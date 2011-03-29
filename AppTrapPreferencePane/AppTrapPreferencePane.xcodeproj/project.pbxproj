@@ -1,0 +1,423 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 42;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		287EF9A70C4F8DED002DB92D /* ATNotifications.m in Sources */ = {isa = PBXBuildFile; fileRef = 287EF9A60C4F8DED002DB92D /* ATNotifications.m */; };
+		28A46D860C43E6CF007925EB /* Read Me.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 28A46D850C43E6CF007925EB /* Read Me.rtf */; };
+		28A46DD60C43ED87007925EB /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 28A46DD50C43ED87007925EB /* Localizable.strings */; };
+		28F272B70C3A231900B1604F /* AppTrap.app in Resources */ = {isa = PBXBuildFile; fileRef = 28830C420BF8BE400096A7CE /* AppTrap.app */; };
+		7D1051D6104A1FA900BAAF3F /* AppTrapPreferencePane.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7D1051D4104A1FA900BAAF3F /* AppTrapPreferencePane.xib */; };
+		7D3C77BA1048CF5B00009126 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D3C77B91048CF5B00009126 /* Sparkle.framework */; };
+		7D3C77E61048CF6300009126 /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7D3C77B91048CF5B00009126 /* Sparkle.framework */; };
+		7D992EB5100BE7B100DDA632 /* ATSUUpdater.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D992EB4100BE7B100DDA632 /* ATSUUpdater.m */; };
+		7D992EBB100BEB3200DDA632 /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = 7D992EBA100BEB3200DDA632 /* dsa_pub.pem */; };
+		7DA59D4510201A08002EBE1E /* ATVariables.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DA59D4410201A08002EBE1E /* ATVariables.m */; };
+		7DB7FF051041C41300310F74 /* ATPreferencePane.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DB7FF041041C41300310F74 /* ATPreferencePane.m */; };
+		7DEB002710156A84001F11ED /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DEB002610156A84001F11ED /* CoreServices.framework */; };
+		8D202CEE0486D31800D8A456 /* AppTrapPreferencePane.tiff in Resources */ = {isa = PBXBuildFile; fileRef = F506C040013D9D8001CA16C8 /* AppTrapPreferencePane.tiff */; };
+		8D202CF30486D31800D8A456 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */; };
+		8D202CF40486D31800D8A456 /* PreferencePanes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F506C035013D953901CA16C8 /* PreferencePanes.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		7D0EFC2D100B9818005B4F39 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				7D3C77E61048CF6300009126 /* Sparkle.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		089C1672FE841209C02AAC07 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
+		089C167FFE841241C02AAC07 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
+		1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
+		287EF8B90C4F8A52002DB92D /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/Localizable.strings; sourceTree = "<group>"; };
+		287EF8D60C4F8C30002DB92D /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = nl; path = "nl.lproj/Read Me.rtf"; sourceTree = "<group>"; };
+		287EF9A50C4F8DED002DB92D /* ATNotifications.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ATNotifications.h; path = ../AppTrap/ATNotifications.h; sourceTree = SOURCE_ROOT; };
+		287EF9A60C4F8DED002DB92D /* ATNotifications.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ATNotifications.m; path = ../AppTrap/ATNotifications.m; sourceTree = SOURCE_ROOT; };
+		28830C420BF8BE400096A7CE /* AppTrap.app */ = {isa = PBXFileReference; lastKnownFileType = wrapper.application; name = AppTrap.app; path = ../AppTrap/build/Release/AppTrap.app; sourceTree = SOURCE_ROOT; };
+		28A46DD10C43ED75007925EB /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/Localizable.strings; sourceTree = "<group>"; };
+		28F272BB0C3A233500B1604F /* English */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = English; path = "English.lproj/Read Me.rtf"; sourceTree = "<group>"; };
+		32DBCFA20370C41700C91783 /* AppTrapPreferencePane_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppTrapPreferencePane_Prefix.pch; sourceTree = "<group>"; };
+		7D1051D5104A1FA900BAAF3F /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/AppTrapPreferencePane.xib; sourceTree = "<group>"; };
+		7D1051D7104A1FBC00BAAF3F /* nl */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = nl; path = nl.lproj/AppTrapPreferencePane.xib; sourceTree = "<group>"; };
+		7D18B1541128BC94003C260F /* pt */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pt; path = pt.lproj/Localizable.strings; sourceTree = "<group>"; };
+		7D18B1551128BCA8003C260F /* pt */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = pt; path = "pt.lproj/Read Me.rtf"; sourceTree = "<group>"; };
+		7D18B1561128BCB9003C260F /* pt */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = pt; path = pt.lproj/AppTrapPreferencePane.xib; sourceTree = "<group>"; };
+		7D3C77B91048CF5B00009126 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sparkle.framework; sourceTree = "<group>"; };
+		7D5CCF6C104C0CC40026160F /* fr */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = fr; path = fr.lproj/AppTrapPreferencePane.xib; sourceTree = "<group>"; };
+		7D5CCF6D104C0CDC0026160F /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = fr; path = "fr.lproj/Read Me.rtf"; sourceTree = "<group>"; };
+		7D5CCF6E104C0CFF0026160F /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		7D992EB3100BE7B100DDA632 /* ATSUUpdater.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATSUUpdater.h; sourceTree = "<group>"; };
+		7D992EB4100BE7B100DDA632 /* ATSUUpdater.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATSUUpdater.m; sourceTree = "<group>"; };
+		7D992EBA100BEB3200DDA632 /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
+		7DA59D4310201A08002EBE1E /* ATVariables.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ATVariables.h; path = ../AppTrap/ATVariables.h; sourceTree = SOURCE_ROOT; };
+		7DA59D4410201A08002EBE1E /* ATVariables.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ATVariables.m; path = ../AppTrap/ATVariables.m; sourceTree = SOURCE_ROOT; };
+		7DB7FF031041C41300310F74 /* ATPreferencePane.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATPreferencePane.h; sourceTree = "<group>"; };
+		7DB7FF041041C41300310F74 /* ATPreferencePane.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATPreferencePane.m; sourceTree = "<group>"; };
+		7DEB002610156A84001F11ED /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = /System/Library/Frameworks/CoreServices.framework; sourceTree = "<absolute>"; };
+		8D202CF70486D31800D8A456 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		8D202CF80486D31800D8A456 /* AppTrap.prefPane */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AppTrap.prefPane; sourceTree = BUILT_PRODUCTS_DIR; };
+		F506C035013D953901CA16C8 /* PreferencePanes.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PreferencePanes.framework; path = /System/Library/Frameworks/PreferencePanes.framework; sourceTree = "<absolute>"; };
+		F506C040013D9D8001CA16C8 /* AppTrapPreferencePane.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = AppTrapPreferencePane.tiff; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8D202CF20486D31800D8A456 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D202CF30486D31800D8A456 /* Cocoa.framework in Frameworks */,
+				8D202CF40486D31800D8A456 /* PreferencePanes.framework in Frameworks */,
+				7DEB002710156A84001F11ED /* CoreServices.framework in Frameworks */,
+				7D3C77BA1048CF5B00009126 /* Sparkle.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		089C166AFE841209C02AAC07 /* AppTrapPreferencePane */ = {
+			isa = PBXGroup;
+			children = (
+				08FB77AFFE84173DC02AAC07 /* Classes */,
+				32DBCFA10370C40200C91783 /* Other Sources */,
+				089C167CFE841241C02AAC07 /* Resources */,
+				089C1671FE841209C02AAC07 /* Frameworks and Libraries */,
+				19C28FB8FE9D52D311CA2CBB /* Products */,
+			);
+			name = AppTrapPreferencePane;
+			sourceTree = "<group>";
+		};
+		089C1671FE841209C02AAC07 /* Frameworks and Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				1058C7ACFEA557BF11CA2CBB /* Linked Frameworks */,
+				1058C7AEFEA557BF11CA2CBB /* Other Frameworks */,
+			);
+			name = "Frameworks and Libraries";
+			sourceTree = "<group>";
+		};
+		089C167CFE841241C02AAC07 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				7D992EBA100BEB3200DDA632 /* dsa_pub.pem */,
+				28A46DD50C43ED87007925EB /* Localizable.strings */,
+				28A46D850C43E6CF007925EB /* Read Me.rtf */,
+				8D202CF70486D31800D8A456 /* Info.plist */,
+				F506C040013D9D8001CA16C8 /* AppTrapPreferencePane.tiff */,
+				7D1051D4104A1FA900BAAF3F /* AppTrapPreferencePane.xib */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		08FB77AFFE84173DC02AAC07 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				7DB7FF031041C41300310F74 /* ATPreferencePane.h */,
+				7DB7FF041041C41300310F74 /* ATPreferencePane.m */,
+				287EF9A50C4F8DED002DB92D /* ATNotifications.h */,
+				287EF9A60C4F8DED002DB92D /* ATNotifications.m */,
+				7DA59D4310201A08002EBE1E /* ATVariables.h */,
+				7DA59D4410201A08002EBE1E /* ATVariables.m */,
+				7D992EB3100BE7B100DDA632 /* ATSUUpdater.h */,
+				7D992EB4100BE7B100DDA632 /* ATSUUpdater.m */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		1058C7ACFEA557BF11CA2CBB /* Linked Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7D3C77B91048CF5B00009126 /* Sparkle.framework */,
+				7DEB002610156A84001F11ED /* CoreServices.framework */,
+				1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */,
+				F506C035013D953901CA16C8 /* PreferencePanes.framework */,
+			);
+			name = "Linked Frameworks";
+			sourceTree = "<group>";
+		};
+		1058C7AEFEA557BF11CA2CBB /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				089C1672FE841209C02AAC07 /* Foundation.framework */,
+				089C167FFE841241C02AAC07 /* AppKit.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		19C28FB8FE9D52D311CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8D202CF80486D31800D8A456 /* AppTrap.prefPane */,
+				28830C420BF8BE400096A7CE /* AppTrap.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		32DBCFA10370C40200C91783 /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				32DBCFA20370C41700C91783 /* AppTrapPreferencePane_Prefix.pch */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8D202CE80486D31800D8A456 /* AppTrap */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1DBD214808BA80EA00186707 /* Build configuration list for PBXNativeTarget "AppTrap" */;
+			buildPhases = (
+				8D202CEC0486D31800D8A456 /* Resources */,
+				8D202CF00486D31800D8A456 /* Sources */,
+				8D202CF20486D31800D8A456 /* Frameworks */,
+				8D202CF50486D31800D8A456 /* Rez */,
+				7D0EFC2D100B9818005B4F39 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AppTrap;
+			productInstallPath = "$(HOME)/Library/PreferencePanes";
+			productName = AppTrapPreferencePane;
+			productReference = 8D202CF80486D31800D8A456 /* AppTrap.prefPane */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		089C1669FE841209C02AAC07 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 1DBD214C08BA80EA00186707 /* Build configuration list for PBXProject "AppTrapPreferencePane" */;
+			compatibilityVersion = "Xcode 2.4";
+			developmentRegion = English;
+			hasScannedForEncodings = 1;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+				sv,
+				pl,
+				no,
+				de,
+				fi,
+				fr,
+				it,
+				nl,
+				pt_BR,
+				tr,
+				da,
+				es,
+				zh_TW,
+				ja,
+				pt,
+			);
+			mainGroup = 089C166AFE841209C02AAC07 /* AppTrapPreferencePane */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8D202CE80486D31800D8A456 /* AppTrap */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8D202CEC0486D31800D8A456 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				28F272B70C3A231900B1604F /* AppTrap.app in Resources */,
+				8D202CEE0486D31800D8A456 /* AppTrapPreferencePane.tiff in Resources */,
+				28A46D860C43E6CF007925EB /* Read Me.rtf in Resources */,
+				28A46DD60C43ED87007925EB /* Localizable.strings in Resources */,
+				7D992EBB100BEB3200DDA632 /* dsa_pub.pem in Resources */,
+				7D1051D6104A1FA900BAAF3F /* AppTrapPreferencePane.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXRezBuildPhase section */
+		8D202CF50486D31800D8A456 /* Rez */ = {
+			isa = PBXRezBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXRezBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8D202CF00486D31800D8A456 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				287EF9A70C4F8DED002DB92D /* ATNotifications.m in Sources */,
+				7D992EB5100BE7B100DDA632 /* ATSUUpdater.m in Sources */,
+				7DA59D4510201A08002EBE1E /* ATVariables.m in Sources */,
+				7DB7FF051041C41300310F74 /* ATPreferencePane.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		28A46D850C43E6CF007925EB /* Read Me.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				28F272BB0C3A233500B1604F /* English */,
+				287EF8D60C4F8C30002DB92D /* nl */,
+				7D5CCF6D104C0CDC0026160F /* fr */,
+				7D18B1551128BCA8003C260F /* pt */,
+			);
+			name = "Read Me.rtf";
+			sourceTree = "<group>";
+		};
+		28A46DD50C43ED87007925EB /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				28A46DD10C43ED75007925EB /* English */,
+				287EF8B90C4F8A52002DB92D /* nl */,
+				7D5CCF6E104C0CFF0026160F /* fr */,
+				7D18B1541128BC94003C260F /* pt */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		7D1051D4104A1FA900BAAF3F /* AppTrapPreferencePane.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7D1051D5104A1FA900BAAF3F /* English */,
+				7D1051D7104A1FBC00BAAF3F /* nl */,
+				7D5CCF6C104C0CC40026160F /* fr */,
+				7D18B1561128BCB9003C260F /* pt */,
+			);
+			name = AppTrapPreferencePane.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1DBD214908BA80EA00186707 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = (
+					x86_64,
+					ppc,
+					i386,
+				);
+				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
+					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_2)",
+				);
+				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)\"";
+				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_2 = "\"$(SRCROOT)\"";
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_ENABLE_OBJC_GC = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = AppTrapPreferencePane_Prefix.pch;
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "$(HOME)/Library/PreferencePanes";
+				PRODUCT_NAME = AppTrap;
+				SDKROOT = /Developer/SDKs/MacOSX10.5.sdk;
+				WRAPPER_EXTENSION = prefPane;
+				ZERO_LINK = YES;
+			};
+			name = Debug;
+		};
+		1DBD214A08BA80EA00186707 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = (
+					x86_64,
+					ppc,
+					i386,
+				);
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
+					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_2)",
+				);
+				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)\"";
+				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_2 = "\"$(SRCROOT)\"";
+				GCC_ENABLE_OBJC_GC = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = AppTrapPreferencePane_Prefix.pch;
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "$(HOME)/Library/PreferencePanes";
+				PRODUCT_NAME = AppTrap;
+				SDKROOT = /Developer/SDKs/MacOSX10.5.sdk;
+				WRAPPER_EXTENSION = prefPane;
+			};
+			name = Release;
+		};
+		1DBD214D08BA80EA00186707 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT_PRE_XCODE_3_1)";
+				ARCHS_STANDARD_32_64_BIT_PRE_XCODE_3_1 = "ppc i386 ppc64 x86_64";
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				PREBINDING = NO;
+				SDKROOT = /Developer/SDKs/MacOSX10.5.sdk;
+			};
+			name = Debug;
+		};
+		1DBD214E08BA80EA00186707 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT_PRE_XCODE_3_1)";
+				ARCHS_STANDARD_32_64_BIT_PRE_XCODE_3_1 = "ppc i386 ppc64 x86_64";
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				PREBINDING = NO;
+				SDKROOT = /Developer/SDKs/MacOSX10.5.sdk;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1DBD214808BA80EA00186707 /* Build configuration list for PBXNativeTarget "AppTrap" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DBD214908BA80EA00186707 /* Debug */,
+				1DBD214A08BA80EA00186707 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1DBD214C08BA80EA00186707 /* Build configuration list for PBXProject "AppTrapPreferencePane" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DBD214D08BA80EA00186707 /* Debug */,
+				1DBD214E08BA80EA00186707 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 089C1669FE841209C02AAC07 /* Project object */;
+}
