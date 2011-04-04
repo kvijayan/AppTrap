@@ -324,7 +324,7 @@
 				INSTALL_PATH = "$(HOME)/Applications";
 				PRODUCT_NAME = AppTrap;
 				RUN_CLANG_STATIC_ANALYZER = YES;
-				SDKROOT = /Developer/SDKs/MacOSX10.5.sdk;
+				SDKROOT = macosx;
 				WRAPPER_EXTENSION = app;
 				ZERO_LINK = YES;
 			};
@@ -348,7 +348,7 @@
 				INSTALL_PATH = "$(HOME)/Applications";
 				PRODUCT_NAME = AppTrap;
 				RUN_CLANG_STATIC_ANALYZER = YES;
-				SDKROOT = /Developer/SDKs/MacOSX10.5.sdk;
+				SDKROOT = macosx;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
