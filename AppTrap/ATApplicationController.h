@@ -134,8 +134,6 @@
  */
 - (IBAction)expandOrShrink:(id)sender;
 
-- (IBAction)tempExpandOrShrink:(id)sender;
-
 #pragma mark -
 #pragma mark Window resizing
 

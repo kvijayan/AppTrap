@@ -80,16 +80,11 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">(BOOL)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_a_t_preference_pane.html#a23a61a5b768ae3db38255f5cca033fcd">inLoginItems:forPath:</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_a_t_preference_pane.html#a5648358d3f692b54174185a9bfd2f5f5">addToLoginItems:forPath:</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_a_t_preference_pane.html#a8369f60e689f2fcb9c88c18f7a23d98e">removeFromLoginItems:forPath:</a></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a67241fa3b9ecfb0d2b6e759292394048"></a><!-- doxytag: member="ATPreferencePane::automaticallyCheckForUpdate:" ref="a67241fa3b9ecfb0d2b6e759292394048" args="(id sender)" -->
-(IBAction)&#160;</td><td class="memItemRight" valign="bottom">- <b>automaticallyCheckForUpdate:</b></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1bb62f5705c07a6db7009561c4c70b19"></a><!-- doxytag: member="ATPreferencePane::checkForUpdate:" ref="a1bb62f5705c07a6db7009561c4c70b19" args="(id sender)" -->
-(IBAction)&#160;</td><td class="memItemRight" valign="bottom">- <b>checkForUpdate:</b></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a28d5eb9aec7e160ea4e7fd732ef3285b"></a><!-- doxytag: member="ATPreferencePane::startStopAppTrap:" ref="a28d5eb9aec7e160ea4e7fd732ef3285b" args="(id sender)" -->
-(IBAction)&#160;</td><td class="memItemRight" valign="bottom">- <b>startStopAppTrap:</b></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a21ad059f47f19b6e247358c0033efb85"></a><!-- doxytag: member="ATPreferencePane::startOnLogin:" ref="a21ad059f47f19b6e247358c0033efb85" args="(id sender)" -->
-(IBAction)&#160;</td><td class="memItemRight" valign="bottom">- <b>startOnLogin:</b></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a28ed062c7cf0c0cc42933a0045d8a7da"></a><!-- doxytag: member="ATPreferencePane::visitWebsite:" ref="a28ed062c7cf0c0cc42933a0045d8a7da" args="(id sender)" -->
-(IBAction)&#160;</td><td class="memItemRight" valign="bottom">- <b>visitWebsite:</b></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">(IBAction)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_a_t_preference_pane.html#a67241fa3b9ecfb0d2b6e759292394048">automaticallyCheckForUpdate:</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">(IBAction)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_a_t_preference_pane.html#a1bb62f5705c07a6db7009561c4c70b19">checkForUpdate:</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">(IBAction)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_a_t_preference_pane.html#a28d5eb9aec7e160ea4e7fd732ef3285b">startStopAppTrap:</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">(IBAction)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_a_t_preference_pane.html#a21ad059f47f19b6e247358c0033efb85">startOnLogin:</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">(IBAction)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_a_t_preference_pane.html#a28ed062c7cf0c0cc42933a0045d8a7da">visitWebsite:</a></td></tr>
 <tr><td colspan="2"><h2><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8b337743965c65f8d658a67faa5c8acc"></a><!-- doxytag: member="ATPreferencePane::appPath" ref="a8b337743965c65f8d658a67faa5c8acc" args="" -->
@@ -148,6 +143,7 @@ IBOutlet NSWindow *&#160;</td><td class="memItemRight" valign="bottom"><b>appTra
   </table>
   </dd>
 </dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000002">Todo:</a></b></dt><dd>Modify this method, or make a new one, that gets the login items on its own (without a parameter). </dd></dl>
 
 </div>
 </div>
@@ -166,6 +162,30 @@ IBOutlet NSWindow *&#160;</td><td class="memItemRight" valign="bottom"><b>appTra
 <div class="memdoc">
 <p>Returns a BOOL indicating whether AppTrap is running or not.</p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>the BOOL indicating whether AppTrap is running. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a67241fa3b9ecfb0d2b6e759292394048"></a><!-- doxytag: member="ATPreferencePane::automaticallyCheckForUpdate:" ref="a67241fa3b9ecfb0d2b6e759292394048" args="(id sender)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (IBAction) automaticallyCheckForUpdate: </td>
+          <td></td>
+          <td class="paramtype">(id)&#160;</td>
+          <td class="paramname"><em>sender</em></td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Enable or disable automatic update checking, depending on the sender's state. Called by a checkbox.</p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">sender</td><td>The control that invoked this method (likely a checkbox). </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -204,6 +224,30 @@ IBOutlet NSWindow *&#160;</td><td class="memItemRight" valign="bottom"><b>appTra
 <dl><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">notification</td><td>The NSNotification that invoked this method. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a1bb62f5705c07a6db7009561c4c70b19"></a><!-- doxytag: member="ATPreferencePane::checkForUpdate:" ref="a1bb62f5705c07a6db7009561c4c70b19" args="(id sender)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (IBAction) checkForUpdate: </td>
+          <td></td>
+          <td class="paramtype">(id)&#160;</td>
+          <td class="paramname"><em>sender</em></td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Check if there is an update. Called by a button.</p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">sender</td><td>The control that invoked this method (likely a button). </td></tr>
   </table>
   </dd>
 </dl>
@@ -296,6 +340,55 @@ IBOutlet NSWindow *&#160;</td><td class="memItemRight" valign="bottom"><b>appTra
   </table>
   </dd>
 </dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000003">Todo:</a></b></dt><dd>Modify this method, or make a new one, that gets the login items on its own (without a parameter). </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a21ad059f47f19b6e247358c0033efb85"></a><!-- doxytag: member="ATPreferencePane::startOnLogin:" ref="a21ad059f47f19b6e247358c0033efb85" args="(id sender)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (IBAction) startOnLogin: </td>
+          <td></td>
+          <td class="paramtype">(id)&#160;</td>
+          <td class="paramname"><em>sender</em></td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Add or remove the AppTrap background process from the user's login items, depending on the state of sender. Called by a checkbox.</p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">sender</td><td>The control that invoked this method (likely a checkbox). </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a28d5eb9aec7e160ea4e7fd732ef3285b"></a><!-- doxytag: member="ATPreferencePane::startStopAppTrap:" ref="a28d5eb9aec7e160ea4e7fd732ef3285b" args="(id sender)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (IBAction) startStopAppTrap: </td>
+          <td></td>
+          <td class="paramtype">(id)&#160;</td>
+          <td class="paramname"><em>sender</em></td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Start or stop the AppTrap background process. Called by a button.</p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">sender</td><td>The control that invoked this method (likely a button). </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -333,6 +426,30 @@ IBOutlet NSWindow *&#160;</td><td class="memItemRight" valign="bottom"><b>appTra
 
 </div>
 </div>
+<a class="anchor" id="a28ed062c7cf0c0cc42933a0045d8a7da"></a><!-- doxytag: member="ATPreferencePane::visitWebsite:" ref="a28ed062c7cf0c0cc42933a0045d8a7da" args="(id sender)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (IBAction) visitWebsite: </td>
+          <td></td>
+          <td class="paramtype">(id)&#160;</td>
+          <td class="paramname"><em>sender</em></td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Open the AppTrap website in the user's default browser. Called by a button.</p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">sender</td><td>The control that invoked this method (likely a checkbox). </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>AppTrapPreferencePane/<a class="el" href="_a_t_preference_pane_8h_source.html">ATPreferencePane.h</a></li>
 <li>AppTrapPreferencePane/ATPreferencePane.m</li>
@@ -352,7 +469,7 @@ IBOutlet NSWindow *&#160;</td><td class="memItemRight" valign="bottom"><b>appTra
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Tue Apr 5 2011 09:46:18 for AppTrap by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Tue Apr 5 2011 13:29:33 for AppTrap by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </small></address>
 </body>

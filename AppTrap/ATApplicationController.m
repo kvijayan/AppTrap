@@ -451,20 +451,6 @@ const int kWindowExpansionAmount = 164;
 	}
 }
 
-- (IBAction)tempExpandOrShrink:(id)sender {
-//	int expanded = isExpanded;
-	if (isExpanded != [sender state]) {
-		isExpanded = [sender state];
-		[[NSUserDefaults standardUserDefaults] setBool:isExpanded forKey:ATPreferencesIsExpanded];
-		NSLog(@"isExpanded: %d", isExpanded);
-		if (isExpanded == NSOnState) {
-			[self extendMainWindowBy:kWindowExpansionAmount];
-		} else {
-			[self extendMainWindowBy:-kWindowExpansionAmount];
-		}
-	}
-}
-
 #pragma mark -
 #pragma mark Application delegate methods
 
