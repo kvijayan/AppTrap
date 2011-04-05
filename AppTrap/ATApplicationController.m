@@ -109,6 +109,25 @@ const int kWindowExpansionAmount = 164;
     return self;
 }
 
+- (void)setupTrashFolderPath
+{
+    pathToTrash = nil;
+    CFURLRef trashURL;
+    FSRef trashFolderRef;
+    OSErr err;
+    
+    isExpanded = NO;
+    
+    err = FSFindFolder(kUserDomain, kTrashFolderType, kDontCreateFolder, &trashFolderRef);
+    if (err == noErr) {
+        trashURL = CFURLCreateFromFSRef(kCFAllocatorSystemDefault, &trashFolderRef);
+        if (trashURL) {
+            pathToTrash = (NSString *)CFURLCopyFileSystemPath(trashURL, kCFURLPOSIXPathStyle);
+            CFRelease(trashURL);
+        }
+    }
+}
+
 - (void)awakeFromNib
 {
 	NSLog(@"awakeFromNib");
