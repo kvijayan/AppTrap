@@ -20,6 +20,10 @@
 
 #import <Cocoa/Cocoa.h>
 
+/**
+ * Subclass of NSTextFieldCell for handling text layout in the main window's
+ * table view.
+ */
 @interface ATTextFieldCell : NSTextFieldCell
 {
 }

@@ -20,10 +20,20 @@
 
 #import <Cocoa/Cocoa.h>
 
+/**
+ * A subclass of NSArrayController whose purpose is to populate the table view
+ * in the main window.
+ */
 @interface ATArrayController : NSArrayController
 {
 }
 
+/**
+ * Add a path to delete from the disk.
+ *
+ * @param[in] path The string representing the path to the file that should be
+ * deleted.
+ */
 - (void)addPathForDeletion:(NSString *)path;
 
 @end
