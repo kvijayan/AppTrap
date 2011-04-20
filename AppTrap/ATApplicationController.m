@@ -200,11 +200,11 @@ const int kWindowExpansionAmount = 164;
                 if ([currentFilename hasSuffix:@".app"])
                     [applicationsInTrash addObject:currentFilename];
                 
-                [pool release];
+                [pool drain];
                 pool = [[NSAutoreleasePool alloc] init];
             }
             
-            [pool release];
+            [pool drain];
             pool = nil;
         }
     }
@@ -270,7 +270,7 @@ const int kWindowExpansionAmount = 164;
         // Get a snapshot of our matches so that we can remove objects from matches while enumerating
         NSEnumerator *matchesEnumerator = [[matches allObjects] objectEnumerator];
         id currentObject = nil;
-        while (currentObject = [matchesEnumerator nextObject]) {
+        while ((currentObject = [matchesEnumerator nextObject])) {
             [listController addPathForDeletion:currentObject];
             [matches removeObject:currentObject];
         }
@@ -303,11 +303,11 @@ const int kWindowExpansionAmount = 164;
         if (![currentObject hasPrefix:@"."])
             count++;
         
-        [pool release];
+        [pool drain];
         pool = [[NSAutoreleasePool alloc] init];
     }
     
-    [pool release];
+    [pool drain];
     pool = nil;
     
     return count;
@@ -383,7 +383,7 @@ const int kWindowExpansionAmount = 164;
             if (tag >= 0)
                 NSLog(@"Successfully moved %@ to trash", sourcePath);
             else
-                NSLog(@"Couldn't move %@ to trash (tag = %i)", sourcePath, tag);
+                NSLog(@"Couldn't move %@ to trash (tag = %d)", sourcePath, (int)tag);
         }
         
         // Remove the item from the list
