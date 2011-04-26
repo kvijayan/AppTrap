@@ -1,6 +1,6 @@
 /*
 -----------------------------------------------
-  APPTRAP LICENSE
+  APPTRAP LICENSE 1
 
   "Do what you want to do,
   and go where you're going to
