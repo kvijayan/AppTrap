@@ -2,10 +2,10 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>CFBundleShortVersionString</key>
-	<string>1.1.6</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>English</string>
+	<key>CFBundleDocumentTypes</key>
+	<array/>
 	<key>CFBundleExecutable</key>
 	<string>${EXECUTABLE_NAME}</string>
 	<key>CFBundleIconFile</key>
@@ -18,23 +18,33 @@
 	<string>${PRODUCT_NAME}</string>
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
+	<key>CFBundleShortVersionString</key>
+	<string>1.1.7 Beta 1</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
+	<key>CFBundleURLTypes</key>
+	<array/>
 	<key>CFBundleVersion</key>
-	<string>56</string>
+	<string>57</string>
+	<key>LSMinimumSystemVersion</key>
+	<string>10.5</string>
 	<key>LSUIElement</key>
 	<string>1</string>
+	<key>NSHumanReadableCopyright</key>
+	<string>© Konst och vanliga saker, 2007-2008</string>
 	<key>NSMainNibFile</key>
 	<string>MainMenu</string>
 	<key>NSPrincipalClass</key>
 	<string>NSApplication</string>
+	<key>NSServices</key>
+	<array/>
 	<key>SmartCrashReports_CompanyName</key>
 	<string>KOVS</string>
 	<key>SmartCrashReports_EmailTicket</key>
 	<string>SCR-0AB11B9C98</string>
-	<key>LSMinimumSystemVersion</key>
-	<string>10.5</string>
-	<key>NSHumanReadableCopyright</key>
-	<string>© Konst och vanliga saker, 2007-2008</string>
+	<key>UTExportedTypeDeclarations</key>
+	<array/>
+	<key>UTImportedTypeDeclarations</key>
+	<array/>
 </dict>
 </plist>
