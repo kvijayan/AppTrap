@@ -17,11 +17,11 @@
 	<key>CFBundlePackageType</key>
 	<string>BNDL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.1.7 Beta 1</string>
+	<string>1.1.7 Beta 3</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>57</string>
+	<string>59</string>
 	<key>LSMinimumSystemVersion</key>
 	<string>10.5</string>
 	<key>NSHumanReadableCopyright</key>
