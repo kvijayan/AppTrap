@@ -27,7 +27,7 @@
 	<key>CFBundleVersion</key>
 	<string>59</string>
 	<key>LSMinimumSystemVersion</key>
-	<string>10.5</string>
+	<string>10.6</string>
 	<key>LSUIElement</key>
 	<string>1</string>
 	<key>NSHumanReadableCopyright</key>
