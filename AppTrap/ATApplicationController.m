@@ -133,7 +133,6 @@ const int kWindowExpansionAmount = 164;
 	NSLog(@"awakeFromNib");
     // Restore the expanded state of the window
 	BOOL shouldExpand = [[NSUserDefaults standardUserDefaults] boolForKey:ATPreferencesIsExpanded];
-	NSLog(@"shouldExpand: %d", shouldExpand);
 	
 	if (shouldExpand) {
 		[self setExpanded:shouldExpand];
