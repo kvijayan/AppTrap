@@ -251,6 +251,10 @@ const int kWindowExpansionAmount = 164;
         // Get the applications's bundle and its identifier
         NSBundle *appBundle = [NSBundle bundleWithPath:fullPath];
         NSString *preferenceFileName = [[appBundle bundleIdentifier] stringByAppendingPathExtension:@"plist"];
+        NSString *preflockFileName = [preferenceFileName stringByAppendingPathExtension:@"lockfile"];
+
+        NSString *lssflprefFileName = [[appBundle bundleIdentifier] stringByAppendingPathExtension:@"LSSharedFileList.plist"];
+        NSString *lssflpreflocklFileName = [lssflprefFileName stringByAppendingPathExtension:@"lockfile"];
         
         // Get the application's true name (i.e. not the filename)
         NSString *appName = [appBundle objectForInfoDictionaryKey:@"CFBundleName"];
@@ -262,6 +266,9 @@ const int kWindowExpansionAmount = 164;
         
         while ((currentLibraryPath = [libraryEnumerator nextObject])) {
             [matches addObjectsFromArray:[self matchesForFilename:preferenceFileName atPath:currentLibraryPath]];
+            [matches addObjectsFromArray:[self matchesForFilename:preflockFileName atPath:currentLibraryPath]];
+            [matches addObjectsFromArray:[self matchesForFilename:lssflprefFileName atPath:currentLibraryPath]];
+            [matches addObjectsFromArray:[self matchesForFilename:lssflpreflocklFileName atPath:currentLibraryPath]];
             [matches addObjectsFromArray:[self matchesForFilename:appName atPath:currentLibraryPath]];
         }
         
