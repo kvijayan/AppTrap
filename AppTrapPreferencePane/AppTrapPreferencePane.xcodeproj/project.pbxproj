@@ -68,6 +68,8 @@
 		7DEB6E0F134A80660032EF71 /* AppTrap.app */ = {isa = PBXFileReference; lastKnownFileType = wrapper.application; name = AppTrap.app; path = ../AppTrap/DerivedData/AppTrap/Build/Products/Release/AppTrap.app; sourceTree = "<group>"; };
 		8D202CF70486D31800D8A456 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		8D202CF80486D31800D8A456 /* AppTrap.prefPane */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AppTrap.prefPane; sourceTree = BUILT_PRODUCTS_DIR; };
+		B3FDF85213ED574B00B51930 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
+		B3FDF85413ED58DF00B51930 /* de */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = de; path = de.lproj/AppTrapPreferencePane.xib; sourceTree = "<group>"; };
 		F506C035013D953901CA16C8 /* PreferencePanes.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PreferencePanes.framework; path = /System/Library/Frameworks/PreferencePanes.framework; sourceTree = "<absolute>"; };
 		F506C040013D9D8001CA16C8 /* AppTrapPreferencePane.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = AppTrapPreferencePane.tiff; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -294,6 +296,7 @@
 				287EF8B90C4F8A52002DB92D /* nl */,
 				7D5CCF6E104C0CFF0026160F /* fr */,
 				7D18B1541128BC94003C260F /* pt */,
+				B3FDF85213ED574B00B51930 /* de */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -305,6 +308,7 @@
 				7D1051D7104A1FBC00BAAF3F /* nl */,
 				7D5CCF6C104C0CC40026160F /* fr */,
 				7D18B1561128BCB9003C260F /* pt */,
+				B3FDF85413ED58DF00B51930 /* de */,
 			);
 			name = AppTrapPreferencePane.xib;
 			sourceTree = "<group>";

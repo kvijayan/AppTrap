@@ -60,6 +60,8 @@
 		7DF8D311104AD53400A09FA1 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* AppTrap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppTrap.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B3FDF84C13ED504F00B51930 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
+		B3FDF84E13ED512D00B51930 /* de */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = de; path = de.lproj/MainMenu.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -285,6 +287,7 @@
 				281A7FDB0CFDEDAA00E5207C /* nl */,
 				7D5CCF8C104C0DAA0026160F /* fr */,
 				7D18B1041128B4F7003C260F /* pt */,
+				B3FDF84C13ED504F00B51930 /* de */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -296,6 +299,7 @@
 				7D1DEA45112F2553005F818C /* nl */,
 				7D1DEA46112F2559005F818C /* fr */,
 				7D1DEA47112F255B005F818C /* pt */,
+				B3FDF84E13ED512D00B51930 /* de */,
 			);
 			name = MainMenu.xib;
 			sourceTree = "<group>";
