@@ -93,7 +93,7 @@
 	NSLog(@"notification userInfo class: %@", [[notification userInfo] className]);
 	NSLog(@"notification userInfo: %@", [[notification userInfo] description]);
 	
-	NSString *backgroundProcessVersion = [[notification userInfo] objectForKey:ATBackgroundProcessVersion];
+	NSString *backgroundProcessVersion = [notification userInfo][ATBackgroundProcessVersion];
 	int backgroundProcessVersionInt = [backgroundProcessVersion intValue];
 	NSString *prefpaneVersion = [[self bundle] objectForInfoDictionaryKey:@"CFBundleVersion"];
 	int prefpaneVersionInt = [prefpaneVersion intValue];
@@ -182,7 +182,7 @@
 	NSURL *appURL = [NSURL fileURLWithPath:appPath];
 	unsigned options = NSWorkspaceLaunchWithoutAddingToRecents | NSWorkspaceLaunchWithoutActivation | NSWorkspaceLaunchAsync;
     
-	BOOL launched = [[NSWorkspace sharedWorkspace] openURLs:[NSArray arrayWithObject:appURL]
+	BOOL launched = [[NSWorkspace sharedWorkspace] openURLs:@[appURL]
                                     withAppBundleIdentifier:nil
                                                     options:options
                              additionalEventParamDescriptor:nil
