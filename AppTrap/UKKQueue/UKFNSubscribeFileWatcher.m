@@ -106,7 +106,7 @@ void    UKFileSubscriptionProc(FNMessage message, OptionBits flags, void *refcon
         return;
     }
     
-    [subscriptions setObject: [NSValue valueWithPointer: subscription] forKey: path];
+    subscriptions[path] = [NSValue valueWithPointer: subscription];
 }
 
 
@@ -120,7 +120,7 @@ void    UKFileSubscriptionProc(FNMessage message, OptionBits flags, void *refcon
     NSValue*            subValue = nil;
     @synchronized( self )
     {
-        subValue = [[[subscriptions objectForKey: path] retain] autorelease];
+        subValue = [[subscriptions[path] retain] autorelease];
         [subscriptions removeObjectForKey: path];
     }
     
@@ -145,11 +145,11 @@ void    UKFileSubscriptionProc(FNMessage message, OptionBits flags, void *refcon
 -(void) sendDelegateMessage: (FNMessage)message forSubscription: (FNSubscriptionRef)subscription
 {
     NSValue*                    subValue = [NSValue valueWithPointer: subscription];
-    NSString*                   path = [[subscriptions allKeysForObject: subValue] objectAtIndex: 0];
+    NSString*                   path = [subscriptions allKeysForObject: subValue][0];
     
 	[[[NSWorkspace sharedWorkspace] notificationCenter] postNotificationName: UKFileWatcherWriteNotification
 															object: self
-															userInfo: [NSDictionary dictionaryWithObjectsAndKeys: path, @"path", nil]];
+															userInfo: @{@"path": path}];
 	
     [delegate watcher: self receivedNotification: UKFileWatcherWriteNotification forPath: path];
     //NSLog( @"UKFNSubscribeFileWatcher noticed change to %@", path );	// DEBUG ONLY!
@@ -192,7 +192,7 @@ void    UKFileSubscriptionProc(FNMessage message, OptionBits flags, void *refcon
 
 void    UKFileSubscriptionProc( FNMessage message, OptionBits flags, void *refcon, FNSubscriptionRef subscription )
 {
-    UKFNSubscribeFileWatcher*   obj = (UKFNSubscribeFileWatcher*) refcon;
+    UKFNSubscribeFileWatcher*   obj = (__bridge UKFNSubscribeFileWatcher*) refcon;
     
     if( message == kFNDirectoryModifiedMessage )    // No others exist as of 10.4
         [obj sendDelegateMessage: message forSubscription: subscription];

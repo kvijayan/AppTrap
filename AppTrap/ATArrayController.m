@@ -39,14 +39,11 @@
         NSMutableAttributedString *name = [[NSMutableAttributedString alloc] initWithString:nameString];
         
         // First row (regular system font)
-        NSDictionary *firstRowAttributes = [NSDictionary dictionaryWithObject:[NSFont systemFontOfSize:13.0]
-                                                                    forKey:NSFontAttributeName];
+        NSDictionary *firstRowAttributes = @{NSFontAttributeName: [NSFont systemFontOfSize:13.0]};
         
         // Second row (smaller, gray text)
-        NSDictionary *secondRowAttributes = [NSDictionary dictionaryWithObjectsAndKeys:
-            [NSFont systemFontOfSize:11.0], NSFontAttributeName,
-            [NSColor grayColor], NSForegroundColorAttributeName,
-            nil];
+        NSDictionary *secondRowAttributes = @{NSFontAttributeName: [NSFont systemFontOfSize:11.0],
+            NSForegroundColorAttributeName: [NSColor grayColor]};
         
         // Apply the attributes
         [name addAttributes:firstRowAttributes range:NSMakeRange(0,[displayName length])];
@@ -61,14 +58,12 @@
         [newEntry setValue:fullPath forKey:@"fullPath"];
         [newEntry setValue:name forKey:@"name"];
         [newEntry setValue:icon forKey:@"icon"];
-        [newEntry setValue:[NSNumber numberWithBool:YES] forKey:@"shouldBeRemoved"];
+        [newEntry setValue:@YES forKey:@"shouldBeRemoved"];
         
         // ...and add it to the list
         [self addObject:newEntry];
         
         // Clear the temporary attributed strings
-        [nameString release];
-        [name release];
     }
 }
 

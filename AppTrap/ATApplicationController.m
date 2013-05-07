@@ -45,7 +45,7 @@ const int kWindowExpansionAmount = 164;
         if (err == noErr) {
             trashURL = CFURLCreateFromFSRef(kCFAllocatorSystemDefault, &trashFolderRef);
             if (trashURL) {
-                pathToTrash = (NSString *)CFURLCopyFileSystemPath(trashURL, kCFURLPOSIXPathStyle);
+                pathToTrash = (NSString *)CFBridgingRelease(CFURLCopyFileSystemPath(trashURL, kCFURLPOSIXPathStyle));
                 CFRelease(trashURL);
             }
         }
@@ -77,7 +77,6 @@ const int kWindowExpansionAmount = 164;
         
         libraryPaths = [[NSSet alloc] initWithArray:tempArray];
         
-        [tempArray release];
         
         // Create an empty whitelist
         whitelist = [[NSMutableSet alloc] init];
@@ -86,9 +85,7 @@ const int kWindowExpansionAmount = 164;
         [self registerForWriteNotifications];
         
         // Setup default preferences
-        NSDictionary *appDefaults = [NSDictionary dictionaryWithObjectsAndKeys:
-            [NSNumber numberWithBool:NO], ATPreferencesIsExpanded,
-            nil];
+        NSDictionary *appDefaults = @{ATPreferencesIsExpanded: @NO};
         [[NSUserDefaults standardUserDefaults] registerDefaults:appDefaults];
         
         // Register for notifications from the prefpane
@@ -122,7 +119,7 @@ const int kWindowExpansionAmount = 164;
     if (err == noErr) {
         trashURL = CFURLCreateFromFSRef(kCFAllocatorSystemDefault, &trashFolderRef);
         if (trashURL) {
-            pathToTrash = (NSString *)CFURLCopyFileSystemPath(trashURL, kCFURLPOSIXPathStyle);
+            pathToTrash = (NSString *)CFBridgingRelease(CFURLCopyFileSystemPath(trashURL, kCFURLPOSIXPathStyle));
             CFRelease(trashURL);
         }
     }
@@ -142,8 +139,7 @@ const int kWindowExpansionAmount = 164;
 
 - (void)sendVersion {
 	NSDistributedNotificationCenter *nc = [NSDistributedNotificationCenter defaultCenter];
-	NSDictionary *version = [NSDictionary dictionaryWithObject:[[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleVersion"] 
-														forKey:ATBackgroundProcessVersion];
+	NSDictionary *version = @{ATBackgroundProcessVersion: [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleVersion"]};
 	//NSLog(@"sendVersion");
 	
 	[nc postNotificationName:ATApplicationGetVersionData 
@@ -193,18 +189,13 @@ const int kWindowExpansionAmount = 164;
             
             // Use a little trick found at: http://www.cocoadev.com/index.pl?NSDirectoryEnumerator
             // For more information: http://www.wodeveloper.com/omniLists/macosx-dev/2002/June/msg00353.html
-            NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
             
-            while ((currentFilename = [e nextObject])) {
-                if ([currentFilename hasSuffix:@".app"])
-                    [applicationsInTrash addObject:currentFilename];
-                
-                [pool drain];
-                pool = [[NSAutoreleasePool alloc] init];
+            @autoreleasepool {
+                while ((currentFilename = [e nextObject])) {
+                    if ([currentFilename hasSuffix:@".app"])
+                        [applicationsInTrash addObject:currentFilename];
+                }
             }
-            
-            [pool drain];
-            pool = nil;
         }
     }
     
@@ -281,7 +272,6 @@ const int kWindowExpansionAmount = 164;
             [matches removeObject:currentObject];
         }
         
-        [matches release];
     }
     
     // Open up the window if we got any hits
@@ -303,18 +293,13 @@ const int kWindowExpansionAmount = 164;
     NSString *currentObject = nil;
     
     // See the method applicationsInTrash for an explanation of this technique
-    NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
     
-    while ((currentObject = [e nextObject])) {
-        if (![currentObject hasPrefix:@"."])
-            count++;
-        
-        [pool drain];
-        pool = [[NSAutoreleasePool alloc] init];
+    @autoreleasepool {
+        while ((currentObject = [e nextObject])) {
+            if (![currentObject hasPrefix:@"."])
+                count++;
+        }
     }
-    
-    [pool drain];
-    pool = nil;
     
     return count;
 }
@@ -325,18 +310,18 @@ const int kWindowExpansionAmount = 164;
 {
 	NSLog(@"filename: %@", filename);
     if (!filename || !path)
-        return [NSArray array];
+        return @[];
     
     // Do not ever allow empty strings
     if ([filename isEqualToString:@""] || [path isEqualToString:@""])
-        return [NSArray array];
+        return @[];
     
     // Find all the matching files at the given path
     NSString *command = [NSString stringWithFormat:@"find '%@' -name '%@' -maxdepth 1", [path stringByExpandingTildeInPath], filename];
     
     NSTask *task = [[NSTask alloc] init];
     [task setLaunchPath: @"/bin/sh"];
-    [task setArguments: [NSArray arrayWithObjects:@"-c", command, nil]];
+    [task setArguments: @[@"-c", command]];
     
     NSPipe *pipe  = [NSPipe pipe];
     [task setStandardOutput: pipe];
@@ -350,8 +335,6 @@ const int kWindowExpansionAmount = 164;
     NSArray *matches = [string componentsSeparatedByString:@"\n"];
     
     [task waitUntilExit];
-    [task release];
-    [string release];
     
     return matches;
 }
@@ -369,7 +352,7 @@ const int kWindowExpansionAmount = 164;
     NSLog(@"listController before: %@ \n\n", [listController arrangedObjects]);
     while ([[listController arrangedObjects] count] > 0) {
         // Pick the first object in the list
-        currentItem = [[listController arrangedObjects] objectAtIndex:0];
+        currentItem = [listController arrangedObjects][0];
 		NSLog(@"currentItem: %@", currentItem);
 		NSLog(@"currentItem class: %@", [currentItem class]);
         
@@ -378,7 +361,7 @@ const int kWindowExpansionAmount = 164;
             // Move the item to the trash
             NSString *sourcePath = [currentItem valueForKey:@"fullPath"];
             NSString *source = [sourcePath stringByDeletingLastPathComponent];
-            NSArray *files = [NSArray arrayWithObject:[sourcePath lastPathComponent]];
+            NSArray *files = @[[sourcePath lastPathComponent]];
 			NSInteger tag;
             [[NSWorkspace sharedWorkspace] performFileOperation:NSWorkspaceRecycleOperation
                                                          source:source
