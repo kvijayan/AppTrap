@@ -244,7 +244,7 @@ static UKKQueue * gUKKQueueSharedQueueSingleton = nil;
         AT_SYNCHRONIZED( self )
         {
             [watchedPaths addObject: path];
-            [watchedFDs addObject: [NSNumber numberWithInt: fd]];
+            [watchedFDs addObject: @(fd)];
             kevent( queueFD, &ev, 1, NULL, 0, &nullts );
         }
     }
@@ -280,7 +280,7 @@ static UKKQueue * gUKKQueueSharedQueueSingleton = nil;
         if( index == NSNotFound )
             return;
         
-        fd = [[watchedFDs objectAtIndex: index] intValue];
+        fd = [watchedFDs[index] intValue];
         
         [watchedFDs removeObjectAtIndex: index];
         [watchedPaths removeObjectAtIndex: index];
@@ -429,7 +429,7 @@ static UKKQueue * gUKKQueueSharedQueueSingleton = nil;
 		[[[NSWorkspace sharedWorkspace] notificationCenter] postNotificationName: nm object: fp];
 		#else
 		[[[NSWorkspace sharedWorkspace] notificationCenter] postNotificationName: nm object: self
-																userInfo: [NSDictionary dictionaryWithObjectsAndKeys: fp, @"path", nil]];
+																userInfo: @{@"path": fp}];
 		#endif
 	}
 }
