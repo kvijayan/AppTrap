@@ -45,7 +45,7 @@ void eventStreamCallback(ConstFSEventStreamRef streamRef, void *clientCallBackIn
         FSEventStreamRef eventStream = FSEventStreamCreate(kCFAllocatorDefault,
                                                            &eventStreamCallback,
                                                            &eventStreamContext,
-                                                           (CFArrayRef)CFBridgingRetain(@[directoryPath]),
+                                                           (__bridge CFArrayRef)@[directoryPath],
                                                            kFSEventStreamEventIdSinceNow,
                                                            kEventStreamLatency,
                                                            kFSEventStreamCreateFlagUseCFTypes);
