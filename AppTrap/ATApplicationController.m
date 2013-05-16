@@ -24,9 +24,16 @@
 #import "ATVariables.h"
 #import "UKKQueue.h"
 #import "ATUserDefaultKeys.h"
+#import "APTFSEventsWatcher.h"
 
 // Amount to expand the window to show the filelist
 const int kWindowExpansionAmount = 164;
+
+@interface ATApplicationController () <APTFSEventsWatcherDelegate>
+@property (nonatomic, strong) APTFSEventsWatcher *eventsWatcher;
+@end
+
+
 
 @implementation ATApplicationController
 
@@ -49,6 +56,11 @@ const int kWindowExpansionAmount = 164;
                 CFRelease(trashURL);
             }
         }
+        
+        APTFSEventsWatcher *watcher = [[APTFSEventsWatcher alloc] initWithDirectoryPath:pathToTrash];
+        [self setEventsWatcher:watcher];
+        [watcher setDelegate:self];
+        [watcher startWatching];
         
         // Setup paths for application folders
         applicationsPaths = [[NSSet alloc] initWithArray:NSSearchPathForDirectoriesInDomains(NSAllApplicationsDirectory, NSLocalDomainMask | NSUserDomainMask, YES)];
@@ -470,6 +482,13 @@ const int kWindowExpansionAmount = 164;
                       object:nil
                     userInfo:nil
           deliverImmediately:YES];
+}
+
+#pragma mark - APTFSEventsWatcherDelegate Methods
+
+- (void)eventsWatcher:(APTFSEventsWatcher *)eventsWatcher observedChangesInDirectoryPath:(NSString *)directory
+{
+    NSLog(@"%s", __func__);
 }
 
 @end

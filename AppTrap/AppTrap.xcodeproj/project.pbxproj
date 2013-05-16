@@ -12,13 +12,14 @@
 		284B38AB0B78CF870008BFD5 /* ATArrayController.m in Sources */ = {isa = PBXBuildFile; fileRef = 284B38AA0B78CF870008BFD5 /* ATArrayController.m */; };
 		287A24B40B854E480077B852 /* ATTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 287A24B30B854E480077B852 /* ATTextFieldCell.m */; };
 		28A46DA00C43E938007925EB /* ATUserDefaultKeys.m in Sources */ = {isa = PBXBuildFile; fileRef = 28A46D9F0C43E938007925EB /* ATUserDefaultKeys.m */; };
-		28A79E370B77D6A7005CCD1F /* UKFileWatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 28A79E2F0B77D6A7005CCD1F /* UKFileWatcher.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		28A79E380B77D6A7005CCD1F /* UKFNSubscribeFileWatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 28A79E310B77D6A7005CCD1F /* UKFNSubscribeFileWatcher.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		28A79E3A0B77D6A7005CCD1F /* UKKQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 28A79E340B77D6A7005CCD1F /* UKKQueue.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		28A79E3B0B77D6A7005CCD1F /* UKMainThreadProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 28A79E360B77D6A7005CCD1F /* UKMainThreadProxy.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		28A79E830B77D91D005CCD1F /* ATApplicationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28A79E810B77D91D005CCD1F /* ATApplicationController.m */; };
 		7D1DEA44112F252B005F818C /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7D1DEA43112F252B005F818C /* MainMenu.xib */; };
+		7D99959E17433AE800B0B4F9 /* UKFileWatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 28A79E2F0B77D6A7005CCD1F /* UKFileWatcher.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		7D9995A017433AE800B0B4F9 /* UKFNSubscribeFileWatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 28A79E310B77D6A7005CCD1F /* UKFNSubscribeFileWatcher.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		7D9995A217433AE800B0B4F9 /* UKKQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 28A79E340B77D6A7005CCD1F /* UKKQueue.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		7D9995A417433AE800B0B4F9 /* UKMainThreadProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 28A79E360B77D6A7005CCD1F /* UKMainThreadProxy.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		7DA59D41102018C1002EBE1E /* ATVariables.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DA59D40102018C1002EBE1E /* ATVariables.m */; };
+		7DF1DA31173B52FD004FEA6A /* APTFSEventsWatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DF1DA30173B52FD004FEA6A /* APTFSEventsWatcher.m */; };
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
 /* End PBXBuildFile section */
@@ -57,6 +58,8 @@
 		7D5CCF8C104C0DAA0026160F /* fr */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		7DA59D3F102018C1002EBE1E /* ATVariables.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATVariables.h; sourceTree = "<group>"; };
 		7DA59D40102018C1002EBE1E /* ATVariables.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATVariables.m; sourceTree = "<group>"; };
+		7DF1DA2F173B52FD004FEA6A /* APTFSEventsWatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APTFSEventsWatcher.h; sourceTree = "<group>"; };
+		7DF1DA30173B52FD004FEA6A /* APTFSEventsWatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APTFSEventsWatcher.m; sourceTree = "<group>"; };
 		7DF8D311104AD53400A09FA1 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* AppTrap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppTrap.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -89,6 +92,8 @@
 				284B38AA0B78CF870008BFD5 /* ATArrayController.m */,
 				287A24B20B854E480077B852 /* ATTextFieldCell.h */,
 				287A24B30B854E480077B852 /* ATTextFieldCell.m */,
+				7DF1DA2F173B52FD004FEA6A /* APTFSEventsWatcher.h */,
+				7DF1DA30173B52FD004FEA6A /* APTFSEventsWatcher.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -264,17 +269,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D99959E17433AE800B0B4F9 /* UKFileWatcher.m in Sources */,
+				7D9995A017433AE800B0B4F9 /* UKFNSubscribeFileWatcher.m in Sources */,
+				7D9995A217433AE800B0B4F9 /* UKKQueue.m in Sources */,
+				7D9995A417433AE800B0B4F9 /* UKMainThreadProxy.m in Sources */,
 				8D11072D0486CEB800E47090 /* main.m in Sources */,
-				28A79E370B77D6A7005CCD1F /* UKFileWatcher.m in Sources */,
-				28A79E380B77D6A7005CCD1F /* UKFNSubscribeFileWatcher.m in Sources */,
-				28A79E3A0B77D6A7005CCD1F /* UKKQueue.m in Sources */,
-				28A79E3B0B77D6A7005CCD1F /* UKMainThreadProxy.m in Sources */,
 				28A79E830B77D91D005CCD1F /* ATApplicationController.m in Sources */,
 				284B38AB0B78CF870008BFD5 /* ATArrayController.m in Sources */,
 				287A24B40B854E480077B852 /* ATTextFieldCell.m in Sources */,
 				281852070C09DAC20020DDF3 /* ATNotifications.m in Sources */,
 				28A46DA00C43E938007925EB /* ATUserDefaultKeys.m in Sources */,
 				7DA59D41102018C1002EBE1E /* ATVariables.m in Sources */,
+				7DF1DA31173B52FD004FEA6A /* APTFSEventsWatcher.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -328,7 +334,7 @@
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
-				MACOSX_DEPLOYMENT_TARGET = 10.6.8;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				PRODUCT_NAME = AppTrap;
 				RUN_CLANG_STATIC_ANALYZER = YES;
 				SDKROOT = macosx;
@@ -357,7 +363,7 @@
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
-				MACOSX_DEPLOYMENT_TARGET = 10.6.8;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				PRODUCT_NAME = AppTrap;
 				RUN_CLANG_STATIC_ANALYZER = YES;
 				SDKROOT = macosx;
