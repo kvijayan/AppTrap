@@ -57,11 +57,6 @@ const int kWindowExpansionAmount = 164;
             }
         }
         
-        APTFSEventsWatcher *watcher = [[APTFSEventsWatcher alloc] initWithDirectoryPath:pathToTrash];
-        [self setEventsWatcher:watcher];
-        [watcher setDelegate:self];
-        [watcher startWatching];
-        
         // Setup paths for application folders
         applicationsPaths = [[NSSet alloc] initWithArray:NSSearchPathForDirectoriesInDomains(NSAllApplicationsDirectory, NSLocalDomainMask | NSUserDomainMask, YES)];
         

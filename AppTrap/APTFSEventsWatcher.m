@@ -32,6 +32,11 @@ void eventStreamCallback(ConstFSEventStreamRef streamRef, void *clientCallBackIn
     self = [super init];
     if (self)
     {
+        if (!directoryPath)
+        {
+            [NSException raise:NSInvalidArgumentException format:@"directoryPath must be a valid NSString."];
+        }
+        
         _watching = NO;
 
         FSEventStreamContext eventStreamContext;
@@ -88,11 +93,6 @@ void eventStreamCallback(ConstFSEventStreamRef streamRef,
     APTFSEventsWatcher *watcher = (__bridge APTFSEventsWatcher*)clientCallBackInfo;
     NSArray *paths = (__bridge NSArray*)eventPaths;
     [watcher.delegate eventsWatcher:watcher observedChangesInDirectoryPath:paths[0]];
-}
-
-- (NSString *)description
-{
-    return @"Hey there";
 }
 
 #pragma mark - Memory Management
