@@ -11,9 +11,15 @@
 #import "APTFSEventsWatcher.h"
 
 @interface APTApplicationController () <APTFSEventsWatcherDelegate>
+{
+    NSString *_pathToTrash;
+}
+
 @property (nonatomic) APTFSEventsWatcher *eventsWatcher;
 
 @property (nonatomic) NSArray *currentDirectoryContents;
+
+@property (nonatomic, readonly) NSString *pathToTrash;
 
 - (void)setUpAndStartEventsWatcher;
 - (BOOL)currentDirectoryContentsMatchesNewDirectoryContents:(NSArray*)newDirectoryContents;
@@ -24,6 +30,27 @@
 @implementation APTApplicationController
 
 #pragma mark - Creation
+
+- (NSString *)pathToTrash
+{
+    if (!_pathToTrash)
+    {
+        // Find the path to the user's trash folder
+        OSErr err;
+        FSRef trashFolderRef;
+        
+        err = FSFindFolder(kUserDomain, kTrashFolderType, kDontCreateFolder, &trashFolderRef);
+        if (err == noErr) {
+            CFURLRef trashURL = CFURLCreateFromFSRef(kCFAllocatorSystemDefault, &trashFolderRef);
+            if (trashURL) {
+                _pathToTrash = (NSString *)CFBridgingRelease(CFURLCopyFileSystemPath(trashURL, kCFURLPOSIXPathStyle));
+                CFRelease(trashURL);
+            }
+        }
+    }
+    
+    return _pathToTrash;
+}
 
 - (id)init
 {
@@ -37,21 +64,7 @@
 
 - (void)setUpAndStartEventsWatcher
 {
-    // Find the path to the user's trash folder
-    OSErr err;
-    FSRef trashFolderRef;
-    NSString *pathToTrash;
-    
-    err = FSFindFolder(kUserDomain, kTrashFolderType, kDontCreateFolder, &trashFolderRef);
-    if (err == noErr) {
-        CFURLRef trashURL = CFURLCreateFromFSRef(kCFAllocatorSystemDefault, &trashFolderRef);
-        if (trashURL) {
-            pathToTrash = (NSString *)CFBridgingRelease(CFURLCopyFileSystemPath(trashURL, kCFURLPOSIXPathStyle));
-            CFRelease(trashURL);
-        }
-    }
-    
-    APTFSEventsWatcher *eventsWatcher = [[APTFSEventsWatcher alloc] initWithDirectoryPath:pathToTrash];
+    APTFSEventsWatcher *eventsWatcher = [[APTFSEventsWatcher alloc] initWithDirectoryPath:self.pathToTrash];
     [self setEventsWatcher:eventsWatcher];
     [eventsWatcher setDelegate:self];
     [eventsWatcher startWatching];
@@ -68,17 +81,16 @@
     
     if (self.currentDirectoryContents && self.currentDirectoryContents.count == newDirectoryContents.count)
     {
-        for (NSString *filename in self.currentDirectoryContents)
+        for (NSUInteger i = 0; i < self.currentDirectoryContents.count; i++)
         {
-            for (NSString *newFilename in newDirectoryContents)
+            NSString *currentName = self.currentDirectoryContents[i];
+            NSString *newName = newDirectoryContents[i];
+            if (![currentName isEqualToString:newName])
             {
-                if (![filename isEqualToString:newFilename])
-                {
-                    return NO;
-                }
+                return NO;
             }
         }
-
+        
         return YES;
     }
     else
