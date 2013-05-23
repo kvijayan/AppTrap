@@ -18,11 +18,15 @@
 @property (nonatomic) APTFSEventsWatcher *eventsWatcher;
 
 @property (nonatomic) NSArray *currentDirectoryContents;
+@property (nonatomic) NSArray *whitelist;
 
 @property (nonatomic, readonly) NSString *pathToTrash;
 
 - (void)setUpAndStartEventsWatcher;
 - (BOOL)currentDirectoryContentsMatchesNewDirectoryContents:(NSArray*)newDirectoryContents;
+- (void)checkForNewApplicationBundlesInDirectory:(NSString*)directoryPath;
+- (void)presentMainWindowForApplicationsArray:(NSArray*)applicationsArray;
+
 @end
 
 
@@ -100,16 +104,59 @@
     
 }
 
+- (void)checkForNewApplicationBundlesInDirectory:(NSString *)directoryPath
+{
+    NSMutableArray *newApplicationsArray = [NSMutableArray new];
+    NSDirectoryEnumerator *enumerator = [[NSFileManager defaultManager] enumeratorAtPath:directoryPath];
+    for (NSString *filename in enumerator)
+    {
+        if ([[filename pathExtension] isEqualToString:@"app"])
+        {
+            [newApplicationsArray addObject:filename];
+        }
+    }
+    
+    NSMutableArray *oldApplicationsArray = [NSMutableArray new];
+    for (NSString *filename in newApplicationsArray)
+    {
+        for (NSString *whitelistFilename in self.whitelist)
+        {
+            if ([filename isEqualToString:whitelistFilename])
+            {
+                [oldApplicationsArray addObject:filename];
+                break;
+            }
+        }
+    }
+    
+    [newApplicationsArray removeObjectsInArray:oldApplicationsArray];
+    if (newApplicationsArray.count > 0)
+    {
+        [self presentMainWindowForApplicationsArray:newApplicationsArray];
+    }
+}
+
+- (void)presentMainWindowForApplicationsArray:(NSArray *)applicationsArray
+{
+    NSLog(@"%s", __func__);
+}
+
 #pragma mark - APTFSEventsWatcherDelegate Method
 
 - (void)eventsWatcher:(APTFSEventsWatcher *)eventsWatcher observedChangesInDirectoryPath:(NSString *)directory
 {
-    NSLog(@"%s", __func__);
     NSError *error;
     NSArray *contents = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:directory error:&error];
+    
+    if (error)
+    {
+        NSLog(@"error: %@", error);
+    }
+    
     if (![self currentDirectoryContentsMatchesNewDirectoryContents:contents])
     {
         [self setCurrentDirectoryContents:contents];
+        [self checkForNewApplicationBundlesInDirectory:directory];
     }
 }
 
