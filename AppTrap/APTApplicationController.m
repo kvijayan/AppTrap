@@ -18,11 +18,15 @@
 @property (nonatomic) APTFSEventsWatcher *eventsWatcher;
 
 @property (nonatomic) NSArray *currentDirectoryContents;
-@property (nonatomic) NSArray *whitelist;
+@property (nonatomic) NSMutableArray *whitelist;
 
 @property (nonatomic, readonly) NSString *pathToTrash;
 
 - (void)setUpAndStartEventsWatcher;
+- (void)setUpWhitelist;
+
+- (NSArray*)arrayOfApplicationsInDirectory:(NSString*)path;
+- (BOOL)arrayOfStrings:(NSArray*)firstArray isEqualToArrayOfStrings:(NSArray*)secondArray;
 - (BOOL)currentDirectoryContentsMatchesNewDirectoryContents:(NSArray*)newDirectoryContents;
 - (void)checkForNewApplicationBundlesInDirectory:(NSString*)directoryPath;
 - (void)presentMainWindowForApplicationsArray:(NSArray*)applicationsArray;
@@ -61,6 +65,7 @@
     self = [super init];
     if (self)
     {
+        [self setUpWhitelist];
         [self setUpAndStartEventsWatcher];
     }
     return self;
@@ -74,7 +79,50 @@
     [eventsWatcher startWatching];
 }
 
+- (void)setUpWhitelist
+{
+    NSArray *applications = [self arrayOfApplicationsInDirectory:self.pathToTrash];
+    NSMutableArray *whitelist = [NSMutableArray arrayWithArray:applications];
+    [self setWhitelist:whitelist];
+}
+
 #pragma mark - Core
+
+- (NSArray*)arrayOfApplicationsInDirectory:(NSString*)path
+{
+    NSMutableArray *applications = [NSMutableArray new];
+    NSEnumerator *files = [[NSFileManager defaultManager] enumeratorAtPath:path];
+    for (NSString *file in files)
+    {
+        if ([file.pathExtension isEqualToString:@"app"])
+        {
+            [applications addObject:file];
+        }
+    }
+    
+    return [NSArray arrayWithArray:applications];
+}
+
+- (BOOL)arrayOfStrings:(NSArray *)firstArray isEqualToArrayOfStrings:(NSArray *)secondArray
+{
+    if (firstArray.count == secondArray.count)
+    {
+        for (NSUInteger i = 0; i < firstArray.count; i++)
+        {
+            NSString *firstString = firstArray[i];
+            NSString *secondString = secondArray[i];
+            if (![firstString isEqualToString:secondString])
+            {
+                return NO;
+            }
+        }
+        return YES;
+    }
+    else
+    {
+        return NO;
+    }
+}
 
 - (BOOL)currentDirectoryContentsMatchesNewDirectoryContents:(NSArray*)newDirectoryContents
 {
@@ -83,19 +131,9 @@
         [NSException raise:NSInvalidArgumentException format:@"newDirectoryContents must not be nil"];
     }
     
-    if (self.currentDirectoryContents && self.currentDirectoryContents.count == newDirectoryContents.count)
+    if (self.currentDirectoryContents)
     {
-        for (NSUInteger i = 0; i < self.currentDirectoryContents.count; i++)
-        {
-            NSString *currentName = self.currentDirectoryContents[i];
-            NSString *newName = newDirectoryContents[i];
-            if (![currentName isEqualToString:newName])
-            {
-                return NO;
-            }
-        }
-        
-        return YES;
+        return [self arrayOfStrings:self.currentDirectoryContents isEqualToArrayOfStrings:newDirectoryContents];
     }
     else
     {
@@ -106,16 +144,11 @@
 
 - (void)checkForNewApplicationBundlesInDirectory:(NSString *)directoryPath
 {
-    NSMutableArray *newApplicationsArray = [NSMutableArray new];
-    NSDirectoryEnumerator *enumerator = [[NSFileManager defaultManager] enumeratorAtPath:directoryPath];
-    for (NSString *filename in enumerator)
-    {
-        if ([[filename pathExtension] isEqualToString:@"app"])
-        {
-            [newApplicationsArray addObject:filename];
-        }
-    }
+    // Enumerate through everything in the trash folder and get just the applications
+    NSArray *array = [self arrayOfApplicationsInDirectory:directoryPath];
+    NSMutableArray *newApplicationsArray = [NSMutableArray arrayWithArray:array];
     
+    // Sift out the applications that are in the whitelist
     NSMutableArray *oldApplicationsArray = [NSMutableArray new];
     for (NSString *filename in newApplicationsArray)
     {
@@ -128,17 +161,22 @@
             }
         }
     }
-    
     [newApplicationsArray removeObjectsInArray:oldApplicationsArray];
+    
+    // Present the window
     if (newApplicationsArray.count > 0)
     {
         [self presentMainWindowForApplicationsArray:newApplicationsArray];
+        
+        // Now that we've dealt with the applications, we'll put them in the whitelist
+        [self.whitelist addObjectsFromArray:newApplicationsArray];
     }
 }
 
 - (void)presentMainWindowForApplicationsArray:(NSArray *)applicationsArray
 {
     NSLog(@"%s", __func__);
+    NSLog(@"current directory contents: %@", self.currentDirectoryContents);
 }
 
 #pragma mark - APTFSEventsWatcherDelegate Method
