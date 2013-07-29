@@ -9,11 +9,15 @@
 #import "APTApplicationController.h"
 
 #import "APTFSEventsWatcher.h"
+#import "ATArrayController.h"
+
+static NSString *PreferencesFolderName = @"Preferences";
+static NSString *StartupItemsFolderName = @"StartupItems";
 
 @interface APTApplicationController () <APTFSEventsWatcherDelegate>
-{
-    NSString *_pathToTrash;
-}
+
+@property (nonatomic) IBOutlet NSWindow *window;
+@property (nonatomic) IBOutlet ATArrayController *listController;
 
 @property (nonatomic) APTFSEventsWatcher *eventsWatcher;
 
@@ -21,6 +25,7 @@
 @property (nonatomic) NSMutableArray *whitelist;
 
 @property (nonatomic, readonly) NSString *pathToTrash;
+@property (nonatomic, readonly) NSSet *libraryPaths;
 
 - (void)setUpAndStartEventsWatcher;
 - (void)setUpWhitelist;
@@ -29,13 +34,18 @@
 - (BOOL)arrayOfStrings:(NSArray*)firstArray isEqualToArrayOfStrings:(NSArray*)secondArray;
 - (BOOL)currentDirectoryContentsMatchesNewDirectoryContents:(NSArray*)newDirectoryContents;
 - (void)checkForNewApplicationBundlesInDirectory:(NSString*)directoryPath;
-- (void)presentMainWindowForApplicationsArray:(NSArray*)applicationsArray;
+- (NSSet*)matchesForApplication:(NSString*)application;
+- (NSSet*)matchesForFilename:(NSString*)filename atPath:(NSString*)path;
+- (void)presentMainWindow;
 
 @end
 
 
 
 @implementation APTApplicationController
+
+@synthesize pathToTrash = _pathToTrash;
+@synthesize libraryPaths = _libraryPaths;
 
 #pragma mark - Creation
 
@@ -58,6 +68,37 @@
     }
     
     return _pathToTrash;
+}
+
+- (NSSet*)libraryPaths
+{
+    if (!_libraryPaths)
+    {
+        NSMutableSet *set = [NSMutableSet new];
+        NSSearchPathDomainMask domainMask = NSUserDomainMask | NSLocalDomainMask;
+        NSArray *searchArray = NSSearchPathForDirectoriesInDomains(NSLibraryDirectory,
+                                                                   domainMask,
+                                                                   YES);
+        NSString *directoryString;
+        for (directoryString in searchArray)
+        {
+            NSString *preferencesDirectory = [directoryString stringByAppendingPathComponent:PreferencesFolderName];
+            NSString *startupItemsDirectory = [directoryString stringByAppendingPathComponent:StartupItemsFolderName];
+            [set addObject:preferencesDirectory];
+            [set addObject:startupItemsDirectory];
+        }
+        
+        NSArray *directories = NSSearchPathForDirectoriesInDomains(NSApplicationSupportDirectory,
+                                                                   domainMask,
+                                                                   YES);
+        [set addObjectsFromArray:directories];
+        directories = NSSearchPathForDirectoriesInDomains(NSCachesDirectory,
+                                                          domainMask,
+                                                          YES);
+        [set addObjectsFromArray:directories];
+        _libraryPaths = [NSSet setWithSet:set];
+    }
+    return _libraryPaths;
 }
 
 - (id)init
@@ -146,7 +187,7 @@
 {
     // Enumerate through everything in the trash folder and get just the applications
     NSArray *array = [self arrayOfApplicationsInDirectory:directoryPath];
-    NSMutableArray *newApplicationsArray = [NSMutableArray arrayWithArray:array];
+    NSMutableArray *newApplicationsArray = array.mutableCopy;
     
     // Sift out the applications that are in the whitelist
     NSMutableArray *oldApplicationsArray = [NSMutableArray new];
@@ -166,17 +207,108 @@
     // Present the window
     if (newApplicationsArray.count > 0)
     {
-        [self presentMainWindowForApplicationsArray:newApplicationsArray];
+        dispatch_queue_t globalQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0);
+        dispatch_async(globalQueue, ^
+                       {
+                           for (NSString *application in newApplicationsArray)
+                           {
+                               NSSet *matches = [self matchesForApplication:application];
+                               [self.listController addPathsForDeletion:matches];
+                           }
+                           
+                           dispatch_async(dispatch_get_main_queue(), ^
+                                          {
+                                              [self presentMainWindow];
+                                          });
+                       });
         
         // Now that we've dealt with the applications, we'll put them in the whitelist
         [self.whitelist addObjectsFromArray:newApplicationsArray];
     }
 }
 
-- (void)presentMainWindowForApplicationsArray:(NSArray *)applicationsArray
+- (NSSet*)matchesForApplication:(NSString*)application
+{
+    // Get the full path of the trapped application
+    NSString *fullPath = [self.pathToTrash stringByAppendingPathComponent:application];
+
+    // Get the applications's bundle and its identifier
+    NSBundle *appBundle = [NSBundle bundleWithPath:fullPath];
+    NSString *preferenceFileName = [[appBundle bundleIdentifier] stringByAppendingPathExtension:@"plist"];
+    NSString *preflockFileName = [preferenceFileName stringByAppendingPathExtension:@"lockfile"];
+    NSString *lssflprefFileName = [[appBundle bundleIdentifier] stringByAppendingPathExtension:@"LSSharedFileList.plist"];
+    NSString *lssflpreflocklFileName = [lssflprefFileName stringByAppendingPathExtension:@"lockfile"];
+    
+    // Get the application's true name (i.e. not the filename)
+    // TODO: replace @"CFBundle" with kCFBundle
+    NSString *appName = [appBundle objectForInfoDictionaryKey:@"CFBundleName"];
+    
+    // Let's find some system files
+    NSMutableSet *matches = [NSMutableSet new];
+    for (NSString *libraryPath in self.libraryPaths)
+    {
+        NSSet *set = [self matchesForFilename:preferenceFileName atPath:libraryPath];
+        [matches unionSet:set];
+        set = [self matchesForFilename:preflockFileName atPath:libraryPath];
+        [matches unionSet:set];
+        set = [self matchesForFilename:preflockFileName atPath:libraryPath];
+        [matches unionSet:set];
+        set = [self matchesForFilename:lssflprefFileName atPath:libraryPath];
+        [matches unionSet:set];
+        set = [self matchesForFilename:lssflpreflocklFileName atPath:libraryPath];
+        [matches unionSet:set];
+        set = [self matchesForFilename:appName atPath:libraryPath];
+        [matches unionSet:set];
+    }
+    
+    NSSet *returnSet = [NSSet setWithSet:matches];
+    return returnSet;
+}
+
+// Part of code from http://www.borkware.com/quickies/single?id=130
+// TODO: Seems like were leaking NSConcreteTask and NSConcretePipe here, needs to be investigated
+- (NSSet*)matchesForFilename:(NSString *)filename atPath:(NSString *)path
+{
+    if (!filename || !path)
+    {
+        return [NSSet new];
+    }
+    
+    // Do not ever allow empty strings
+    if ([filename isEqualToString:@""] || [path isEqualToString:@""])
+    {
+        return [NSSet set];
+    }
+    
+    // Find all the matching files at the given path
+    NSString *command = [NSString stringWithFormat:@"find '%@' -name '%@' -maxdepth 1", path.stringByExpandingTildeInPath, filename];
+    
+    NSTask *task = [NSTask new];
+    [task setLaunchPath: @"/bin/sh"];
+    [task setArguments: @[@"-c", command]];
+    
+    NSPipe *pipe  = [NSPipe new];
+    [task setStandardOutput:pipe];
+    NSFileHandle *file = pipe.fileHandleForReading;
+
+    [task launch];
+    
+    NSData *data = file.readDataToEndOfFile;
+    NSString *string = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+    NSArray *matches = [string componentsSeparatedByString:@"\n"];
+    
+    [task waitUntilExit];
+    
+    NSSet *setToReturn = [NSSet setWithArray:matches];
+    return setToReturn;
+}
+
+- (void)presentMainWindow
 {
     NSLog(@"%s", __func__);
     NSLog(@"current directory contents: %@", self.currentDirectoryContents);
+    [NSApp activateIgnoringOtherApps:YES];
+    [NSApp runModalForWindow:self.window];
 }
 
 #pragma mark - APTFSEventsWatcherDelegate Method

@@ -236,12 +236,8 @@ const int kWindowExpansionAmount = 164;
         if ([whitelist containsObject:currentFilename])
             continue;
         
-        NSLog(@"I just trapped the application %@!", currentFilename);
-        
-		NSLog(@"whitelist before: %@", whitelist);
         // Add it to the whitelist
         [whitelist addObject:currentFilename];
-		NSLog(@"whitelist after: %@", whitelist);
         
         // Get the full path of the trapped application
         NSString *fullPath = [pathToTrash stringByAppendingPathComponent:currentFilename];
@@ -315,7 +311,6 @@ const int kWindowExpansionAmount = 164;
 // TODO: Seems like were leaking NSConcreteTask and NSConcretePipe here, needs to be investigated
 - (NSArray *)matchesForFilename:(NSString *)filename atPath:(NSString *)path
 {
-	NSLog(@"filename: %@", filename);
     if (!filename || !path)
         return @[];
     
