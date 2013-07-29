@@ -30,6 +30,7 @@ static NSString *StartupItemsFolderName = @"StartupItems";
 - (void)setUpAndStartEventsWatcher;
 - (void)setUpWhitelist;
 
+- (NSUInteger)visibleItemsCountAtPath:(NSString*)path;
 - (NSArray*)arrayOfApplicationsInDirectory:(NSString*)path;
 - (BOOL)arrayOfStrings:(NSArray*)firstArray isEqualToArrayOfStrings:(NSArray*)secondArray;
 - (BOOL)currentDirectoryContentsMatchesNewDirectoryContents:(NSArray*)newDirectoryContents;
@@ -129,6 +130,24 @@ static NSString *StartupItemsFolderName = @"StartupItems";
 
 #pragma mark - Core
 
+- (NSUInteger)visibleItemsCountAtPath:(NSString*)path
+{
+	NSUInteger count = 0;
+	NSDirectoryEnumerator *directoryEnumerator = [[NSFileManager defaultManager] enumeratorAtPath:path];
+	for (NSString *filePath in directoryEnumerator)
+	{
+		if ([filePath hasPrefix:@"."])
+		{
+			[directoryEnumerator skipDescendants];
+		}
+		else
+		{
+			count++;
+		}
+	}
+	return count;
+}
+
 - (NSArray*)arrayOfApplicationsInDirectory:(NSString*)path
 {
     NSMutableArray *applications = [NSMutableArray new];
@@ -204,27 +223,26 @@ static NSString *StartupItemsFolderName = @"StartupItems";
     }
     [newApplicationsArray removeObjectsInArray:oldApplicationsArray];
     
-    // Present the window
-    if (newApplicationsArray.count > 0)
-    {
-        dispatch_queue_t globalQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0);
-        dispatch_async(globalQueue, ^
-                       {
-                           for (NSString *application in newApplicationsArray)
-                           {
-                               NSSet *matches = [self matchesForApplication:application];
-                               [self.listController addPathsForDeletion:matches];
-                           }
-                           
-                           dispatch_async(dispatch_get_main_queue(), ^
-                                          {
-                                              [self presentMainWindow];
-                                          });
-                       });
-        
-        // Now that we've dealt with the applications, we'll put them in the whitelist
-        [self.whitelist addObjectsFromArray:newApplicationsArray];
-    }
+	if ([self visibleItemsCountAtPath:self.pathToTrash] <= 0)
+	{
+		[self.whitelist removeAllObjects];
+	}
+	else
+	{
+		for (NSString *application in newApplicationsArray)
+		{
+			NSSet *matches = [self matchesForApplication:application];
+			[self.listController addPathsForDeletion:matches];
+		}
+		   
+		if (((NSArray*)self.listController.arrangedObjects).count > 0)
+		{
+			[self presentMainWindow];
+		}
+		   
+		// Now that we've dealt with the applications, we'll put them in the whitelist
+		[self.whitelist addObjectsFromArray:newApplicationsArray];
+	}
 }
 
 - (NSSet*)matchesForApplication:(NSString*)application
