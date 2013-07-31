@@ -22,6 +22,14 @@
 
 @implementation ATArrayController
 
+- (void)addPathsForDeletion:(NSSet*)paths
+{
+    for (NSString *path in paths)
+    {
+        [self addPathForDeletion:path];
+    }
+}
+
 - (void)addPathForDeletion:(NSString *)path
 {
     // Expand any tildes in the path
