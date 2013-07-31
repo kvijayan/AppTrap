@@ -25,6 +25,16 @@
 		8D202CF40486D31800D8A456 /* PreferencePanes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F506C035013D953901CA16C8 /* PreferencePanes.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		7D97B04D17A8B2E100569109 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7D97B03E17A8A04900569109 /* AppTrap.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8D1107320486CEB800E47090;
+			remoteInfo = AppTrap;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXCopyFilesBuildPhase section */
 		7D0EFC2D100B9818005B4F39 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -58,7 +68,7 @@
 		7D5CCF6C104C0CC40026160F /* fr */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = fr; path = fr.lproj/AppTrapPreferencePane.xib; sourceTree = "<group>"; };
 		7D5CCF6D104C0CDC0026160F /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = fr; path = "fr.lproj/Read Me.rtf"; sourceTree = "<group>"; };
 		7D5CCF6E104C0CFF0026160F /* fr */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
-		7D97B03E17A8A04900569109 /* AppTrap.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = file; name = AppTrap.xcodeproj; path = ../AppTrap/AppTrap.xcodeproj; sourceTree = "<group>"; };
+		7D97B03E17A8A04900569109 /* AppTrap.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = AppTrap.xcodeproj; path = ../AppTrap/AppTrap.xcodeproj; sourceTree = "<group>"; };
 		7D97B04317A8AC7500569109 /* AppTrap.app */ = {isa = PBXFileReference; lastKnownFileType = wrapper.application; path = AppTrap.app; sourceTree = "<group>"; };
 		7D992EB3100BE7B100DDA632 /* ATSUUpdater.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATSUUpdater.h; sourceTree = "<group>"; };
 		7D992EB4100BE7B100DDA632 /* ATSUUpdater.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATSUUpdater.m; sourceTree = "<group>"; };
@@ -176,6 +186,14 @@
 			name = "Other Sources";
 			sourceTree = "<group>";
 		};
+		7D97B04A17A8B2E100569109 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7D97B04E17A8B2E100569109 /* AppTrap.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -234,12 +252,28 @@
 			);
 			mainGroup = 089C166AFE841209C02AAC07 /* AppTrapPreferencePane */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 7D97B04A17A8B2E100569109 /* Products */;
+					ProjectRef = 7D97B03E17A8A04900569109 /* AppTrap.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				8D202CE80486D31800D8A456 /* AppTrap */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		7D97B04E17A8B2E100569109 /* AppTrap.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = AppTrap.app;
+			remoteRef = 7D97B04D17A8B2E100569109 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		8D202CEC0486D31800D8A456 /* Resources */ = {
