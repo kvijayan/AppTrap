@@ -1,7 +1,10 @@
+AppTrap.xcworkspace/xcuserdata
+
 .DS_Store
 AppTrap/DerivedData
 AppTrap/AppTrap.xcodeproj/xcuserdata/
-AppTrap/AppTrap.xcodeproj/project.xcworkspace/xcuserdata/kumaranvijayan.xcuserdatad/UserInterfaceState.xcuserstate
+AppTrap/AppTrap.xcodeproj/project.xcworkspace/xcuserdata
 
 AppTrapPreferencePane/DerivedData
+AppTrapPreferencePane/AppTrap.app
 AppTrapPreferencePane/AppTrapPreferencePane.xcodeproj/project.xcworkspace/xcuserdata/
