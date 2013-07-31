@@ -13,12 +13,13 @@
 		7D1051D6104A1FA900BAAF3F /* AppTrapPreferencePane.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7D1051D4104A1FA900BAAF3F /* AppTrapPreferencePane.xib */; };
 		7D3C77BA1048CF5B00009126 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D3C77B91048CF5B00009126 /* Sparkle.framework */; };
 		7D3C77E61048CF6300009126 /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7D3C77B91048CF5B00009126 /* Sparkle.framework */; };
+		7D97B03F17A8A04900569109 /* AppTrap.xcodeproj in Resources */ = {isa = PBXBuildFile; fileRef = 7D97B03E17A8A04900569109 /* AppTrap.xcodeproj */; };
+		7D97B04417A8AC7500569109 /* AppTrap.app in Resources */ = {isa = PBXBuildFile; fileRef = 7D97B04317A8AC7500569109 /* AppTrap.app */; };
 		7D992EB5100BE7B100DDA632 /* ATSUUpdater.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D992EB4100BE7B100DDA632 /* ATSUUpdater.m */; };
 		7D992EBB100BEB3200DDA632 /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = 7D992EBA100BEB3200DDA632 /* dsa_pub.pem */; };
 		7DA59D4510201A08002EBE1E /* ATVariables.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DA59D4410201A08002EBE1E /* ATVariables.m */; };
 		7DB7FF051041C41300310F74 /* ATPreferencePane.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DB7FF041041C41300310F74 /* ATPreferencePane.m */; };
 		7DEB002710156A84001F11ED /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DEB002610156A84001F11ED /* CoreServices.framework */; };
-		7DEB6E10134A80660032EF71 /* AppTrap.app in Resources */ = {isa = PBXBuildFile; fileRef = 7DEB6E0F134A80660032EF71 /* AppTrap.app */; };
 		8D202CEE0486D31800D8A456 /* AppTrapPreferencePane.tiff in Resources */ = {isa = PBXBuildFile; fileRef = F506C040013D9D8001CA16C8 /* AppTrapPreferencePane.tiff */; };
 		8D202CF30486D31800D8A456 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */; };
 		8D202CF40486D31800D8A456 /* PreferencePanes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F506C035013D953901CA16C8 /* PreferencePanes.framework */; };
@@ -57,6 +58,8 @@
 		7D5CCF6C104C0CC40026160F /* fr */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = fr; path = fr.lproj/AppTrapPreferencePane.xib; sourceTree = "<group>"; };
 		7D5CCF6D104C0CDC0026160F /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = fr; path = "fr.lproj/Read Me.rtf"; sourceTree = "<group>"; };
 		7D5CCF6E104C0CFF0026160F /* fr */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		7D97B03E17A8A04900569109 /* AppTrap.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = file; name = AppTrap.xcodeproj; path = ../AppTrap/AppTrap.xcodeproj; sourceTree = "<group>"; };
+		7D97B04317A8AC7500569109 /* AppTrap.app */ = {isa = PBXFileReference; lastKnownFileType = wrapper.application; path = AppTrap.app; sourceTree = "<group>"; };
 		7D992EB3100BE7B100DDA632 /* ATSUUpdater.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATSUUpdater.h; sourceTree = "<group>"; };
 		7D992EB4100BE7B100DDA632 /* ATSUUpdater.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATSUUpdater.m; sourceTree = "<group>"; };
 		7D992EBA100BEB3200DDA632 /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
@@ -65,7 +68,6 @@
 		7DB7FF031041C41300310F74 /* ATPreferencePane.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATPreferencePane.h; sourceTree = "<group>"; };
 		7DB7FF041041C41300310F74 /* ATPreferencePane.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATPreferencePane.m; sourceTree = "<group>"; };
 		7DEB002610156A84001F11ED /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = /System/Library/Frameworks/CoreServices.framework; sourceTree = "<absolute>"; };
-		7DEB6E0F134A80660032EF71 /* AppTrap.app */ = {isa = PBXFileReference; lastKnownFileType = wrapper.application; name = AppTrap.app; path = ../AppTrap/DerivedData/AppTrap/Build/Products/Release/AppTrap.app; sourceTree = "<group>"; };
 		8D202CF70486D31800D8A456 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		8D202CF80486D31800D8A456 /* AppTrap.prefPane */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AppTrap.prefPane; sourceTree = BUILT_PRODUCTS_DIR; };
 		F506C035013D953901CA16C8 /* PreferencePanes.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PreferencePanes.framework; path = /System/Library/Frameworks/PreferencePanes.framework; sourceTree = "<absolute>"; };
@@ -90,12 +92,13 @@
 		089C166AFE841209C02AAC07 /* AppTrapPreferencePane */ = {
 			isa = PBXGroup;
 			children = (
+				7D97B04317A8AC7500569109 /* AppTrap.app */,
+				7D97B03E17A8A04900569109 /* AppTrap.xcodeproj */,
 				08FB77AFFE84173DC02AAC07 /* Classes */,
 				32DBCFA10370C40200C91783 /* Other Sources */,
 				089C167CFE841241C02AAC07 /* Resources */,
 				089C1671FE841209C02AAC07 /* Frameworks and Libraries */,
 				19C28FB8FE9D52D311CA2CBB /* Products */,
-				7DEB6E0F134A80660032EF71 /* AppTrap.app */,
 			);
 			name = AppTrapPreferencePane;
 			sourceTree = "<group>";
@@ -243,12 +246,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7DEB6E10134A80660032EF71 /* AppTrap.app in Resources */,
 				8D202CEE0486D31800D8A456 /* AppTrapPreferencePane.tiff in Resources */,
 				28A46D860C43E6CF007925EB /* Read Me.rtf in Resources */,
 				28A46DD60C43ED87007925EB /* Localizable.strings in Resources */,
 				7D992EBB100BEB3200DDA632 /* dsa_pub.pem in Resources */,
 				7D1051D6104A1FA900BAAF3F /* AppTrapPreferencePane.xib in Resources */,
+				7D97B03F17A8A04900569109 /* AppTrap.xcodeproj in Resources */,
+				7D97B04417A8AC7500569109 /* AppTrap.app in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
