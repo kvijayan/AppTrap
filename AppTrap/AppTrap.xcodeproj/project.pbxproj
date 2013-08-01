@@ -14,6 +14,9 @@
 		28A46DA00C43E938007925EB /* ATUserDefaultKeys.m in Sources */ = {isa = PBXBuildFile; fileRef = 28A46D9F0C43E938007925EB /* ATUserDefaultKeys.m */; };
 		28A79E830B77D91D005CCD1F /* ATApplicationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28A79E810B77D91D005CCD1F /* ATApplicationController.m */; };
 		7D1DEA44112F252B005F818C /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7D1DEA43112F252B005F818C /* MainMenu.xib */; };
+		7D315FE217A9E6930098DAC9 /* APTMoveToTrashAlertViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D315FE017A9E6930098DAC9 /* APTMoveToTrashAlertViewController.m */; };
+		7D315FE617A9EEA40098DAC9 /* APTApplicationDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D315FE517A9EEA40098DAC9 /* APTApplicationDelegate.m */; };
+		7D31601717A9FFB00098DAC9 /* APTMoveToTrashAlertViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7D31601617A9FFB00098DAC9 /* APTMoveToTrashAlertViewController.xib */; };
 		7D99959E17433AE800B0B4F9 /* UKFileWatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 28A79E2F0B77D6A7005CCD1F /* UKFileWatcher.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		7D9995A017433AE800B0B4F9 /* UKFNSubscribeFileWatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 28A79E310B77D6A7005CCD1F /* UKFNSubscribeFileWatcher.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		7D9995A217433AE800B0B4F9 /* UKKQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 28A79E340B77D6A7005CCD1F /* UKKQueue.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -56,6 +59,11 @@
 		7D1DEA45112F2553005F818C /* nl */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = nl; path = nl.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		7D1DEA46112F2559005F818C /* fr */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = fr; path = fr.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		7D1DEA47112F255B005F818C /* pt */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = pt; path = pt.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		7D315FDF17A9E6930098DAC9 /* APTMoveToTrashAlertViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APTMoveToTrashAlertViewController.h; sourceTree = "<group>"; };
+		7D315FE017A9E6930098DAC9 /* APTMoveToTrashAlertViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APTMoveToTrashAlertViewController.m; sourceTree = "<group>"; };
+		7D315FE417A9EEA40098DAC9 /* APTApplicationDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APTApplicationDelegate.h; sourceTree = "<group>"; };
+		7D315FE517A9EEA40098DAC9 /* APTApplicationDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APTApplicationDelegate.m; sourceTree = "<group>"; };
+		7D31601617A9FFB00098DAC9 /* APTMoveToTrashAlertViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = APTMoveToTrashAlertViewController.xib; sourceTree = "<group>"; };
 		7D5CCF8C104C0DAA0026160F /* fr */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		7DA59D3F102018C1002EBE1E /* ATVariables.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATVariables.h; sourceTree = "<group>"; };
 		7DA59D40102018C1002EBE1E /* ATVariables.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATVariables.m; sourceTree = "<group>"; };
@@ -95,10 +103,15 @@
 				284B38AA0B78CF870008BFD5 /* ATArrayController.m */,
 				287A24B20B854E480077B852 /* ATTextFieldCell.h */,
 				287A24B30B854E480077B852 /* ATTextFieldCell.m */,
+				7D315FE417A9EEA40098DAC9 /* APTApplicationDelegate.h */,
+				7D315FE517A9EEA40098DAC9 /* APTApplicationDelegate.m */,
 				7DF1DA2F173B52FD004FEA6A /* APTFSEventsWatcher.h */,
 				7DF1DA30173B52FD004FEA6A /* APTFSEventsWatcher.m */,
 				7DEFC1201744998800668ECE /* APTApplicationController.h */,
 				7DEFC1211744998800668ECE /* APTApplicationController.m */,
+				7D315FDF17A9E6930098DAC9 /* APTMoveToTrashAlertViewController.h */,
+				7D315FE017A9E6930098DAC9 /* APTMoveToTrashAlertViewController.m */,
+				7D31601617A9FFB00098DAC9 /* APTMoveToTrashAlertViewController.xib */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -247,6 +260,7 @@
 				zh_TW,
 				ja,
 				pt,
+				en,
 			);
 			mainGroup = 29B97314FDCFA39411CA2CEA /* AppTrap */;
 			projectDirPath = "";
@@ -264,6 +278,7 @@
 			files = (
 				281A7E610CFDC17100E5207C /* Localizable.strings in Resources */,
 				7D1DEA44112F252B005F818C /* MainMenu.xib in Resources */,
+				7D31601717A9FFB00098DAC9 /* APTMoveToTrashAlertViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -287,6 +302,8 @@
 				7DA59D41102018C1002EBE1E /* ATVariables.m in Sources */,
 				7DF1DA31173B52FD004FEA6A /* APTFSEventsWatcher.m in Sources */,
 				7DEFC1221744998800668ECE /* APTApplicationController.m in Sources */,
+				7D315FE217A9E6930098DAC9 /* APTMoveToTrashAlertViewController.m in Sources */,
+				7D315FE617A9EEA40098DAC9 /* APTApplicationDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,0 +1,13 @@
+//
+//  APTApplicationDelegate.h
+//  AppTrap
+//
+//  Created by Kumaran Vijayan on 2013-07-31.
+//
+//
+
+#import <Cocoa/Cocoa.h>
+
+@interface APTApplicationDelegate : NSObject
+
+@end
