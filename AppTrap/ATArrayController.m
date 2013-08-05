@@ -35,43 +35,14 @@
     // Expand any tildes in the path
     NSString *fullPath = [path stringByExpandingTildeInPath];
     
-    if ([[NSFileManager defaultManager] fileExistsAtPath:fullPath]) {
-        // Get the display name of the file or directory
-        NSString *displayName = [[NSFileManager defaultManager] displayNameAtPath:fullPath];
-        
-        // Get the abbreviated path
-        NSString *shortPath = [fullPath stringByAbbreviatingWithTildeInPath];
-        
-        // Construct a multiline attributed string for table display
-        NSMutableString *nameString = [[NSMutableString alloc] initWithFormat:@"%@\n%@", displayName, shortPath];
-        NSMutableAttributedString *name = [[NSMutableAttributedString alloc] initWithString:nameString];
-        
-        // First row (regular system font)
-        NSDictionary *firstRowAttributes = @{NSFontAttributeName: [NSFont systemFontOfSize:13.0]};
-        
-        // Second row (smaller, gray text)
-        NSDictionary *secondRowAttributes = @{NSFontAttributeName: [NSFont systemFontOfSize:11.0],
-            NSForegroundColorAttributeName: [NSColor grayColor]};
-        
-        // Apply the attributes
-        [name addAttributes:firstRowAttributes range:NSMakeRange(0,[displayName length])];
-        [name addAttributes:secondRowAttributes range:NSMakeRange([displayName length] + 1,[shortPath length])];
-        
-        // Get the icon
-        NSImage *icon = [[NSWorkspace sharedWorkspace] iconForFile:fullPath];
-        [icon setSize:NSMakeSize(32, 32)];
-        
-        // Throw this stuff into a new dict...
-        NSMutableDictionary *newEntry = [NSMutableDictionary dictionary];
-        [newEntry setValue:fullPath forKey:@"fullPath"];
-        [newEntry setValue:name forKey:@"name"];
-        [newEntry setValue:icon forKey:@"icon"];
-        [newEntry setValue:@YES forKey:@"shouldBeRemoved"];
-        
-        // ...and add it to the list
-        [self addObject:newEntry];
-        
-        // Clear the temporary attributed strings
+    if ([[NSFileManager defaultManager] fileExistsAtPath:fullPath])
+	{
+		NSString *name = [[NSFileManager defaultManager] displayNameAtPath:fullPath];
+		NSString *path = fullPath.stringByAbbreviatingWithTildeInPath.stringByDeletingLastPathComponent;
+		NSImage *icon = [[NSWorkspace sharedWorkspace] iconForFile:fullPath];
+		[icon setSize:NSMakeSize(32.0, 32.0)];
+		NSDictionary *entry = @{@"path":path, @"name":name, @"icon":icon, @"shouldBeRemoved":@YES};
+		[self addObject:entry];
     }
 }
 
