@@ -41,7 +41,7 @@
 		NSString *path = fullPath.stringByAbbreviatingWithTildeInPath.stringByDeletingLastPathComponent;
 		NSImage *icon = [[NSWorkspace sharedWorkspace] iconForFile:fullPath];
 		[icon setSize:NSMakeSize(32.0, 32.0)];
-		NSDictionary *entry = @{@"path":path, @"name":name, @"icon":icon, @"shouldBeRemoved":@YES};
+		NSMutableDictionary *entry = [NSMutableDictionary dictionaryWithObjectsAndKeys:path, @"path", name, @"name", icon, @"icon", @YES, @"shouldBeRemoved", nil];
 		[self addObject:entry];
     }
 }
