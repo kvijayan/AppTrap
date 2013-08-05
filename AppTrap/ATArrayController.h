@@ -28,7 +28,7 @@
 {
 }
 
-- (void)addPathsForDeletion:(NSSet*)paths;
+- (void)addPathsForDeletion:(NSArray*)paths;
 
 /**
  * Add a path to delete from the disk.
