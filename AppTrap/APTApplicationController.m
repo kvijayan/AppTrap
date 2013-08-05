@@ -16,8 +16,9 @@ static NSString *StartupItemsFolderName = @"StartupItems";
 
 @interface APTApplicationController () <APTFSEventsWatcherDelegate>
 
+@property (nonatomic, weak) IBOutlet id <APTApplicationControllerDelegate> delegate;
+
 @property (nonatomic) IBOutlet NSWindow *window;
-@property (nonatomic) IBOutlet ATArrayController *listController;
 
 @property (nonatomic) APTFSEventsWatcher *eventsWatcher;
 
@@ -204,7 +205,7 @@ static NSString *StartupItemsFolderName = @"StartupItems";
 
 - (void)checkForNewApplicationBundlesInDirectory:(NSString *)directoryPath
 {
-    // Enumerate through everything in the trash folder and get just the applications
+    // Enumerate through everything in the folder and get just the applications
     NSArray *array = [self arrayOfApplicationsInDirectory:directoryPath];
     NSMutableArray *newApplicationsArray = array.mutableCopy;
     
@@ -229,15 +230,17 @@ static NSString *StartupItemsFolderName = @"StartupItems";
 	}
 	else
 	{
+		NSMutableArray *files = [NSMutableArray new];
 		for (NSString *application in newApplicationsArray)
 		{
 			NSSet *matches = [self matchesForApplication:application];
-			[self.listController addPathsForDeletion:matches];
+			[files addObjectsFromArray:matches.allObjects];
 		}
 		   
-		if (((NSArray*)self.listController.arrangedObjects).count > 0)
+		if (files.count > 0)
 		{
-			[self presentMainWindow];
+			NSArray *returnFiles = [NSArray arrayWithArray:files];
+			[self.delegate applicationController:self didFindFiles:returnFiles];
 		}
 		   
 		// Now that we've dealt with the applications, we'll put them in the whitelist

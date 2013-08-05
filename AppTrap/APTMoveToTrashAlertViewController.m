@@ -13,7 +13,7 @@
 static CGFloat LargeHeight = 402.0;
 static CGFloat SmallHeight = 177.0;
 
-@interface APTMoveToTrashAlertViewController ()
+@interface APTMoveToTrashAlertViewController () <APTApplicationControllerDelegate>
 
 @property (weak) IBOutlet NSWindow *mainWindow;
 
@@ -24,7 +24,7 @@ static CGFloat SmallHeight = 177.0;
 @property (weak) IBOutlet NSButton *moveFilesButton;
 @property (weak) IBOutlet NSButton *showFileListButton;
 
-@property (nonatomic) APTApplicationController *applicationController;
+@property (nonatomic) IBOutlet APTApplicationController *applicationController;
 
 - (void)viewDidLoad;
 - (void)setUpLabelsAndButtons;
@@ -85,15 +85,25 @@ static CGFloat SmallHeight = 177.0;
 
 - (IBAction)moveFiles:(id)sender
 {
+	NSLog(@"%s", __func__);
 }
 
 - (IBAction)leaveFiles:(id)sender
 {
+	NSLog(@"%s", __func__);
 }
 
 - (IBAction)showFileList:(NSButton*)sender
 {
 	[self resizeWindowForState:sender.state];
+}
+
+#pragma mark - APTApplicationControllerDelegate Method
+
+- (void)applicationController:(APTApplicationController *)applicationController didFindFiles:(NSArray *)files
+{
+    [NSApp activateIgnoringOtherApps:YES];
+    [NSApp runModalForWindow:self.mainWindow];
 }
 
 @end

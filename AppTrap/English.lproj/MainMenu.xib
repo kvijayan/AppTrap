@@ -59,7 +59,6 @@
 					<string key="NSFrameSize">{480, 155}</string>
 					<reference key="NSSuperview"/>
 					<reference key="NSWindow"/>
-					<reference key="NSNextKeyView"/>
 					<bool key="NSViewIsLayerTreeHost">YES</bool>
 				</object>
 				<string key="NSScreenRect">{{0, 0}, {1366, 768}}</string>
@@ -666,9 +665,6 @@
 				<string key="NSNibName">APTMoveToTrashAlertViewController</string>
 				<string key="NSTitle">AppTrap</string>
 			</object>
-			<object class="NSCustomObject" id="394369358">
-				<string key="NSClassName">APTApplicationController</string>
-			</object>
 			<object class="NSUserDefaultsController" id="633721123">
 				<bool key="NSSharedInstance">YES</bool>
 			</object>
@@ -914,22 +910,6 @@
 						<reference key="destination" ref="375004402"/>
 					</object>
 					<int key="connectionID">205</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBOutletConnection" key="connection">
-						<string key="label">listController</string>
-						<reference key="source" ref="394369358"/>
-						<reference key="destination" ref="907501642"/>
-					</object>
-					<int key="connectionID">387</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBOutletConnection" key="connection">
-						<string key="label">window</string>
-						<reference key="source" ref="394369358"/>
-						<reference key="destination" ref="414193742"/>
-					</object>
-					<int key="connectionID">388</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
@@ -1432,11 +1412,6 @@
 						<string key="objectName">Shared Defaults</string>
 					</object>
 					<object class="IBObjectRecord">
-						<int key="objectID">386</int>
-						<reference key="object" ref="394369358"/>
-						<reference key="parent" ref="0"/>
-					</object>
-					<object class="IBObjectRecord">
 						<int key="objectID">389</int>
 						<reference key="object" ref="434996304"/>
 						<reference key="parent" ref="0"/>
@@ -1499,14 +1474,13 @@
 				<string key="204.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="21.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="21.IBWindowTemplateEditedContentRect">{{272, 784}, {480, 149}}</string>
-				<boolean value="YES" key="21.NSWindowTemplate.visibleAtLaunch"/>
+				<boolean value="NO" key="21.NSWindowTemplate.visibleAtLaunch"/>
 				<string key="220.CustomClassName">ATArrayController</string>
 				<string key="220.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="23.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="24.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="253.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="29.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<string key="386.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="389.CustomClassName">APTMoveToTrashAlertViewController</string>
 				<string key="389.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="390.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -1602,6 +1576,7 @@
 						</object>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="outlets">
+						<string key="applicationController">APTApplicationController</string>
 						<string key="explanationLabel">NSTextField</string>
 						<string key="instructionLabel">NSTextField</string>
 						<string key="leaveFilesButton">NSButton</string>
@@ -1611,6 +1586,10 @@
 						<string key="warningLabel">NSTextField</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
+						<object class="IBToOneOutletInfo" key="applicationController">
+							<string key="name">applicationController</string>
+							<string key="candidateClassName">APTApplicationController</string>
+						</object>
 						<object class="IBToOneOutletInfo" key="explanationLabel">
 							<string key="name">explanationLabel</string>
 							<string key="candidateClassName">NSTextField</string>
