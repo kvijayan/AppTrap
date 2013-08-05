@@ -93,7 +93,11 @@ static CGFloat SmallHeight = 177.0;
 
 - (IBAction)leaveFiles:(id)sender
 {
-	NSLog(@"%s", __func__);
+	NSArray *objects = self.arrayController.arrangedObjects;
+	[self.arrayController removeObjects:objects];
+	
+	[NSApp stopModal];
+	[self.mainWindow orderOut:self];
 }
 
 - (IBAction)showFileList:(NSButton*)sender
