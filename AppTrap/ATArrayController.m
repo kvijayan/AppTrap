@@ -22,7 +22,7 @@
 
 @implementation ATArrayController
 
-- (void)addPathsForDeletion:(NSSet*)paths
+- (void)addPathsForDeletion:(NSArray*)paths
 {
     for (NSString *path in paths)
     {
