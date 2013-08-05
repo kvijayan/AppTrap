@@ -15,16 +15,20 @@ static CGFloat SmallHeight = 177.0;
 
 @interface APTMoveToTrashAlertViewController ()
 
+@property (weak) IBOutlet NSWindow *mainWindow;
+
 @property (weak) IBOutlet NSTextField *instructionLabel;
 @property (weak) IBOutlet NSTextField *explanationLabel;
 @property (weak) IBOutlet NSTextField *warningLabel;
 @property (weak) IBOutlet NSButton *leaveFilesButton;
 @property (weak) IBOutlet NSButton *moveFilesButton;
+@property (weak) IBOutlet NSButton *showFileListButton;
 
 @property (nonatomic) APTApplicationController *applicationController;
 
 - (void)viewDidLoad;
 - (void)setUpLabelsAndButtons;
+- (void)resizeWindowForState:(NSCellStateValue)state;
 
 - (IBAction)moveFiles:(id)sender;
 - (IBAction)leaveFiles:(id)sender;
@@ -57,6 +61,26 @@ static CGFloat SmallHeight = 177.0;
 	[self.moveFilesButton setStringValue:NSLocalizedString(@"Move files", nil)];
 }
 
+- (void)resizeWindowForState:(NSCellStateValue)state
+{
+	NSRect rect = self.mainWindow.frame;
+	
+	if (state == NSOnState)
+	{
+		CGFloat heightDifference = LargeHeight - self.mainWindow.frame.size.height;
+		rect.origin.y -= heightDifference;
+		rect.size.height = LargeHeight;
+	}
+	else
+	{
+		CGFloat heightDifference = self.mainWindow.frame.size.height - SmallHeight;
+		rect.origin.y += heightDifference;
+		rect.size.height = SmallHeight;
+	}
+	
+	[self.mainWindow setFrame:rect display:YES animate:YES];
+}
+
 #pragma mark - Interface Actions
 
 - (IBAction)moveFiles:(id)sender
@@ -69,22 +93,7 @@ static CGFloat SmallHeight = 177.0;
 
 - (IBAction)showFileList:(NSButton*)sender
 {
-	NSRect rect = self.view.window.frame;
-	
-	if (sender.state == NSOnState)
-	{
-		CGFloat heightDifference = LargeHeight - self.view.window.frame.size.height;
-		rect.origin.y -= heightDifference;
-		rect.size.height = LargeHeight;
-	}
-	else
-	{
-		CGFloat heightDifference = self.view.window.frame.size.height - SmallHeight;
-		rect.origin.y += heightDifference;
-		rect.size.height = SmallHeight;
-	}
-
-	[self.view.window setFrame:rect display:YES animate:YES];
+	[self resizeWindowForState:sender.state];
 }
 
 @end

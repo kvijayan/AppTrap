@@ -917,14 +917,6 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
-						<string key="label">delegate</string>
-						<reference key="source" ref="414193742"/>
-						<reference key="destination" ref="56127487"/>
-					</object>
-					<int key="connectionID">395</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBOutletConnection" key="connection">
 						<string key="label">listController</string>
 						<reference key="source" ref="394369358"/>
 						<reference key="destination" ref="907501642"/>
@@ -946,6 +938,14 @@
 						<reference key="destination" ref="56127487"/>
 					</object>
 					<int key="connectionID">394</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">mainWindow</string>
+						<reference key="source" ref="434996304"/>
+						<reference key="destination" ref="414193742"/>
+					</object>
+					<int key="connectionID">397</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
@@ -1531,7 +1531,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">395</int>
+			<int key="maxID">397</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -1603,20 +1603,17 @@
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="outlets">
 						<string key="explanationLabel">NSTextField</string>
-						<string key="heightConstraint">NSLayoutConstraint</string>
 						<string key="instructionLabel">NSTextField</string>
 						<string key="leaveFilesButton">NSButton</string>
+						<string key="mainWindow">NSWindow</string>
 						<string key="moveFilesButton">NSButton</string>
+						<string key="showFileListButton">NSButton</string>
 						<string key="warningLabel">NSTextField</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
 						<object class="IBToOneOutletInfo" key="explanationLabel">
 							<string key="name">explanationLabel</string>
 							<string key="candidateClassName">NSTextField</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="heightConstraint">
-							<string key="name">heightConstraint</string>
-							<string key="candidateClassName">NSLayoutConstraint</string>
 						</object>
 						<object class="IBToOneOutletInfo" key="instructionLabel">
 							<string key="name">instructionLabel</string>
@@ -1626,8 +1623,16 @@
 							<string key="name">leaveFilesButton</string>
 							<string key="candidateClassName">NSButton</string>
 						</object>
+						<object class="IBToOneOutletInfo" key="mainWindow">
+							<string key="name">mainWindow</string>
+							<string key="candidateClassName">NSWindow</string>
+						</object>
 						<object class="IBToOneOutletInfo" key="moveFilesButton">
 							<string key="name">moveFilesButton</string>
+							<string key="candidateClassName">NSButton</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="showFileListButton">
+							<string key="name">showFileListButton</string>
 							<string key="candidateClassName">NSButton</string>
 						</object>
 						<object class="IBToOneOutletInfo" key="warningLabel">
