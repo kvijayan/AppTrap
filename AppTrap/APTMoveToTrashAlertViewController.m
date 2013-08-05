@@ -14,7 +14,7 @@
 static CGFloat LargeHeight = 402.0;
 static CGFloat SmallHeight = 177.0;
 
-@interface APTMoveToTrashAlertViewController () <APTApplicationControllerDelegate, NSTableViewDataSource>
+@interface APTMoveToTrashAlertViewController () <APTApplicationControllerDelegate>
 
 @property (weak) IBOutlet NSWindow *mainWindow;
 
@@ -105,26 +105,11 @@ static CGFloat SmallHeight = 177.0;
 	[self resizeWindowForState:sender.state];
 }
 
-#pragma mark - NSTableViewDataSource Method
-
-- (NSInteger)numberOfRowsInTableView:(NSTableView *)tableView
-{
-	NSUInteger count = ((NSArray*)self.arrayController.arrangedObjects).count;
-	return count;
-}
-
-- (id)tableView:(NSTableView *)tableView objectValueForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row
-{
-	id object = self.arrayController.arrangedObjects[row];
-	return object;
-}
-
 #pragma mark - APTApplicationControllerDelegate Method
 
 - (void)applicationController:(APTApplicationController *)applicationController didFindFiles:(NSArray *)files
 {
 	[self.arrayController addPathsForDeletion:files];
-	[self.tableView reloadData];
     [NSApp activateIgnoringOtherApps:YES];
     [NSApp runModalForWindow:self.mainWindow];
 }
