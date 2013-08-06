@@ -129,6 +129,36 @@ static NSString *StartupItemsFolderName = @"StartupItems";
     [self setWhitelist:whitelist];
 }
 
+- (void)moveFilesToTrash:(NSArray *)paths
+{
+	// Stop the events watcher while we're moving stuff to the trash
+	[self.eventsWatcher stopWatching];
+	
+	NSWorkspace *workspace = [NSWorkspace sharedWorkspace];
+	NSString *emptyString = @"";
+	for (NSString *path in paths)
+	{
+		NSString *source = path.stringByDeletingLastPathComponent;
+		NSString *fileName = path.lastPathComponent;
+		NSInteger tag;
+		BOOL success = [workspace performFileOperation:NSWorkspaceRecycleOperation
+												source:source
+										   destination:emptyString
+												 files:@[fileName]
+												   tag:&tag];
+		if (success)
+		{
+			NSLog(@"Successfully moved %@ to trash", path);
+		}
+		else
+		{
+			NSLog(@"Couldn't move %@ to trash (tag = %d)", path, (int)tag);
+		}
+	}
+	
+	[self.eventsWatcher startWatching];
+}
+
 #pragma mark - Core
 
 - (NSUInteger)visibleItemsCountAtPath:(NSString*)path
@@ -319,8 +349,16 @@ static NSString *StartupItemsFolderName = @"StartupItems";
     NSArray *matches = [string componentsSeparatedByString:@"\n"];
     
     [task waitUntilExit];
-    
-    NSSet *setToReturn = [NSSet setWithArray:matches];
+
+    NSMutableArray *returnMatches = [NSMutableArray new];
+	for (NSString *match in matches)
+	{
+		if (![match isEqualToString:@""])
+		{
+			[returnMatches addObject:match];
+		}
+	}
+    NSSet *setToReturn = [NSSet setWithArray:returnMatches];
     return setToReturn;
 }
 

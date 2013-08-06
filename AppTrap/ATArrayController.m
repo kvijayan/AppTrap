@@ -33,7 +33,7 @@
 - (void)addPathForDeletion:(NSString *)path
 {
     // Expand any tildes in the path
-    NSString *fullPath = [path stringByExpandingTildeInPath];
+    NSString *fullPath = path.stringByExpandingTildeInPath;
     
     if ([[NSFileManager defaultManager] fileExistsAtPath:fullPath])
 	{
@@ -41,7 +41,7 @@
 		NSString *path = fullPath.stringByAbbreviatingWithTildeInPath.stringByDeletingLastPathComponent;
 		NSImage *icon = [[NSWorkspace sharedWorkspace] iconForFile:fullPath];
 		[icon setSize:NSMakeSize(32.0, 32.0)];
-		NSMutableDictionary *entry = [NSMutableDictionary dictionaryWithObjectsAndKeys:path, @"path", name, @"name", icon, @"icon", @YES, @"shouldBeRemoved", nil];
+		NSMutableDictionary *entry = [NSMutableDictionary dictionaryWithObjectsAndKeys:path, @"path", name, @"name", icon, @"icon", @YES, @"shouldBeRemoved", fullPath, @"fullPath", nil];
 		[self addObject:entry];
     }
 }

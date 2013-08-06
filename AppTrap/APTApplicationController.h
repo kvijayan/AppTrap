@@ -16,5 +16,5 @@
 @end
 
 @interface APTApplicationController : NSObject
-
+- (void)moveFilesToTrash:(NSArray*)paths;
 @end

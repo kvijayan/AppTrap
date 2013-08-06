@@ -89,12 +89,29 @@ static CGFloat SmallHeight = 177.0;
 - (IBAction)moveFiles:(id)sender
 {
 	NSLog(@"%s", __func__);
+	NSMutableArray *paths = [NSMutableArray new];
+	NSMutableArray *entries = [NSMutableArray new];
+	for (NSDictionary *entry in self.arrayController.arrangedObjects)
+	{
+		BOOL shouldBeRemoved = ((NSNumber*)entry[@"shouldBeRemoved"]).boolValue;
+		if (shouldBeRemoved)
+		{
+			[paths addObject:entry[@"fullPath"]];
+			[entries addObject:entry];
+		}
+	}
+	
+	[self.applicationController moveFilesToTrash:paths];
+	[self.arrayController removeObjects:entries];
+	
+	[NSApp stopModal];
+	[self.mainWindow orderOut:self];
 }
 
 - (IBAction)leaveFiles:(id)sender
 {
-	NSArray *objects = self.arrayController.arrangedObjects;
-	[self.arrayController removeObjects:objects];
+	NSArray *entries = self.arrayController.arrangedObjects;
+	[self.arrayController removeObjects:entries];
 	
 	[NSApp stopModal];
 	[self.mainWindow orderOut:self];
@@ -109,9 +126,12 @@ static CGFloat SmallHeight = 177.0;
 
 - (void)applicationController:(APTApplicationController *)applicationController didFindFiles:(NSArray *)files
 {
-	[self.arrayController addPathsForDeletion:files];
-    [NSApp activateIgnoringOtherApps:YES];
-    [NSApp runModalForWindow:self.mainWindow];
+	if (files.count > 0)
+	{
+		[self.arrayController addPathsForDeletion:files];
+		[NSApp activateIgnoringOtherApps:YES];
+		[NSApp runModalForWindow:self.mainWindow];
+	}
 }
 
 @end
