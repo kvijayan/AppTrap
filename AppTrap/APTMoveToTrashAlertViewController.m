@@ -90,18 +90,17 @@ static CGFloat SmallHeight = 177.0;
 {
 	NSLog(@"%s", __func__);
 	NSMutableArray *paths = [NSMutableArray new];
-	NSMutableArray *entries = [NSMutableArray new];
 	for (NSDictionary *entry in self.arrayController.arrangedObjects)
 	{
 		BOOL shouldBeRemoved = ((NSNumber*)entry[@"shouldBeRemoved"]).boolValue;
 		if (shouldBeRemoved)
 		{
 			[paths addObject:entry[@"fullPath"]];
-			[entries addObject:entry];
 		}
 	}
 	
 	[self.applicationController moveFilesToTrash:paths];
+	NSArray *entries = self.arrayController.arrangedObjects;
 	[self.arrayController removeObjects:entries];
 	
 	[NSApp stopModal];
