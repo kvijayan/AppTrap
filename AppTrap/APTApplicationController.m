@@ -33,7 +33,6 @@ static NSString *StartupItemsFolderName = @"StartupItems";
 
 - (NSUInteger)visibleItemsCountAtPath:(NSString*)path;
 - (NSArray*)arrayOfApplicationsInDirectory:(NSString*)path;
-- (BOOL)arrayOfStrings:(NSArray*)firstArray isEqualToArrayOfStrings:(NSArray*)secondArray;
 - (BOOL)currentDirectoryContentsMatchesNewDirectoryContents:(NSArray*)newDirectoryContents;
 - (void)checkForNewApplicationBundlesInDirectory:(NSString*)directoryPath;
 - (NSSet*)matchesForApplication:(NSString*)application;
@@ -194,43 +193,10 @@ static NSString *StartupItemsFolderName = @"StartupItems";
     return [NSArray arrayWithArray:applications];
 }
 
-- (BOOL)arrayOfStrings:(NSArray *)firstArray isEqualToArrayOfStrings:(NSArray *)secondArray
-{
-    if (firstArray.count == secondArray.count)
-    {
-        for (NSUInteger i = 0; i < firstArray.count; i++)
-        {
-            NSString *firstString = firstArray[i];
-            NSString *secondString = secondArray[i];
-            if (![firstString isEqualToString:secondString])
-            {
-                return NO;
-            }
-        }
-        return YES;
-    }
-    else
-    {
-        return NO;
-    }
-}
-
 - (BOOL)currentDirectoryContentsMatchesNewDirectoryContents:(NSArray*)newDirectoryContents
 {
-    if (!newDirectoryContents)
-    {
-        [NSException raise:NSInvalidArgumentException format:@"newDirectoryContents must not be nil"];
-    }
-    
-    if (self.currentDirectoryContents)
-    {
-        return [self arrayOfStrings:self.currentDirectoryContents isEqualToArrayOfStrings:newDirectoryContents];
-    }
-    else
-    {
-        return NO;
-    }
-    
+	BOOL same = [self.currentDirectoryContents isEqualToArray:newDirectoryContents];
+	return same;
 }
 
 - (void)checkForNewApplicationBundlesInDirectory:(NSString *)directoryPath
