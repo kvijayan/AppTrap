@@ -10,6 +10,7 @@
 
 #import "APTApplicationController.h"
 #import "ATArrayController.h"
+#import "ATUserDefaultKeys.h"
 
 static CGFloat LargeHeight = 402.0;
 static CGFloat SmallHeight = 177.0;
@@ -31,6 +32,7 @@ static CGFloat SmallHeight = 177.0;
 
 - (void)viewDidLoad;
 - (void)setUpLabelsAndButtons;
+- (void)setUpWindow;
 - (void)resizeWindowForState:(NSCellStateValue)state;
 
 - (IBAction)moveFiles:(id)sender;
@@ -52,6 +54,7 @@ static CGFloat SmallHeight = 177.0;
 - (void)viewDidLoad
 {
 	[self setUpLabelsAndButtons];
+	[self setUpWindow];
 }
 
 - (void)setUpLabelsAndButtons
@@ -62,6 +65,22 @@ static CGFloat SmallHeight = 177.0;
 	
 	[self.leaveFilesButton setStringValue:NSLocalizedString(@"Leave files", nil)];
 	[self.moveFilesButton setStringValue:NSLocalizedString(@"Move files", nil)];
+}
+
+- (void)setUpWindow
+{
+	BOOL isExpanded = [[NSUserDefaults standardUserDefaults] boolForKey:ATPreferencesIsExpanded];
+	NSCellStateValue state;
+	if (isExpanded)
+	{
+		state = NSOnState;
+	}
+	else
+	{
+		state = NSOffState;
+	}
+	[self resizeWindowForState:state];
+	[self.showFileListButton setState:state];
 }
 
 - (void)resizeWindowForState:(NSCellStateValue)state
@@ -118,7 +137,19 @@ static CGFloat SmallHeight = 177.0;
 
 - (IBAction)showFileList:(NSButton*)sender
 {
+	NSCellStateValue state = sender.state;
 	[self resizeWindowForState:sender.state];
+	BOOL isExpanded;
+	if (state == NSOnState)
+	{
+		isExpanded = YES;
+	}
+	else
+	{
+		isExpanded = NO;
+	}
+	[[NSUserDefaults standardUserDefaults] setBool:isExpanded forKey:ATPreferencesIsExpanded];
+	[[NSUserDefaults standardUserDefaults] synchronize];
 }
 
 #pragma mark - APTApplicationControllerDelegate Method
