@@ -16,6 +16,7 @@ static CFTimeInterval kEventStreamLatency = 3.0;
 }
 
 @property (nonatomic) FSEventStreamRef eventStream;
+@property (nonatomic) CFRunLoopRef runLoop;
 
 void eventStreamCallback(ConstFSEventStreamRef streamRef, void *clientCallBackInfo, size_t numEvents, void *eventPaths, const FSEventStreamEventFlags eventFlags[], const FSEventStreamEventId eventIds[]);
 
@@ -55,6 +56,10 @@ void eventStreamCallback(ConstFSEventStreamRef streamRef, void *clientCallBackIn
                                                            kEventStreamLatency,
                                                            kFSEventStreamCreateFlagUseCFTypes);
         [self setEventStream:eventStream];
+		[self setRunLoop:CFRunLoopGetCurrent()];
+		FSEventStreamScheduleWithRunLoop(self.eventStream,
+										 CFRunLoopGetCurrent(),
+										 kCFRunLoopDefaultMode);
     }
     return self;
 }
@@ -68,9 +73,6 @@ void eventStreamCallback(ConstFSEventStreamRef streamRef, void *clientCallBackIn
 
 - (void)startWatching
 {
-    FSEventStreamScheduleWithRunLoop(self.eventStream,
-                                     CFRunLoopGetCurrent(),
-                                     kCFRunLoopDefaultMode);
     FSEventStreamStart(self.eventStream);
     _watching = YES;
 }
@@ -99,7 +101,8 @@ void eventStreamCallback(ConstFSEventStreamRef streamRef,
 
 - (void)dealloc
 {
-    FSEventStreamUnscheduleFromRunLoop(self.eventStream, CFRunLoopGetCurrent(), kCFRunLoopDefaultMode);
+	FSEventStreamStop(self.eventStream);
+    FSEventStreamUnscheduleFromRunLoop(self.eventStream, self.runLoop, kCFRunLoopDefaultMode);
     FSEventStreamInvalidate(self.eventStream);
     FSEventStreamRelease(self.eventStream);
 }
