@@ -130,8 +130,9 @@ static NSString *StartupItemsFolderName = @"StartupItems";
 
 - (void)moveFilesToTrash:(NSArray *)paths
 {
-	// Stop the events watcher while we're moving stuff to the trash
+	// Kill the events watcher before we move stuff to the trash
 	[self.eventsWatcher stopWatching];
+	[self setEventsWatcher:nil];
 	
 	NSWorkspace *workspace = [NSWorkspace sharedWorkspace];
 	NSString *emptyString = @"";
@@ -155,7 +156,11 @@ static NSString *StartupItemsFolderName = @"StartupItems";
 		}
 	}
 	
-	[self.eventsWatcher startWatching];
+	// Create a new events watcher to monitor the trash
+	APTFSEventsWatcher *watcher = [[APTFSEventsWatcher alloc] initWithDirectoryPath:self.pathToTrash];
+	[self setEventsWatcher:watcher];
+	[watcher setDelegate:self];
+	[watcher startWatching];
 }
 
 #pragma mark - Core
