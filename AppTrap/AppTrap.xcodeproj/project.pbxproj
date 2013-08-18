@@ -17,6 +17,7 @@
 		7D315FE217A9E6930098DAC9 /* APTMoveToTrashAlertViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D315FE017A9E6930098DAC9 /* APTMoveToTrashAlertViewController.m */; };
 		7D315FE617A9EEA40098DAC9 /* APTApplicationDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D315FE517A9EEA40098DAC9 /* APTApplicationDelegate.m */; };
 		7D31601717A9FFB00098DAC9 /* APTMoveToTrashAlertViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7D31601617A9FFB00098DAC9 /* APTMoveToTrashAlertViewController.xib */; };
+		7D6FB8FB17C020B300EE17FC /* APTPreferencePaneDelegate.h in Resources */ = {isa = PBXBuildFile; fileRef = 7D6FB8FA17C020B300EE17FC /* APTPreferencePaneDelegate.h */; };
 		7D99959E17433AE800B0B4F9 /* UKFileWatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 28A79E2F0B77D6A7005CCD1F /* UKFileWatcher.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		7D9995A017433AE800B0B4F9 /* UKFNSubscribeFileWatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 28A79E310B77D6A7005CCD1F /* UKFNSubscribeFileWatcher.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		7D9995A217433AE800B0B4F9 /* UKKQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 28A79E340B77D6A7005CCD1F /* UKKQueue.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -65,6 +66,7 @@
 		7D315FE517A9EEA40098DAC9 /* APTApplicationDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APTApplicationDelegate.m; sourceTree = "<group>"; };
 		7D31601617A9FFB00098DAC9 /* APTMoveToTrashAlertViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = APTMoveToTrashAlertViewController.xib; sourceTree = "<group>"; };
 		7D5CCF8C104C0DAA0026160F /* fr */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		7D6FB8FA17C020B300EE17FC /* APTPreferencePaneDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = APTPreferencePaneDelegate.h; path = /Users/kumaranvijayan/Code/AppTrap/AppTrap/APTPreferencePaneDelegate.h; sourceTree = "<absolute>"; };
 		7DA59D3F102018C1002EBE1E /* ATVariables.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATVariables.h; sourceTree = "<group>"; };
 		7DA59D40102018C1002EBE1E /* ATVariables.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATVariables.m; sourceTree = "<group>"; };
 		7DEFC1201744998800668ECE /* APTApplicationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APTApplicationController.h; sourceTree = "<group>"; };
@@ -168,6 +170,7 @@
 		29B97314FDCFA39411CA2CEA /* AppTrap */ = {
 			isa = PBXGroup;
 			children = (
+				7D6FB8FA17C020B300EE17FC /* APTPreferencePaneDelegate.h */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				28A79E850B77D931005CCD1F /* Third-Party Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
@@ -279,6 +282,7 @@
 				281A7E610CFDC17100E5207C /* Localizable.strings in Resources */,
 				7D1DEA44112F252B005F818C /* MainMenu.xib in Resources */,
 				7D31601717A9FFB00098DAC9 /* APTMoveToTrashAlertViewController.xib in Resources */,
+				7D6FB8FB17C020B300EE17FC /* APTPreferencePaneDelegate.h in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
