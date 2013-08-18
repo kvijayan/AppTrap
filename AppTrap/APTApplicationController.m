@@ -13,6 +13,7 @@
 
 static NSString *PreferencesFolderName = @"Preferences";
 static NSString *StartupItemsFolderName = @"StartupItems";
+static NSString *SandboxContainersFolderName = @"Containers";
 
 @interface APTApplicationController () <APTFSEventsWatcherDelegate>
 
@@ -85,8 +86,10 @@ static NSString *StartupItemsFolderName = @"StartupItems";
         {
             NSString *preferencesDirectory = [directoryString stringByAppendingPathComponent:PreferencesFolderName];
             NSString *startupItemsDirectory = [directoryString stringByAppendingPathComponent:StartupItemsFolderName];
+			NSString *sandboxContainersDirectory = [directoryString stringByAppendingPathComponent:SandboxContainersFolderName];
             [set addObject:preferencesDirectory];
             [set addObject:startupItemsDirectory];
+			[set addObject:sandboxContainersDirectory];
         }
         
         NSArray *directories = NSSearchPathForDirectoriesInDomains(NSApplicationSupportDirectory,
@@ -256,10 +259,12 @@ static NSString *StartupItemsFolderName = @"StartupItems";
 
     // Get the applications's bundle and its identifier
     NSBundle *appBundle = [NSBundle bundleWithPath:fullPath];
-    NSString *preferenceFileName = [[appBundle bundleIdentifier] stringByAppendingPathExtension:@"plist"];
+	NSString *bundleIdentifier = appBundle.bundleIdentifier;
+    NSString *preferenceFileName = [bundleIdentifier stringByAppendingPathExtension:@"plist"];
     NSString *preflockFileName = [preferenceFileName stringByAppendingPathExtension:@"lockfile"];
-    NSString *lssflprefFileName = [[appBundle bundleIdentifier] stringByAppendingPathExtension:@"LSSharedFileList.plist"];
+    NSString *lssflprefFileName = [bundleIdentifier stringByAppendingPathExtension:@"LSSharedFileList.plist"];
     NSString *lssflpreflocklFileName = [lssflprefFileName stringByAppendingPathExtension:@"lockfile"];
+	
     
     // Get the application's true name (i.e. not the filename)
     // TODO: replace @"CFBundle" with kCFBundle
@@ -281,6 +286,8 @@ static NSString *StartupItemsFolderName = @"StartupItems";
         [matches unionSet:set];
         set = [self matchesForFilename:appName atPath:libraryPath];
         [matches unionSet:set];
+		set = [self matchesForFilename:bundleIdentifier atPath:libraryPath];
+		[matches unionSet:set];
     }
     
     NSSet *returnSet = [NSSet setWithSet:matches];
