@@ -22,6 +22,7 @@
 
 NSString *ATApplicationFinishedLaunchingNotification = @"ATApplicationFinishedLaunchingNotification";
 NSString *ATApplicationTerminatedNotification = @"ATApplicationTerminatedNotification";
-NSString *ATApplicationShouldTerminateNotification = @"ATApplicationShouldTerminateNotification";
-NSString *ATApplicationSendVersionData = @"ATApplicationSendVersionData";
 NSString *ATApplicationGetVersionData = @"ATApplicationGetVersionData";
+
+NSString *ATApplicationSendVersionData = @"ATApplicationSendVersionData";
+NSString *ATApplicationShouldTerminateNotification = @"ATApplicationShouldTerminateNotification";

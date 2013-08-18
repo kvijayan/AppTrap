@@ -11,11 +11,14 @@
 #import "APTApplicationController.h"
 #import "ATArrayController.h"
 #import "ATUserDefaultKeys.h"
+#import "APTPreferencePaneDelegate.h"
+#import "ATNotifications.h"
+#import "ATVariables.h"
 
 static CGFloat LargeHeight = 402.0;
 static CGFloat SmallHeight = 177.0;
 
-@interface APTMoveToTrashAlertViewController () <APTApplicationControllerDelegate>
+@interface APTMoveToTrashAlertViewController () <APTApplicationControllerDelegate, APTPreferencePaneDelegate>
 
 @property (weak) IBOutlet NSWindow *mainWindow;
 
@@ -30,9 +33,12 @@ static CGFloat SmallHeight = 177.0;
 @property (weak) IBOutlet APTApplicationController *applicationController;
 @property (weak) IBOutlet ATArrayController *arrayController;
 
+@property (nonatomic) IBOutlet NSDistributedNotificationCenter *notificationCenter;
+
 - (void)viewDidLoad;
 - (void)setUpLabelsAndButtons;
 - (void)setUpWindow;
+- (void)sendApplicationDidFinishLaunchingNotification;
 - (void)resizeWindowForState:(NSCellStateValue)state;
 
 - (IBAction)moveFiles:(id)sender;
@@ -45,6 +51,28 @@ static CGFloat SmallHeight = 177.0;
 
 @implementation APTMoveToTrashAlertViewController
 
+- (id)initWithCoder:(NSCoder *)aDecoder
+{
+	self = [super init];
+	if (self)
+	{
+		NSDistributedNotificationCenter *nc = [NSDistributedNotificationCenter defaultCenter];
+		[self setNotificationCenter:nc];
+		[nc addObserver:self
+			   selector:@selector(preferencePaneRequestsTermination:)
+				   name:ATApplicationShouldTerminateNotification
+				 object:nil
+	 suspensionBehavior:NSNotificationSuspensionBehaviorDeliverImmediately];
+		
+		[nc addObserver:self
+			   selector:@selector(preferencePaneRequestsVersion:)
+				   name:ATApplicationSendVersionData
+				 object:nil
+	 suspensionBehavior:NSNotificationSuspensionBehaviorDeliverImmediately];
+	}
+	return self;
+}
+
 - (void)loadView
 {
 	[super loadView];
@@ -55,6 +83,12 @@ static CGFloat SmallHeight = 177.0;
 {
 	[self setUpLabelsAndButtons];
 	[self setUpWindow];
+	[self sendApplicationDidFinishLaunchingNotification];
+}
+
+- (void)dealloc
+{
+	[self.notificationCenter removeObserver:self];
 }
 
 - (void)setUpLabelsAndButtons
@@ -81,6 +115,12 @@ static CGFloat SmallHeight = 177.0;
 	}
 	[self resizeWindowForState:state];
 	[self.showFileListButton setState:state];
+}
+
+- (void)sendApplicationDidFinishLaunchingNotification
+{
+	[self.notificationCenter postNotificationName:ATApplicationFinishedLaunchingNotification
+										   object:nil];
 }
 
 - (void)resizeWindowForState:(NSCellStateValue)state
@@ -162,6 +202,23 @@ static CGFloat SmallHeight = 177.0;
 		[NSApp activateIgnoringOtherApps:YES];
 		[NSApp runModalForWindow:self.mainWindow];
 	}
+}
+
+#pragma mark - APTPreferencePaneDelegate methods
+
+- (void)preferencePaneRequestsVersion:(id)sender
+{
+	NSString *bundleIdentifier = [[NSBundle mainBundle] objectForInfoDictionaryKey:(NSString*)kCFBundleVersionKey];
+	NSDictionary *userInfo = @{ATBackgroundProcessVersion: bundleIdentifier};
+	[self.notificationCenter postNotificationName:ATApplicationGetVersionData
+										   object:nil
+										 userInfo:userInfo
+							   deliverImmediately:YES];
+}
+
+- (void)preferencePaneRequestsTermination:(id)sender
+{
+	[[NSApplication sharedApplication] terminate:self];
 }
 
 @end
