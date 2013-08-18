@@ -10,17 +10,11 @@
 		281852070C09DAC20020DDF3 /* ATNotifications.m in Sources */ = {isa = PBXBuildFile; fileRef = 281852060C09DAC20020DDF3 /* ATNotifications.m */; };
 		281A7E610CFDC17100E5207C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 281A7E600CFDC17100E5207C /* Localizable.strings */; };
 		284B38AB0B78CF870008BFD5 /* ATArrayController.m in Sources */ = {isa = PBXBuildFile; fileRef = 284B38AA0B78CF870008BFD5 /* ATArrayController.m */; };
-		287A24B40B854E480077B852 /* ATTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 287A24B30B854E480077B852 /* ATTextFieldCell.m */; };
 		28A46DA00C43E938007925EB /* ATUserDefaultKeys.m in Sources */ = {isa = PBXBuildFile; fileRef = 28A46D9F0C43E938007925EB /* ATUserDefaultKeys.m */; };
-		28A79E830B77D91D005CCD1F /* ATApplicationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28A79E810B77D91D005CCD1F /* ATApplicationController.m */; };
 		7D1DEA44112F252B005F818C /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7D1DEA43112F252B005F818C /* MainMenu.xib */; };
 		7D315FE217A9E6930098DAC9 /* APTMoveToTrashAlertViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D315FE017A9E6930098DAC9 /* APTMoveToTrashAlertViewController.m */; };
 		7D315FE617A9EEA40098DAC9 /* APTApplicationDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D315FE517A9EEA40098DAC9 /* APTApplicationDelegate.m */; };
 		7D31601717A9FFB00098DAC9 /* APTMoveToTrashAlertViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7D31601617A9FFB00098DAC9 /* APTMoveToTrashAlertViewController.xib */; };
-		7D99959E17433AE800B0B4F9 /* UKFileWatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 28A79E2F0B77D6A7005CCD1F /* UKFileWatcher.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		7D9995A017433AE800B0B4F9 /* UKFNSubscribeFileWatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 28A79E310B77D6A7005CCD1F /* UKFNSubscribeFileWatcher.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		7D9995A217433AE800B0B4F9 /* UKKQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 28A79E340B77D6A7005CCD1F /* UKKQueue.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		7D9995A417433AE800B0B4F9 /* UKMainThreadProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 28A79E360B77D6A7005CCD1F /* UKMainThreadProxy.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		7DA59D41102018C1002EBE1E /* ATVariables.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DA59D40102018C1002EBE1E /* ATVariables.m */; };
 		7DEFC1221744998800668ECE /* APTApplicationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DEFC1211744998800668ECE /* APTApplicationController.m */; };
 		7DF1DA31173B52FD004FEA6A /* APTFSEventsWatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DF1DA30173B52FD004FEA6A /* APTFSEventsWatcher.m */; };
@@ -36,21 +30,8 @@
 		281A7FDB0CFDEDAA00E5207C /* nl */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/Localizable.strings; sourceTree = "<group>"; };
 		284B38A90B78CF870008BFD5 /* ATArrayController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATArrayController.h; sourceTree = "<group>"; };
 		284B38AA0B78CF870008BFD5 /* ATArrayController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATArrayController.m; sourceTree = "<group>"; };
-		287A24B20B854E480077B852 /* ATTextFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATTextFieldCell.h; sourceTree = "<group>"; };
-		287A24B30B854E480077B852 /* ATTextFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATTextFieldCell.m; sourceTree = "<group>"; };
 		28A46D9E0C43E938007925EB /* ATUserDefaultKeys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATUserDefaultKeys.h; sourceTree = "<group>"; };
 		28A46D9F0C43E938007925EB /* ATUserDefaultKeys.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATUserDefaultKeys.m; sourceTree = "<group>"; };
-		28A79E2E0B77D6A7005CCD1F /* UKFileWatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UKFileWatcher.h; sourceTree = "<group>"; };
-		28A79E2F0B77D6A7005CCD1F /* UKFileWatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UKFileWatcher.m; sourceTree = "<group>"; };
-		28A79E300B77D6A7005CCD1F /* UKFNSubscribeFileWatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UKFNSubscribeFileWatcher.h; sourceTree = "<group>"; };
-		28A79E310B77D6A7005CCD1F /* UKFNSubscribeFileWatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UKFNSubscribeFileWatcher.m; sourceTree = "<group>"; };
-		28A79E320B77D6A7005CCD1F /* UKKQueue Readme.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "UKKQueue Readme.txt"; sourceTree = "<group>"; };
-		28A79E330B77D6A7005CCD1F /* UKKQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UKKQueue.h; sourceTree = "<group>"; };
-		28A79E340B77D6A7005CCD1F /* UKKQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UKKQueue.m; sourceTree = "<group>"; };
-		28A79E350B77D6A7005CCD1F /* UKMainThreadProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UKMainThreadProxy.h; sourceTree = "<group>"; };
-		28A79E360B77D6A7005CCD1F /* UKMainThreadProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UKMainThreadProxy.m; sourceTree = "<group>"; };
-		28A79E810B77D91D005CCD1F /* ATApplicationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATApplicationController.m; sourceTree = "<group>"; };
-		28A79E820B77D91D005CCD1F /* ATApplicationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATApplicationController.h; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
@@ -97,12 +78,8 @@
 				281852060C09DAC20020DDF3 /* ATNotifications.m */,
 				7DA59D3F102018C1002EBE1E /* ATVariables.h */,
 				7DA59D40102018C1002EBE1E /* ATVariables.m */,
-				28A79E820B77D91D005CCD1F /* ATApplicationController.h */,
-				28A79E810B77D91D005CCD1F /* ATApplicationController.m */,
 				284B38A90B78CF870008BFD5 /* ATArrayController.h */,
 				284B38AA0B78CF870008BFD5 /* ATArrayController.m */,
-				287A24B20B854E480077B852 /* ATTextFieldCell.h */,
-				287A24B30B854E480077B852 /* ATTextFieldCell.m */,
 				7D315FE417A9EEA40098DAC9 /* APTApplicationDelegate.h */,
 				7D315FE517A9EEA40098DAC9 /* APTApplicationDelegate.m */,
 				7DF1DA2F173B52FD004FEA6A /* APTFSEventsWatcher.h */,
@@ -122,30 +99,6 @@
 				8D1107320486CEB800E47090 /* AppTrap.app */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		28A79E2D0B77D6A7005CCD1F /* UKKQueue */ = {
-			isa = PBXGroup;
-			children = (
-				28A79E320B77D6A7005CCD1F /* UKKQueue Readme.txt */,
-				28A79E2E0B77D6A7005CCD1F /* UKFileWatcher.h */,
-				28A79E2F0B77D6A7005CCD1F /* UKFileWatcher.m */,
-				28A79E300B77D6A7005CCD1F /* UKFNSubscribeFileWatcher.h */,
-				28A79E310B77D6A7005CCD1F /* UKFNSubscribeFileWatcher.m */,
-				28A79E330B77D6A7005CCD1F /* UKKQueue.h */,
-				28A79E340B77D6A7005CCD1F /* UKKQueue.m */,
-				28A79E350B77D6A7005CCD1F /* UKMainThreadProxy.h */,
-				28A79E360B77D6A7005CCD1F /* UKMainThreadProxy.m */,
-			);
-			path = UKKQueue;
-			sourceTree = "<group>";
-		};
-		28A79E850B77D931005CCD1F /* Third-Party Classes */ = {
-			isa = PBXGroup;
-			children = (
-				28A79E2D0B77D6A7005CCD1F /* UKKQueue */,
-			);
-			name = "Third-Party Classes";
 			sourceTree = "<group>";
 		};
 		28EEC0670C0B1C0800CC7B4D /* Linked frameworks */ = {
@@ -169,7 +122,6 @@
 			isa = PBXGroup;
 			children = (
 				080E96DDFE201D6D7F000001 /* Classes */,
-				28A79E850B77D931005CCD1F /* Third-Party Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
@@ -289,14 +241,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7D99959E17433AE800B0B4F9 /* UKFileWatcher.m in Sources */,
-				7D9995A017433AE800B0B4F9 /* UKFNSubscribeFileWatcher.m in Sources */,
-				7D9995A217433AE800B0B4F9 /* UKKQueue.m in Sources */,
-				7D9995A417433AE800B0B4F9 /* UKMainThreadProxy.m in Sources */,
 				8D11072D0486CEB800E47090 /* main.m in Sources */,
-				28A79E830B77D91D005CCD1F /* ATApplicationController.m in Sources */,
 				284B38AB0B78CF870008BFD5 /* ATArrayController.m in Sources */,
-				287A24B40B854E480077B852 /* ATTextFieldCell.m in Sources */,
 				281852070C09DAC20020DDF3 /* ATNotifications.m in Sources */,
 				28A46DA00C43E938007925EB /* ATUserDefaultKeys.m in Sources */,
 				7DA59D41102018C1002EBE1E /* ATVariables.m in Sources */,
