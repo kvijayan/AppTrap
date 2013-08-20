@@ -11,6 +11,10 @@
 		28A46D860C43E6CF007925EB /* Read Me.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 28A46D850C43E6CF007925EB /* Read Me.rtf */; };
 		28A46DD60C43ED87007925EB /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 28A46DD50C43ED87007925EB /* Localizable.strings */; };
 		7D1051D6104A1FA900BAAF3F /* AppTrapPreferencePane.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7D1051D4104A1FA900BAAF3F /* AppTrapPreferencePane.xib */; };
+		7D252B8F17C148B6008BBBB3 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D252B8E17C148B6008BBBB3 /* SenTestingKit.framework */; };
+		7D252B9117C148B6008BBBB3 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D252B9017C148B6008BBBB3 /* Cocoa.framework */; };
+		7D252B9B17C148B6008BBBB3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7D252B9917C148B6008BBBB3 /* InfoPlist.strings */; };
+		7D252B9E17C148B6008BBBB3 /* PrefPaneTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D252B9D17C148B6008BBBB3 /* PrefPaneTests.m */; };
 		7D3C77BA1048CF5B00009126 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D3C77B91048CF5B00009126 /* Sparkle.framework */; };
 		7D3C77E61048CF6300009126 /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7D3C77B91048CF5B00009126 /* Sparkle.framework */; };
 		7D97B03F17A8A04900569109 /* AppTrap.xcodeproj in Resources */ = {isa = PBXBuildFile; fileRef = 7D97B03E17A8A04900569109 /* AppTrap.xcodeproj */; };
@@ -26,6 +30,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		7D252BA417C148B6008BBBB3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7D97B03E17A8A04900569109 /* AppTrap.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 7D6FB90317C055C500EE17FC;
+			remoteInfo = AppTrapTests;
+		};
+		7D252BA717C148E1008BBBB3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 089C1669FE841209C02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8D202CE80486D31800D8A456;
+			remoteInfo = AppTrap;
+		};
 		7D97B04D17A8B2E100569109 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 7D97B03E17A8A04900569109 /* AppTrap.xcodeproj */;
@@ -64,6 +82,17 @@
 		7D18B1541128BC94003C260F /* pt */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = pt; path = pt.lproj/Localizable.strings; sourceTree = "<group>"; };
 		7D18B1551128BCA8003C260F /* pt */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = pt; path = "pt.lproj/Read Me.rtf"; sourceTree = "<group>"; };
 		7D18B1561128BCB9003C260F /* pt */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = pt; path = pt.lproj/AppTrapPreferencePane.xib; sourceTree = "<group>"; };
+		7D252B8C17C148B6008BBBB3 /* PrefPaneTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PrefPaneTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7D252B8E17C148B6008BBBB3 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		7D252B9017C148B6008BBBB3 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
+		7D252B9317C148B6008BBBB3 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		7D252B9417C148B6008BBBB3 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		7D252B9517C148B6008BBBB3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		7D252B9817C148B6008BBBB3 /* PrefPaneTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PrefPaneTests-Info.plist"; sourceTree = "<group>"; };
+		7D252B9A17C148B6008BBBB3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		7D252B9C17C148B6008BBBB3 /* PrefPaneTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefPaneTests.h; sourceTree = "<group>"; };
+		7D252B9D17C148B6008BBBB3 /* PrefPaneTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PrefPaneTests.m; sourceTree = "<group>"; };
+		7D252B9F17C148B6008BBBB3 /* PrefPaneTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PrefPaneTests-Prefix.pch"; sourceTree = "<group>"; };
 		7D3C77B91048CF5B00009126 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sparkle.framework; sourceTree = "<group>"; };
 		7D5CCF6C104C0CC40026160F /* fr */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = fr; path = fr.lproj/AppTrapPreferencePane.xib; sourceTree = "<group>"; };
 		7D5CCF6D104C0CDC0026160F /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = fr; path = "fr.lproj/Read Me.rtf"; sourceTree = "<group>"; };
@@ -85,6 +114,15 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		7D252B8817C148B6008BBBB3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7D252B8F17C148B6008BBBB3 /* SenTestingKit.framework in Frameworks */,
+				7D252B9117C148B6008BBBB3 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8D202CF20486D31800D8A456 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -108,6 +146,8 @@
 				32DBCFA10370C40200C91783 /* Other Sources */,
 				089C167CFE841241C02AAC07 /* Resources */,
 				089C1671FE841209C02AAC07 /* Frameworks and Libraries */,
+				7D252B9617C148B6008BBBB3 /* PrefPaneTests */,
+				7D252B8D17C148B6008BBBB3 /* Frameworks */,
 				19C28FB8FE9D52D311CA2CBB /* Products */,
 			);
 			name = AppTrapPreferencePane;
@@ -174,6 +214,7 @@
 			isa = PBXGroup;
 			children = (
 				8D202CF80486D31800D8A456 /* AppTrap.prefPane */,
+				7D252B8C17C148B6008BBBB3 /* PrefPaneTests.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -186,10 +227,51 @@
 			name = "Other Sources";
 			sourceTree = "<group>";
 		};
+		7D252B8D17C148B6008BBBB3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7D252B8E17C148B6008BBBB3 /* SenTestingKit.framework */,
+				7D252B9017C148B6008BBBB3 /* Cocoa.framework */,
+				7D252B9217C148B6008BBBB3 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7D252B9217C148B6008BBBB3 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7D252B9317C148B6008BBBB3 /* AppKit.framework */,
+				7D252B9417C148B6008BBBB3 /* CoreData.framework */,
+				7D252B9517C148B6008BBBB3 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		7D252B9617C148B6008BBBB3 /* PrefPaneTests */ = {
+			isa = PBXGroup;
+			children = (
+				7D252B9C17C148B6008BBBB3 /* PrefPaneTests.h */,
+				7D252B9D17C148B6008BBBB3 /* PrefPaneTests.m */,
+				7D252B9717C148B6008BBBB3 /* Supporting Files */,
+			);
+			path = PrefPaneTests;
+			sourceTree = "<group>";
+		};
+		7D252B9717C148B6008BBBB3 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7D252B9817C148B6008BBBB3 /* PrefPaneTests-Info.plist */,
+				7D252B9917C148B6008BBBB3 /* InfoPlist.strings */,
+				7D252B9F17C148B6008BBBB3 /* PrefPaneTests-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		7D97B04A17A8B2E100569109 /* Products */ = {
 			isa = PBXGroup;
 			children = (
 				7D97B04E17A8B2E100569109 /* AppTrap.app */,
+				7D252BA517C148B6008BBBB3 /* AppTrapTests.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -197,6 +279,25 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		7D252B8B17C148B6008BBBB3 /* PrefPaneTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7D252BA617C148B6008BBBB3 /* Build configuration list for PBXNativeTarget "PrefPaneTests" */;
+			buildPhases = (
+				7D252B8717C148B6008BBBB3 /* Sources */,
+				7D252B8817C148B6008BBBB3 /* Frameworks */,
+				7D252B8917C148B6008BBBB3 /* Resources */,
+				7D252B8A17C148B6008BBBB3 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7D252BA817C148E1008BBBB3 /* PBXTargetDependency */,
+			);
+			name = PrefPaneTests;
+			productName = PrefPaneTests;
+			productReference = 7D252B8C17C148B6008BBBB3 /* PrefPaneTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
 		8D202CE80486D31800D8A456 /* AppTrap */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1DBD214808BA80EA00186707 /* Build configuration list for PBXNativeTarget "AppTrap" */;
@@ -249,6 +350,7 @@
 				zh_TW,
 				ja,
 				pt,
+				en,
 			);
 			mainGroup = 089C166AFE841209C02AAC07 /* AppTrapPreferencePane */;
 			projectDirPath = "";
@@ -261,11 +363,19 @@
 			projectRoot = "";
 			targets = (
 				8D202CE80486D31800D8A456 /* AppTrap */,
+				7D252B8B17C148B6008BBBB3 /* PrefPaneTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		7D252BA517C148B6008BBBB3 /* AppTrapTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = AppTrapTests.octest;
+			remoteRef = 7D252BA417C148B6008BBBB3 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		7D97B04E17A8B2E100569109 /* AppTrap.app */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.application;
@@ -276,6 +386,14 @@
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
+		7D252B8917C148B6008BBBB3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7D252B9B17C148B6008BBBB3 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8D202CEC0486D31800D8A456 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -302,7 +420,31 @@
 		};
 /* End PBXRezBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		7D252B8A17C148B6008BBBB3 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
+		7D252B8717C148B6008BBBB3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7D252B9E17C148B6008BBBB3 /* PrefPaneTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8D202CF00486D31800D8A456 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -315,6 +457,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7D252BA817C148E1008BBBB3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8D202CE80486D31800D8A456 /* AppTrap */;
+			targetProxy = 7D252BA717C148E1008BBBB3 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		28A46D850C43E6CF007925EB /* Read Me.rtf */ = {
@@ -348,6 +498,14 @@
 				7D18B1561128BCB9003C260F /* pt */,
 			);
 			name = AppTrapPreferencePane.xib;
+			sourceTree = "<group>";
+		};
+		7D252B9917C148B6008BBBB3 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7D252B9A17C148B6008BBBB3 /* en */,
+			);
+			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -432,6 +590,73 @@
 			};
 			name = Release;
 		};
+		7D252BA017C148B6008BBBB3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = "\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PrefPaneTests/PrefPaneTests-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				INFOPLIST_FILE = "PrefPaneTests/PrefPaneTests-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		7D252BA117C148B6008BBBB3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = "\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PrefPaneTests/PrefPaneTests-Prefix.pch";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				INFOPLIST_FILE = "PrefPaneTests/PrefPaneTests-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -449,6 +674,15 @@
 			buildConfigurations = (
 				1DBD214D08BA80EA00186707 /* Debug */,
 				1DBD214E08BA80EA00186707 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7D252BA617C148B6008BBBB3 /* Build configuration list for PBXNativeTarget "PrefPaneTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7D252BA017C148B6008BBBB3 /* Debug */,
+				7D252BA117C148B6008BBBB3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
