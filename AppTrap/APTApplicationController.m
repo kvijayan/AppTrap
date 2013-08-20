@@ -13,6 +13,7 @@
 
 static NSString *PreferencesFolderName = @"Preferences";
 static NSString *StartupItemsFolderName = @"StartupItems";
+static NSString *SandboxContainersFolderName = @"Containers";
 
 @interface APTApplicationController () <APTFSEventsWatcherDelegate>
 
@@ -85,8 +86,10 @@ static NSString *StartupItemsFolderName = @"StartupItems";
         {
             NSString *preferencesDirectory = [directoryString stringByAppendingPathComponent:PreferencesFolderName];
             NSString *startupItemsDirectory = [directoryString stringByAppendingPathComponent:StartupItemsFolderName];
+			NSString *sandboxContainersDirectory = [directoryString stringByAppendingPathComponent:SandboxContainersFolderName];
             [set addObject:preferencesDirectory];
             [set addObject:startupItemsDirectory];
+			[set addObject:sandboxContainersDirectory];
         }
         
         NSArray *directories = NSSearchPathForDirectoriesInDomains(NSApplicationSupportDirectory,
@@ -256,10 +259,12 @@ static NSString *StartupItemsFolderName = @"StartupItems";
 
     // Get the applications's bundle and its identifier
     NSBundle *appBundle = [NSBundle bundleWithPath:fullPath];
-    NSString *preferenceFileName = [[appBundle bundleIdentifier] stringByAppendingPathExtension:@"plist"];
+	NSString *bundleIdentifier = appBundle.bundleIdentifier;
+    NSString *preferenceFileName = [bundleIdentifier stringByAppendingPathExtension:@"plist"];
     NSString *preflockFileName = [preferenceFileName stringByAppendingPathExtension:@"lockfile"];
-    NSString *lssflprefFileName = [[appBundle bundleIdentifier] stringByAppendingPathExtension:@"LSSharedFileList.plist"];
+    NSString *lssflprefFileName = [bundleIdentifier stringByAppendingPathExtension:@"LSSharedFileList.plist"];
     NSString *lssflpreflocklFileName = [lssflprefFileName stringByAppendingPathExtension:@"lockfile"];
+	
     
     // Get the application's true name (i.e. not the filename)
     // TODO: replace @"CFBundle" with kCFBundle
@@ -281,14 +286,14 @@ static NSString *StartupItemsFolderName = @"StartupItems";
         [matches unionSet:set];
         set = [self matchesForFilename:appName atPath:libraryPath];
         [matches unionSet:set];
+		set = [self matchesForFilename:bundleIdentifier atPath:libraryPath];
+		[matches unionSet:set];
     }
     
     NSSet *returnSet = [NSSet setWithSet:matches];
     return returnSet;
 }
 
-// Part of code from http://www.borkware.com/quickies/single?id=130
-// TODO: Seems like were leaking NSConcreteTask and NSConcretePipe here, needs to be investigated
 - (NSSet*)matchesForFilename:(NSString *)filename atPath:(NSString *)path
 {
     if (!filename || !path)
@@ -301,36 +306,28 @@ static NSString *StartupItemsFolderName = @"StartupItems";
     {
         return [NSSet set];
     }
-    
-    // Find all the matching files at the given path
-    NSString *command = [NSString stringWithFormat:@"find '%@' -name '%@' -maxdepth 1", path.stringByExpandingTildeInPath, filename];
-    
-    NSTask *task = [NSTask new];
-    [task setLaunchPath: @"/bin/sh"];
-    [task setArguments: @[@"-c", command]];
-    
-    NSPipe *pipe  = [NSPipe new];
-    [task setStandardOutput:pipe];
-    NSFileHandle *file = pipe.fileHandleForReading;
-
-    [task launch];
-    
-    NSData *data = file.readDataToEndOfFile;
-    NSString *string = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-    NSArray *matches = [string componentsSeparatedByString:@"\n"];
-    
-    [task waitUntilExit];
-
-    NSMutableArray *returnMatches = [NSMutableArray new];
-	for (NSString *match in matches)
+	
+	NSMutableSet *set = [NSMutableSet new];
+	NSURL *url = [NSURL fileURLWithPath:path];
+	NSDirectoryEnumerator *enumerator = [[NSFileManager defaultManager] enumeratorAtURL:url
+															 includingPropertiesForKeys:@[NSURLNameKey]
+																				options:NSDirectoryEnumerationSkipsHiddenFiles | NSDirectoryEnumerationSkipsSubdirectoryDescendants | NSDirectoryEnumerationSkipsPackageDescendants
+																		   errorHandler:nil];
+	for (NSURL *searchFile in enumerator)
 	{
-		if (![match isEqualToString:@""])
+		NSString *searchFileName = searchFile.path.lastPathComponent;
+		if ([searchFileName hasPrefix:@"."])
 		{
-			[returnMatches addObject:match];
+			[enumerator skipDescendants];
+		}
+		else if ([searchFileName isEqualToString:filename])
+		{
+			NSString *match = [path stringByAppendingPathComponent:searchFileName];
+			[set addObject:match];
 		}
 	}
-    NSSet *setToReturn = [NSSet setWithArray:returnMatches];
-    return setToReturn;
+	NSSet *returnSet = [NSSet setWithSet:set];
+	return returnSet;
 }
 
 - (void)presentMainWindow

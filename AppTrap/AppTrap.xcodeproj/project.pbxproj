@@ -10,17 +10,18 @@
 		281852070C09DAC20020DDF3 /* ATNotifications.m in Sources */ = {isa = PBXBuildFile; fileRef = 281852060C09DAC20020DDF3 /* ATNotifications.m */; };
 		281A7E610CFDC17100E5207C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 281A7E600CFDC17100E5207C /* Localizable.strings */; };
 		284B38AB0B78CF870008BFD5 /* ATArrayController.m in Sources */ = {isa = PBXBuildFile; fileRef = 284B38AA0B78CF870008BFD5 /* ATArrayController.m */; };
-		287A24B40B854E480077B852 /* ATTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 287A24B30B854E480077B852 /* ATTextFieldCell.m */; };
 		28A46DA00C43E938007925EB /* ATUserDefaultKeys.m in Sources */ = {isa = PBXBuildFile; fileRef = 28A46D9F0C43E938007925EB /* ATUserDefaultKeys.m */; };
-		28A79E830B77D91D005CCD1F /* ATApplicationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28A79E810B77D91D005CCD1F /* ATApplicationController.m */; };
 		7D1DEA44112F252B005F818C /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7D1DEA43112F252B005F818C /* MainMenu.xib */; };
 		7D315FE217A9E6930098DAC9 /* APTMoveToTrashAlertViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D315FE017A9E6930098DAC9 /* APTMoveToTrashAlertViewController.m */; };
 		7D315FE617A9EEA40098DAC9 /* APTApplicationDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D315FE517A9EEA40098DAC9 /* APTApplicationDelegate.m */; };
 		7D31601717A9FFB00098DAC9 /* APTMoveToTrashAlertViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7D31601617A9FFB00098DAC9 /* APTMoveToTrashAlertViewController.xib */; };
-		7D99959E17433AE800B0B4F9 /* UKFileWatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 28A79E2F0B77D6A7005CCD1F /* UKFileWatcher.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		7D9995A017433AE800B0B4F9 /* UKFNSubscribeFileWatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 28A79E310B77D6A7005CCD1F /* UKFNSubscribeFileWatcher.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		7D9995A217433AE800B0B4F9 /* UKKQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 28A79E340B77D6A7005CCD1F /* UKKQueue.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		7D9995A417433AE800B0B4F9 /* UKMainThreadProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 28A79E360B77D6A7005CCD1F /* UKMainThreadProxy.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		7D6FB8FB17C020B300EE17FC /* APTPreferencePaneDelegate.h in Resources */ = {isa = PBXBuildFile; fileRef = 7D6FB8FA17C020B300EE17FC /* APTPreferencePaneDelegate.h */; };
+		7D6FB90517C055C500EE17FC /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D6FB90417C055C500EE17FC /* SenTestingKit.framework */; };
+		7D6FB90717C055C500EE17FC /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D6FB90617C055C500EE17FC /* Cocoa.framework */; };
+		7D6FB91117C055C500EE17FC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7D6FB90F17C055C500EE17FC /* InfoPlist.strings */; };
+		7D6FB91417C055C500EE17FC /* AppTrapTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D6FB91317C055C500EE17FC /* AppTrapTests.m */; };
+		7D6FB91917C059C500EE17FC /* APTApplicationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DEFC1211744998800668ECE /* APTApplicationController.m */; };
+		7D6FB91A17C059F000EE17FC /* APTFSEventsWatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DF1DA30173B52FD004FEA6A /* APTFSEventsWatcher.m */; };
 		7DA59D41102018C1002EBE1E /* ATVariables.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DA59D40102018C1002EBE1E /* ATVariables.m */; };
 		7DEFC1221744998800668ECE /* APTApplicationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DEFC1211744998800668ECE /* APTApplicationController.m */; };
 		7DF1DA31173B52FD004FEA6A /* APTFSEventsWatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DF1DA30173B52FD004FEA6A /* APTFSEventsWatcher.m */; };
@@ -36,21 +37,8 @@
 		281A7FDB0CFDEDAA00E5207C /* nl */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/Localizable.strings; sourceTree = "<group>"; };
 		284B38A90B78CF870008BFD5 /* ATArrayController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATArrayController.h; sourceTree = "<group>"; };
 		284B38AA0B78CF870008BFD5 /* ATArrayController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATArrayController.m; sourceTree = "<group>"; };
-		287A24B20B854E480077B852 /* ATTextFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATTextFieldCell.h; sourceTree = "<group>"; };
-		287A24B30B854E480077B852 /* ATTextFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATTextFieldCell.m; sourceTree = "<group>"; };
 		28A46D9E0C43E938007925EB /* ATUserDefaultKeys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATUserDefaultKeys.h; sourceTree = "<group>"; };
 		28A46D9F0C43E938007925EB /* ATUserDefaultKeys.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATUserDefaultKeys.m; sourceTree = "<group>"; };
-		28A79E2E0B77D6A7005CCD1F /* UKFileWatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UKFileWatcher.h; sourceTree = "<group>"; };
-		28A79E2F0B77D6A7005CCD1F /* UKFileWatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UKFileWatcher.m; sourceTree = "<group>"; };
-		28A79E300B77D6A7005CCD1F /* UKFNSubscribeFileWatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UKFNSubscribeFileWatcher.h; sourceTree = "<group>"; };
-		28A79E310B77D6A7005CCD1F /* UKFNSubscribeFileWatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UKFNSubscribeFileWatcher.m; sourceTree = "<group>"; };
-		28A79E320B77D6A7005CCD1F /* UKKQueue Readme.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "UKKQueue Readme.txt"; sourceTree = "<group>"; };
-		28A79E330B77D6A7005CCD1F /* UKKQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UKKQueue.h; sourceTree = "<group>"; };
-		28A79E340B77D6A7005CCD1F /* UKKQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UKKQueue.m; sourceTree = "<group>"; };
-		28A79E350B77D6A7005CCD1F /* UKMainThreadProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UKMainThreadProxy.h; sourceTree = "<group>"; };
-		28A79E360B77D6A7005CCD1F /* UKMainThreadProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UKMainThreadProxy.m; sourceTree = "<group>"; };
-		28A79E810B77D91D005CCD1F /* ATApplicationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATApplicationController.m; sourceTree = "<group>"; };
-		28A79E820B77D91D005CCD1F /* ATApplicationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATApplicationController.h; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
@@ -65,6 +53,18 @@
 		7D315FE517A9EEA40098DAC9 /* APTApplicationDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APTApplicationDelegate.m; sourceTree = "<group>"; };
 		7D31601617A9FFB00098DAC9 /* APTMoveToTrashAlertViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = APTMoveToTrashAlertViewController.xib; sourceTree = "<group>"; };
 		7D5CCF8C104C0DAA0026160F /* fr */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		7D6FB8FA17C020B300EE17FC /* APTPreferencePaneDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = APTPreferencePaneDelegate.h; path = /Users/kumaranvijayan/Code/AppTrap/AppTrap/APTPreferencePaneDelegate.h; sourceTree = "<absolute>"; };
+		7D6FB90317C055C500EE17FC /* AppTrapTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AppTrapTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7D6FB90417C055C500EE17FC /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		7D6FB90617C055C500EE17FC /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
+		7D6FB90917C055C500EE17FC /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		7D6FB90A17C055C500EE17FC /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		7D6FB90B17C055C500EE17FC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		7D6FB90E17C055C500EE17FC /* AppTrapTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AppTrapTests-Info.plist"; sourceTree = "<group>"; };
+		7D6FB91017C055C500EE17FC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		7D6FB91217C055C500EE17FC /* AppTrapTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppTrapTests.h; sourceTree = "<group>"; };
+		7D6FB91317C055C500EE17FC /* AppTrapTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppTrapTests.m; sourceTree = "<group>"; };
+		7D6FB91517C055C500EE17FC /* AppTrapTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AppTrapTests-Prefix.pch"; sourceTree = "<group>"; };
 		7DA59D3F102018C1002EBE1E /* ATVariables.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATVariables.h; sourceTree = "<group>"; };
 		7DA59D40102018C1002EBE1E /* ATVariables.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATVariables.m; sourceTree = "<group>"; };
 		7DEFC1201744998800668ECE /* APTApplicationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APTApplicationController.h; sourceTree = "<group>"; };
@@ -77,6 +77,15 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		7D6FB8FF17C055C500EE17FC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7D6FB90517C055C500EE17FC /* SenTestingKit.framework in Frameworks */,
+				7D6FB90717C055C500EE17FC /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8D11072E0486CEB800E47090 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -97,12 +106,8 @@
 				281852060C09DAC20020DDF3 /* ATNotifications.m */,
 				7DA59D3F102018C1002EBE1E /* ATVariables.h */,
 				7DA59D40102018C1002EBE1E /* ATVariables.m */,
-				28A79E820B77D91D005CCD1F /* ATApplicationController.h */,
-				28A79E810B77D91D005CCD1F /* ATApplicationController.m */,
 				284B38A90B78CF870008BFD5 /* ATArrayController.h */,
 				284B38AA0B78CF870008BFD5 /* ATArrayController.m */,
-				287A24B20B854E480077B852 /* ATTextFieldCell.h */,
-				287A24B30B854E480077B852 /* ATTextFieldCell.m */,
 				7D315FE417A9EEA40098DAC9 /* APTApplicationDelegate.h */,
 				7D315FE517A9EEA40098DAC9 /* APTApplicationDelegate.m */,
 				7DF1DA2F173B52FD004FEA6A /* APTFSEventsWatcher.h */,
@@ -120,32 +125,9 @@
 			isa = PBXGroup;
 			children = (
 				8D1107320486CEB800E47090 /* AppTrap.app */,
+				7D6FB90317C055C500EE17FC /* AppTrapTests.octest */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		28A79E2D0B77D6A7005CCD1F /* UKKQueue */ = {
-			isa = PBXGroup;
-			children = (
-				28A79E320B77D6A7005CCD1F /* UKKQueue Readme.txt */,
-				28A79E2E0B77D6A7005CCD1F /* UKFileWatcher.h */,
-				28A79E2F0B77D6A7005CCD1F /* UKFileWatcher.m */,
-				28A79E300B77D6A7005CCD1F /* UKFNSubscribeFileWatcher.h */,
-				28A79E310B77D6A7005CCD1F /* UKFNSubscribeFileWatcher.m */,
-				28A79E330B77D6A7005CCD1F /* UKKQueue.h */,
-				28A79E340B77D6A7005CCD1F /* UKKQueue.m */,
-				28A79E350B77D6A7005CCD1F /* UKMainThreadProxy.h */,
-				28A79E360B77D6A7005CCD1F /* UKMainThreadProxy.m */,
-			);
-			path = UKKQueue;
-			sourceTree = "<group>";
-		};
-		28A79E850B77D931005CCD1F /* Third-Party Classes */ = {
-			isa = PBXGroup;
-			children = (
-				28A79E2D0B77D6A7005CCD1F /* UKKQueue */,
-			);
-			name = "Third-Party Classes";
 			sourceTree = "<group>";
 		};
 		28EEC0670C0B1C0800CC7B4D /* Linked frameworks */ = {
@@ -168,10 +150,11 @@
 		29B97314FDCFA39411CA2CEA /* AppTrap */ = {
 			isa = PBXGroup;
 			children = (
+				7D6FB8FA17C020B300EE17FC /* APTPreferencePaneDelegate.h */,
 				080E96DDFE201D6D7F000001 /* Classes */,
-				28A79E850B77D931005CCD1F /* Third-Party Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
+				7D6FB90C17C055C500EE17FC /* AppTrapTests */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
 			);
@@ -202,13 +185,64 @@
 			children = (
 				28EEC0670C0B1C0800CC7B4D /* Linked frameworks */,
 				28EEC06C0C0B1C1F00CC7B4D /* Other frameworks */,
+				7D6FB90417C055C500EE17FC /* SenTestingKit.framework */,
+				7D6FB90617C055C500EE17FC /* Cocoa.framework */,
+				7D6FB90817C055C500EE17FC /* Other Frameworks */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7D6FB90817C055C500EE17FC /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7D6FB90917C055C500EE17FC /* AppKit.framework */,
+				7D6FB90A17C055C500EE17FC /* CoreData.framework */,
+				7D6FB90B17C055C500EE17FC /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		7D6FB90C17C055C500EE17FC /* AppTrapTests */ = {
+			isa = PBXGroup;
+			children = (
+				7D6FB91217C055C500EE17FC /* AppTrapTests.h */,
+				7D6FB91317C055C500EE17FC /* AppTrapTests.m */,
+				7D6FB90D17C055C500EE17FC /* Supporting Files */,
+			);
+			path = AppTrapTests;
+			sourceTree = "<group>";
+		};
+		7D6FB90D17C055C500EE17FC /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7D6FB90E17C055C500EE17FC /* AppTrapTests-Info.plist */,
+				7D6FB90F17C055C500EE17FC /* InfoPlist.strings */,
+				7D6FB91517C055C500EE17FC /* AppTrapTests-Prefix.pch */,
+			);
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		7D6FB90217C055C500EE17FC /* AppTrapTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7D6FB91817C055C500EE17FC /* Build configuration list for PBXNativeTarget "AppTrapTests" */;
+			buildPhases = (
+				7D6FB8FE17C055C500EE17FC /* Sources */,
+				7D6FB8FF17C055C500EE17FC /* Frameworks */,
+				7D6FB90017C055C500EE17FC /* Resources */,
+				7D6FB90117C055C500EE17FC /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AppTrapTests;
+			productName = AppTrapTests;
+			productReference = 7D6FB90317C055C500EE17FC /* AppTrapTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
 		8D1107260486CEB800E47090 /* AppTrap */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "AppTrap" */;
@@ -267,11 +301,20 @@
 			projectRoot = "";
 			targets = (
 				8D1107260486CEB800E47090 /* AppTrap */,
+				7D6FB90217C055C500EE17FC /* AppTrapTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		7D6FB90017C055C500EE17FC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7D6FB91117C055C500EE17FC /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8D1107290486CEB800E47090 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -279,24 +322,45 @@
 				281A7E610CFDC17100E5207C /* Localizable.strings in Resources */,
 				7D1DEA44112F252B005F818C /* MainMenu.xib in Resources */,
 				7D31601717A9FFB00098DAC9 /* APTMoveToTrashAlertViewController.xib in Resources */,
+				7D6FB8FB17C020B300EE17FC /* APTPreferencePaneDelegate.h in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		7D6FB90117C055C500EE17FC /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
+		7D6FB8FE17C055C500EE17FC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7D6FB91A17C059F000EE17FC /* APTFSEventsWatcher.m in Sources */,
+				7D6FB91917C059C500EE17FC /* APTApplicationController.m in Sources */,
+				7D6FB91417C055C500EE17FC /* AppTrapTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8D11072C0486CEB800E47090 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7D99959E17433AE800B0B4F9 /* UKFileWatcher.m in Sources */,
-				7D9995A017433AE800B0B4F9 /* UKFNSubscribeFileWatcher.m in Sources */,
-				7D9995A217433AE800B0B4F9 /* UKKQueue.m in Sources */,
-				7D9995A417433AE800B0B4F9 /* UKMainThreadProxy.m in Sources */,
 				8D11072D0486CEB800E47090 /* main.m in Sources */,
-				28A79E830B77D91D005CCD1F /* ATApplicationController.m in Sources */,
 				284B38AB0B78CF870008BFD5 /* ATArrayController.m in Sources */,
-				287A24B40B854E480077B852 /* ATTextFieldCell.m in Sources */,
 				281852070C09DAC20020DDF3 /* ATNotifications.m in Sources */,
 				28A46DA00C43E938007925EB /* ATUserDefaultKeys.m in Sources */,
 				7DA59D41102018C1002EBE1E /* ATVariables.m in Sources */,
@@ -332,9 +396,72 @@
 			name = MainMenu.xib;
 			sourceTree = "<group>";
 		};
+		7D6FB90F17C055C500EE17FC /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7D6FB91017C055C500EE17FC /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		7D6FB91617C055C500EE17FC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = "\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "AppTrapTests/AppTrapTests-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				INFOPLIST_FILE = "AppTrapTests/AppTrapTests-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		7D6FB91717C055C500EE17FC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = "\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "AppTrapTests/AppTrapTests-Prefix.pch";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				INFOPLIST_FILE = "AppTrapTests/AppTrapTests-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
 		C01FCF4B08A954540054247B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -433,6 +560,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		7D6FB91817C055C500EE17FC /* Build configuration list for PBXNativeTarget "AppTrapTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7D6FB91617C055C500EE17FC /* Debug */,
+				7D6FB91717C055C500EE17FC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "AppTrap" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

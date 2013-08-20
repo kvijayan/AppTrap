@@ -20,8 +20,12 @@
 
 #import <Foundation/Foundation.h>
 
+// Sent by the background process
 extern NSString *ATApplicationFinishedLaunchingNotification;
 extern NSString *ATApplicationTerminatedNotification;
-extern NSString *ATApplicationShouldTerminateNotification;
-extern NSString *ATApplicationSendVersionData;
 extern NSString *ATApplicationGetVersionData;
+
+
+// Sent by the preference pane
+extern NSString *ATApplicationSendVersionData;
+extern NSString *ATApplicationShouldTerminateNotification;
