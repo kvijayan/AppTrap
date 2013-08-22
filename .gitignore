@@ -1,13 +1,5 @@
-AppTrap.xcworkspace/xcuserdata/
+xcuserdata/
 
-.DS_Store
-AppTrap/DerivedData/
-AppTrap/AppTrap.xcodeproj/xcuserdata/**/*
-!AppTrap/AppTrap.xcodeproj/xcuserdata/**/xcschemes/*
-AppTrap/AppTrap.xcodeproj/project.xcworkspace/xcuserdata/
+DerivedData/
 
-AppTrapPreferencePane/DerivedData/
 AppTrapPreferencePane/AppTrap.app
-AppTrapPreferencePane/AppTrapPreferencePane.xcodeproj/project.xcworkspace/xcuserdata/**/*
-!AppTrapPreferencePane/AppTrapPreferencePane.xcodeproj/project.xcworkspace/xcuserdata/**/xcschemes/*
-AppTrapPreferencePane/AppTrapPreferencePane.xcodeproj/xcuserdata/
