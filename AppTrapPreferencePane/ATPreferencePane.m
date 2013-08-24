@@ -23,6 +23,9 @@
 #import "ATVariables.h"
 //#import "UKLoginItemRegistry.h"
 
+static NSString *AppTrapBackgroundBundleIdentifier = @"com.KumaranVijayan.AppTrap";
+static NSString *AppTrapBackgroundBundleIdentifierOld = @"se.konstochvanligasaker.AppTrap";
+
 @implementation ATPreferencePane
 
 - (void)mainViewDidLoad
@@ -202,25 +205,18 @@
           deliverImmediately:YES];
 }
 
-// Code from Growl
 - (BOOL)appTrapIsRunning
 {
-    BOOL appTrapIsRunning = NO;
-    ProcessSerialNumber PSN = {kNoProcess, kNoProcess};
-    
-    while (GetNextProcess(&PSN) == noErr) {
-        CFDictionaryRef infoDict = ProcessInformationCopyDictionary(&PSN, kProcessDictionaryIncludeAllInformationMask);
-        CFStringRef bundleId = CFDictionaryGetValue(infoDict, kCFBundleIdentifierKey);
-        
-        if (bundleId && CFStringCompare(bundleId, CFSTR("se.konstochvanligasaker.AppTrap"), 0) == kCFCompareEqualTo) {
-            appTrapIsRunning = YES;
-            CFRelease(infoDict);
-            break;
-        }
-        CFRelease(infoDict);
-    }
-    
-    return appTrapIsRunning;
+	id <NSFastEnumeration> applications = [NSRunningApplication runningApplicationsWithBundleIdentifier:AppTrapBackgroundBundleIdentifier];
+	for (NSRunningApplication *application in applications)
+	{
+		NSString *bundleIdentifier = application.bundleIdentifier;
+		if ([bundleIdentifier isEqualToString:AppTrapBackgroundBundleIdentifier])
+		{
+			return YES;
+		}
+	}
+	return NO;
 }
 
 #pragma mark -
