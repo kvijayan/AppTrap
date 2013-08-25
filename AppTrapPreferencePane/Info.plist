@@ -32,6 +32,8 @@
 	<string>AppTrap</string>
 	<key>NSPrincipalClass</key>
 	<string>ATPreferencePane</string>
+	<key>NSSupportsSuddenTermination</key>
+	<true/>
 	<key>SUAllowsAutomaticUpdates</key>
 	<string>NO</string>
 	<key>SUEnableAutomaticChecks</key>
