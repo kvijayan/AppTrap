@@ -32,6 +32,7 @@ static CGFloat SmallHeight = 177.0;
 
 @property (weak) IBOutlet APTApplicationController *applicationController;
 @property (weak) IBOutlet ATArrayController *arrayController;
+@property (nonatomic, readonly) NSArray *arrayControllerSortDescriptors;
 
 @property (nonatomic) IBOutlet NSDistributedNotificationCenter *notificationCenter;
 
@@ -115,6 +116,13 @@ static CGFloat SmallHeight = 177.0;
 	}
 	[self resizeWindowForState:state];
 	[self.showFileListButton setState:state];
+}
+
+- (NSArray*)arrayControllerSortDescriptors
+{
+	NSSortDescriptor *sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"path"
+																	 ascending:YES];
+	return @[sortDescriptor];
 }
 
 - (void)sendApplicationDidFinishLaunchingNotification
