@@ -158,7 +158,10 @@ static CGFloat SmallHeight = 177.0;
 		}
 	}
 	
+	[[NSProcessInfo processInfo] disableSuddenTermination];
 	[self.applicationController moveFilesToTrash:paths];
+	[[NSProcessInfo processInfo] enableSuddenTermination];
+	
 	NSArray *entries = self.arrayController.arrangedObjects;
 	[self.arrayController removeObjects:entries];
 	
