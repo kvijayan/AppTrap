@@ -17,7 +17,6 @@
 		7D252B9E17C148B6008BBBB3 /* PrefPaneTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D252B9D17C148B6008BBBB3 /* PrefPaneTests.m */; };
 		7D3C77BA1048CF5B00009126 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D3C77B91048CF5B00009126 /* Sparkle.framework */; };
 		7D3C77E61048CF6300009126 /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7D3C77B91048CF5B00009126 /* Sparkle.framework */; };
-		7D97B03F17A8A04900569109 /* AppTrap.xcodeproj in Resources */ = {isa = PBXBuildFile; fileRef = 7D97B03E17A8A04900569109 /* AppTrap.xcodeproj */; };
 		7D97B04417A8AC7500569109 /* AppTrap.app in Resources */ = {isa = PBXBuildFile; fileRef = 7D97B04317A8AC7500569109 /* AppTrap.app */; };
 		7D992EB5100BE7B100DDA632 /* ATSUUpdater.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D992EB4100BE7B100DDA632 /* ATSUUpdater.m */; };
 		7D992EBB100BEB3200DDA632 /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = 7D992EBA100BEB3200DDA632 /* dsa_pub.pem */; };
@@ -403,7 +402,6 @@
 				28A46DD60C43ED87007925EB /* Localizable.strings in Resources */,
 				7D992EBB100BEB3200DDA632 /* dsa_pub.pem in Resources */,
 				7D1051D6104A1FA900BAAF3F /* AppTrapPreferencePane.xib in Resources */,
-				7D97B03F17A8A04900569109 /* AppTrap.xcodeproj in Resources */,
 				7D97B04417A8AC7500569109 /* AppTrap.app in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
