@@ -319,6 +319,7 @@
 				8D202CF50486D31800D8A456 /* Rez */,
 				7D0EFC2D100B9818005B4F39 /* Copy Sparkle Framework */,
 				7DEB0133180A515500180509 /* Copy AppTrap */,
+				7DF9E17A181A216000DCD9CE /* Sign Sparkle */,
 			);
 			buildRules = (
 			);
@@ -443,6 +444,20 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+		7DF9E17A181A216000DCD9CE /* Sign Sparkle */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Sign Sparkle";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "LOCATION=\"${BUILT_PRODUCTS_DIR}\"/\"${FRAMEWORKS_FOLDER_PATH}\"\nIDENTITY=\"Developer ID Application: The Iconfactory\"\ncodesign --verbose --force --sign \"Developer ID Application: Kumaran Vijayan (3XKMQ3837J)\" \"$LOCATION/Sparkle.framework/Versions/A\"";
 		};
 /* End PBXShellScriptBuildPhase section */
 
