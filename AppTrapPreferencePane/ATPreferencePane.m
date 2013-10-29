@@ -34,7 +34,7 @@ static NSString *AppTrapBackgroundBundleIdentifierOld = @"se.konstochvanligasake
 	[[ATSUUpdater sharedUpdater] setDelegate:self];
 		
     // Setup the application path
-    appPath = [[[self bundle] pathForResource:@"AppTrap" ofType:@"app"] retain];
+    appPath = [[self bundle] pathForResource:@"AppTrap" ofType:@"app"];
 	NSLog(@"appPath: %@", appPath);
 	
 	[automaticallyCheckForUpdate setState:[[ATSUUpdater sharedUpdater] automaticallyChecksForUpdates]];
@@ -44,7 +44,7 @@ static NSString *AppTrapBackgroundBundleIdentifierOld = @"se.konstochvanligasake
     // TODO: Leave this off for now, something goes haywire on startup
     /*if ([self appTrapIsRunning])
         [self launchAppTrap];*/
-	CFURLRef appPathURL = (CFURLRef)[appPath copy];
+	CFURLRef appPathURL = (CFURLRef)CFBridgingRetain([appPath copy]);
 
     // Check if application is in login items
     if ([self inLoginItems:LSSharedFileListCreate(NULL, kLSSharedFileListSessionLoginItems, NULL) forPath:appPathURL]) {
@@ -143,7 +143,7 @@ static NSString *AppTrapBackgroundBundleIdentifierOld = @"se.konstochvanligasake
 
 - (void)didSelect
 {
-	CFURLRef appPathURL = (CFURLRef)[appPath copy];
+	CFURLRef appPathURL = (CFURLRef)CFBridgingRetain([appPath copy]);
 	
 	if ([self inLoginItems:LSSharedFileListCreate(NULL, kLSSharedFileListSessionLoginItems, NULL) 
 				   forPath:appPathURL]) {
@@ -242,11 +242,11 @@ static NSString *AppTrapBackgroundBundleIdentifierOld = @"se.konstochvanligasake
 	
 	// We're going to grab the contents of the shared file list (LSSharedFileListItemRef objects)
 	// and pop it in an array so we can iterate through it to find our item.
-	NSArray  *loginItemsArray = (NSArray *)LSSharedFileListCopySnapshot(theLoginItemsRefs, &seedValue);
+	NSArray  *loginItemsArray = (NSArray *)CFBridgingRelease(LSSharedFileListCopySnapshot(theLoginItemsRefs, &seedValue));
 	for (id item in loginItemsArray) {		
-		LSSharedFileListItemRef itemRef = (LSSharedFileListItemRef)item;
+		LSSharedFileListItemRef itemRef = (__bridge LSSharedFileListItemRef)item;
 		if (LSSharedFileListItemResolve(itemRef, 0, (CFURLRef*) &thePath, NULL) == noErr) {
-			if ([[(NSURL *)thePath path] hasPrefix:appPath]) {
+			if ([[(__bridge NSURL *)thePath path] hasPrefix:appPath]) {
 				return YES;
 			}
 		}
@@ -269,16 +269,15 @@ static NSString *AppTrapBackgroundBundleIdentifierOld = @"se.konstochvanligasake
 	
 	// We're going to grab the contents of the shared file list (LSSharedFileListItemRef objects)
 	// and pop it in an array so we can iterate through it to find our item.
-	NSArray  *loginItemsArray = (NSArray *)LSSharedFileListCopySnapshot(theLoginItemsRefs, &seedValue);
+	NSArray  *loginItemsArray = (NSArray *)CFBridgingRelease(LSSharedFileListCopySnapshot(theLoginItemsRefs, &seedValue));
 	for (id item in loginItemsArray) {		
-		LSSharedFileListItemRef itemRef = (LSSharedFileListItemRef)item;
+		LSSharedFileListItemRef itemRef = (__bridge LSSharedFileListItemRef)item;
 		if (LSSharedFileListItemResolve(itemRef, 0, (CFURLRef*) &thePath, NULL) == noErr) {
-			if ([[(NSURL *)thePath path] hasPrefix:appPath])
+			if ([[(__bridge NSURL *)thePath path] hasPrefix:appPath])
 				LSSharedFileListItemRemove(theLoginItemsRefs, itemRef); // Deleting the item
 		}
 	}
 	
-	[loginItemsArray release];
 }
 
 #pragma mark -
@@ -296,7 +295,7 @@ static NSString *AppTrapBackgroundBundleIdentifierOld = @"se.konstochvanligasake
 
 - (IBAction)startOnLogin:(id)sender
 {
-	CFURLRef appPathURL = (CFURLRef)[NSURL fileURLWithPath:appPath];
+	CFURLRef appPathURL = (__bridge CFURLRef)[NSURL fileURLWithPath:appPath];
 	LSSharedFileListRef loginItems = LSSharedFileListCreate(NULL, kLSSharedFileListSessionLoginItems, NULL);
 
     if ([sender state] == NSOnState) {
