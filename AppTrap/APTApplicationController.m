@@ -55,18 +55,8 @@ static NSString *SandboxContainersFolderName = @"Containers";
 {
     if (!_pathToTrash)
     {
-        // Find the path to the user's trash folder
-        OSErr err;
-        FSRef trashFolderRef;
-        
-        err = FSFindFolder(kUserDomain, kTrashFolderType, kDontCreateFolder, &trashFolderRef);
-        if (err == noErr) {
-            CFURLRef trashURL = CFURLCreateFromFSRef(kCFAllocatorSystemDefault, &trashFolderRef);
-            if (trashURL) {
-                _pathToTrash = (NSString *)CFBridgingRelease(CFURLCopyFileSystemPath(trashURL, kCFURLPOSIXPathStyle));
-                CFRelease(trashURL);
-            }
-        }
+		NSArray *paths = NSSearchPathForDirectoriesInDomains(NSTrashDirectory, NSUserDomainMask, YES);
+		_pathToTrash = paths.firstObject;
     }
     
     return _pathToTrash;
