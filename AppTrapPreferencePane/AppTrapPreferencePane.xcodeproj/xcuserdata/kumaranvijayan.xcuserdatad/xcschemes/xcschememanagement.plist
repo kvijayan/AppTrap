@@ -4,19 +4,19 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>AppTrap Prefpane Debug.xcscheme</key>
+		<key>AppTrap Prefpane.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>0</integer>
-		</dict>
-		<key>AppTrap Prefpane Release.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>1</integer>
+			<integer>2</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>7D252B8B17C148B6008BBBB3</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>8D202CE80486D31800D8A456</key>
 		<dict>
 			<key>primary</key>
