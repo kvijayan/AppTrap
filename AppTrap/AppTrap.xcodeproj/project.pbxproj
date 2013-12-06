@@ -44,9 +44,6 @@
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
 		32CA4F630368D1EE00C91783 /* AppTrap_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppTrap_Prefix.pch; sourceTree = "<group>"; };
 		7D18B1041128B4F7003C260F /* pt */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = pt; path = pt.lproj/Localizable.strings; sourceTree = "<group>"; };
-		7D1DEA45112F2553005F818C /* nl */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = nl; path = nl.lproj/MainMenu.xib; sourceTree = "<group>"; };
-		7D1DEA46112F2559005F818C /* fr */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = fr; path = fr.lproj/MainMenu.xib; sourceTree = "<group>"; };
-		7D1DEA47112F255B005F818C /* pt */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = pt; path = pt.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		7D315FDF17A9E6930098DAC9 /* APTMoveToTrashAlertViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APTMoveToTrashAlertViewController.h; sourceTree = "<group>"; };
 		7D315FE017A9E6930098DAC9 /* APTMoveToTrashAlertViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APTMoveToTrashAlertViewController.m; sourceTree = "<group>"; };
 		7D315FE417A9EEA40098DAC9 /* APTApplicationDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APTApplicationDelegate.h; sourceTree = "<group>"; };
@@ -394,9 +391,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				7DF8D311104AD53400A09FA1 /* English */,
-				7D1DEA45112F2553005F818C /* nl */,
-				7D1DEA46112F2559005F818C /* fr */,
-				7D1DEA47112F255B005F818C /* pt */,
 			);
 			name = MainMenu.xib;
 			sourceTree = "<group>";
