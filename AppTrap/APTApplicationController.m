@@ -21,6 +21,8 @@ static NSString *SandboxContainersFolderName = @"Containers";
 
 @property (nonatomic) IBOutlet NSWindow *window;
 
+@property (nonatomic) dispatch_queue_t trashEventOperationQueue;
+
 @property (nonatomic) APTFSEventsWatcher *eventsWatcher;
 
 @property (nonatomic) NSArray *currentDirectoryContents;
@@ -46,6 +48,7 @@ static NSString *SandboxContainersFolderName = @"Containers";
 
 @implementation APTApplicationController
 
+@synthesize trashEventOperationQueue = _trashEventOperationQueue;
 @synthesize pathToTrash = _pathToTrash;
 @synthesize libraryPaths = _libraryPaths;
 
@@ -102,6 +105,7 @@ static NSString *SandboxContainersFolderName = @"Containers";
     {
         [self setUpWhitelist];
         [self setUpAndStartEventsWatcher];
+		[self setTrashEventOperationQueue:dispatch_queue_create(NULL, DISPATCH_QUEUE_SERIAL)];
     }
     return self;
 }
@@ -234,7 +238,10 @@ static NSString *SandboxContainersFolderName = @"Containers";
 		if (files.count > 0)
 		{
 			NSArray *returnFiles = [NSArray arrayWithArray:files];
-			[self.delegate applicationController:self didFindFiles:returnFiles];
+			dispatch_async(dispatch_get_main_queue(), ^
+						   {
+							   [self.delegate applicationController:self didFindFiles:returnFiles];
+						   });
 		}
 		   
 		// Now that we've dealt with the applications, we'll put them in the whitelist
@@ -340,11 +347,14 @@ static NSString *SandboxContainersFolderName = @"Containers";
         NSLog(@"error: %@", error);
     }
     
-    if (![self currentDirectoryContentsMatchesNewDirectoryContents:contents])
-    {
-        [self setCurrentDirectoryContents:contents];
-        [self checkForNewApplicationBundlesInDirectory:directory];
-    }
+	dispatch_async(self.trashEventOperationQueue, ^
+				   {
+					   if (![self currentDirectoryContentsMatchesNewDirectoryContents:contents])
+					   {
+						   [self setCurrentDirectoryContents:contents];
+						   [self checkForNewApplicationBundlesInDirectory:directory];
+					   }
+				   });
 }
 
 @end
