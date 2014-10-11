@@ -2,11 +2,13 @@
 //  AppTrapTests.m
 //  AppTrapTests
 //
-//  Created by Kumaran Vijayan on 2013-08-17.
+//  Created by Kumaran Vijayan on 2014-10-10.
 //
 //
 
-#import "AppTrapTests.h"
+@import Foundation.NSString;
+
+@import XCTest.XCTest;
 
 #import "APTApplicationController.h"
 
@@ -15,41 +17,38 @@
 @property (nonatomic, readonly) NSArray *libraryPaths;
 @end
 
-@interface AppTrapTests ()
+@interface AppTrapTests : XCTestCase
+@property (nonatomic, readonly) NSString *pathToTrash;
+@property (nonatomic, readonly) NSArray *libraryPaths;
 @property (nonatomic) APTApplicationController *controller;
 @end
 
-
 @implementation AppTrapTests
 
-- (void)setUp
-{
+- (void)setUp {
     [super setUp];
-
-	APTApplicationController *controller = [APTApplicationController new];
-	[self setController:controller];
+    APTApplicationController *controller = [APTApplicationController new];
+    [self setController:controller];
 }
 
-- (void)tearDown
-{
-    // Tear-down code here.
-    
+- (void)tearDown {
+    // Put teardown code here. This method is called after the invocation of each test method in the class.
     [super tearDown];
 }
 
 - (void)testPathToTrash
 {
-	NSString *pathToTrash = self.controller.pathToTrash;
-	STAssertNotNil(pathToTrash, @"");
-	NSString *trash = pathToTrash.lastPathComponent;
-	STAssertEqualObjects(trash, @".Trash", @"");
+    NSString *pathToTrash = self.controller.pathToTrash;
+    XCTAssertNotNil(pathToTrash, @"");
+    NSString *trash = pathToTrash.lastPathComponent;
+    XCTAssertEqualObjects(trash, @".Trash", @"");
 }
 
 - (void)testLibraryPaths
 {
-	NSArray *libraryPaths = self.controller.libraryPaths;
-	STAssertNotNil(libraryPaths, @"");
-	STAssertTrue(libraryPaths.count > 0, @"");
+    NSArray *libraryPaths = self.controller.libraryPaths;
+    XCTAssertNotNil(libraryPaths, @"");
+    XCTAssertTrue([libraryPaths count] > 0, @"");
 }
 
 @end
