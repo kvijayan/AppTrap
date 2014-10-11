@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment defaultVersion="1080" identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6245"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="APTPreferencePaneGeneralViewController">
+            <connections>
+                <outlet property="view" destination="nwd-qM-WiH" id="ev1-ju-fLk"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <view id="nwd-qM-WiH">
+            <rect key="frame" x="0.0" y="0.0" width="545" height="404"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <box title="Title" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="T6y-hh-Xwp">
+                    <rect key="frame" x="189" y="230" width="167" height="89"/>
+                    <view key="contentView">
+                        <rect key="frame" x="2" y="2" width="163" height="85"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Ajx-nu-Ieb">
+                                <rect key="frame" x="95" y="48" width="53" height="17"/>
+                                <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Inactive" id="5vn-GF-Q4u">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="pi5-fN-HXT">
+                                <rect key="frame" x="18" y="12" width="127" height="32"/>
+                                <buttonCell key="cell" type="push" title="Start AppTrap" bezelStyle="rounded" alignment="center" borderStyle="border" inset="2" id="mKJ-w4-Z8w">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                            </button>
+                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="yhj-nP-0eD">
+                                <rect key="frame" x="15" y="48" width="76" height="17"/>
+                                <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="AppTrap is:" id="6Uq-FB-iN4">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                        </subviews>
+                    </view>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="pi5-fN-HXT" secondAttribute="bottom" constant="17" id="1dq-N1-5WE"/>
+                        <constraint firstItem="pi5-fN-HXT" firstAttribute="top" secondItem="yhj-nP-0eD" secondAttribute="bottom" constant="8" symbolic="YES" id="22e-KU-hVV"/>
+                        <constraint firstItem="yhj-nP-0eD" firstAttribute="leading" secondItem="T6y-hh-Xwp" secondAttribute="leading" constant="16" id="8GS-M2-6dG"/>
+                        <constraint firstAttribute="centerX" secondItem="pi5-fN-HXT" secondAttribute="centerX" id="IVG-S0-QSi"/>
+                        <constraint firstItem="yhj-nP-0eD" firstAttribute="top" secondItem="T6y-hh-Xwp" secondAttribute="top" constant="20" id="L1c-Yz-j0E"/>
+                        <constraint firstItem="Ajx-nu-Ieb" firstAttribute="leading" secondItem="yhj-nP-0eD" secondAttribute="trailing" constant="8" id="MX4-yM-uvr"/>
+                        <constraint firstItem="yhj-nP-0eD" firstAttribute="baseline" secondItem="Ajx-nu-Ieb" secondAttribute="baseline" id="Yno-yT-ilf"/>
+                        <constraint firstAttribute="trailing" secondItem="Ajx-nu-Ieb" secondAttribute="trailing" constant="16" id="ksd-4U-z7F"/>
+                    </constraints>
+                    <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
+                    <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                </box>
+                <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="r5i-Qj-ExN">
+                    <rect key="frame" x="173" y="325" width="199" height="59"/>
+                    <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="AppTrap" id="wTy-Yx-lCR">
+                        <font key="font" size="48" name="Helvetica-BoldOblique"/>
+                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <customView translatesAutoresizingMaskIntoConstraints="NO" id="3Mi-aG-gTD">
+                    <rect key="frame" x="200" y="209" width="145" height="17"/>
+                    <subviews>
+                        <textField hidden="YES" verticalHuggingPriority="750" verticalCompressionResistancePriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="Xnl-6V-fw6">
+                            <rect key="frame" x="22" y="0.0" width="125" height="17"/>
+                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Restarting AppTrap" id="skN-Zb-Ttf">
+                                <font key="font" metaFont="system"/>
+                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                        </textField>
+                        <progressIndicator horizontalHuggingPriority="750" verticalHuggingPriority="750" minValue="16" maxValue="100" doubleValue="16" displayedWhenStopped="NO" bezeled="NO" indeterminate="YES" controlSize="small" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="fYR-gX-fv1">
+                            <rect key="frame" x="0.0" y="0.0" width="16" height="17"/>
+                        </progressIndicator>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="Xnl-6V-fw6" secondAttribute="trailing" id="5dP-Yw-Zhd"/>
+                        <constraint firstItem="Xnl-6V-fw6" firstAttribute="height" secondItem="fYR-gX-fv1" secondAttribute="height" id="FJ3-QZ-D3S"/>
+                        <constraint firstItem="fYR-gX-fv1" firstAttribute="leading" secondItem="3Mi-aG-gTD" secondAttribute="leading" id="Iv8-8q-hEQ"/>
+                        <constraint firstAttribute="bottom" secondItem="fYR-gX-fv1" secondAttribute="bottom" id="NHd-O8-oOx"/>
+                        <constraint firstItem="Xnl-6V-fw6" firstAttribute="leading" secondItem="fYR-gX-fv1" secondAttribute="trailing" constant="8" symbolic="YES" id="OnN-NW-dY3"/>
+                        <constraint firstItem="fYR-gX-fv1" firstAttribute="top" secondItem="3Mi-aG-gTD" secondAttribute="top" id="cRT-4N-xKz"/>
+                        <constraint firstItem="Xnl-6V-fw6" firstAttribute="centerY" secondItem="fYR-gX-fv1" secondAttribute="centerY" id="tyW-Qz-BTt"/>
+                    </constraints>
+                </customView>
+                <button translatesAutoresizingMaskIntoConstraints="NO" id="7bI-Xx-Rql">
+                    <rect key="frame" x="174" y="185" width="196" height="18"/>
+                    <buttonCell key="cell" type="check" title="Start automatically on login" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="LMa-gT-cwT">
+                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                </button>
+            </subviews>
+            <constraints>
+                <constraint firstAttribute="centerX" secondItem="7bI-Xx-Rql" secondAttribute="centerX" id="FiI-ew-9Zy"/>
+                <constraint firstItem="3Mi-aG-gTD" firstAttribute="top" secondItem="T6y-hh-Xwp" secondAttribute="bottom" constant="8" id="G0i-CH-qx4"/>
+                <constraint firstItem="r5i-Qj-ExN" firstAttribute="top" secondItem="nwd-qM-WiH" secondAttribute="top" constant="20" id="GRK-uN-gP9"/>
+                <constraint firstAttribute="centerX" secondItem="3Mi-aG-gTD" secondAttribute="centerX" id="XBy-z2-sOh"/>
+                <constraint firstItem="7bI-Xx-Rql" firstAttribute="top" secondItem="3Mi-aG-gTD" secondAttribute="bottom" constant="8" id="YN9-ms-DfV"/>
+                <constraint firstAttribute="centerX" secondItem="r5i-Qj-ExN" secondAttribute="centerX" id="jjA-CZ-bAx"/>
+                <constraint firstAttribute="centerX" secondItem="T6y-hh-Xwp" secondAttribute="centerX" id="n8d-d0-Omt"/>
+                <constraint firstItem="T6y-hh-Xwp" firstAttribute="top" secondItem="r5i-Qj-ExN" secondAttribute="bottom" constant="8" id="qup-KM-MmZ"/>
+            </constraints>
+            <point key="canvasLocation" x="338.5" y="301"/>
+        </view>
+    </objects>
+</document>

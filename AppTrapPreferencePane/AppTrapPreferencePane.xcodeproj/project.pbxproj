@@ -20,6 +20,8 @@
 		7D992EBB100BEB3200DDA632 /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = 7D992EBA100BEB3200DDA632 /* dsa_pub.pem */; };
 		7DA59D4510201A08002EBE1E /* ATVariables.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DA59D4410201A08002EBE1E /* ATVariables.m */; };
 		7DB7FF051041C41300310F74 /* ATPreferencePane.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DB7FF041041C41300310F74 /* ATPreferencePane.m */; };
+		7DE98F1319E9A640004499C8 /* APTPreferencePaneGeneralViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7DE98F1219E9A640004499C8 /* APTPreferencePaneGeneralViewController.xib */; };
+		7DE98F1619E9A726004499C8 /* APTPreferencePaneGeneralViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DE98F1519E9A726004499C8 /* APTPreferencePaneGeneralViewController.m */; };
 		7DEB002710156A84001F11ED /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DEB002610156A84001F11ED /* CoreServices.framework */; };
 		7DEB0136180A516200180509 /* AppTrap.app in Copy AppTrap */ = {isa = PBXBuildFile; fileRef = 7D97B04E17A8B2E100569109 /* AppTrap.app */; };
 		8D202CEE0486D31800D8A456 /* AppTrapPreferencePane.tiff in Resources */ = {isa = PBXBuildFile; fileRef = F506C040013D9D8001CA16C8 /* AppTrapPreferencePane.tiff */; };
@@ -116,6 +118,9 @@
 		7DB7FF041041C41300310F74 /* ATPreferencePane.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATPreferencePane.m; sourceTree = "<group>"; };
 		7DE98EED19E8B6BF004499C8 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		7DE98EF019E8B6E5004499C8 /* de */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = de; path = de.lproj/AppTrapPreferencePane.xib; sourceTree = "<group>"; };
+		7DE98F1219E9A640004499C8 /* APTPreferencePaneGeneralViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = APTPreferencePaneGeneralViewController.xib; sourceTree = "<group>"; };
+		7DE98F1419E9A726004499C8 /* APTPreferencePaneGeneralViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APTPreferencePaneGeneralViewController.h; sourceTree = "<group>"; };
+		7DE98F1519E9A726004499C8 /* APTPreferencePaneGeneralViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APTPreferencePaneGeneralViewController.m; sourceTree = "<group>"; };
 		7DEB002610156A84001F11ED /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = /System/Library/Frameworks/CoreServices.framework; sourceTree = "<absolute>"; };
 		8D202CF70486D31800D8A456 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		8D202CF80486D31800D8A456 /* AppTrap.prefPane */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AppTrap.prefPane; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -180,6 +185,7 @@
 				8D202CF70486D31800D8A456 /* Info.plist */,
 				F506C040013D9D8001CA16C8 /* AppTrapPreferencePane.tiff */,
 				7D1051D4104A1FA900BAAF3F /* AppTrapPreferencePane.xib */,
+				7DE98F1219E9A640004499C8 /* APTPreferencePaneGeneralViewController.xib */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -195,6 +201,8 @@
 				7DA59D4410201A08002EBE1E /* ATVariables.m */,
 				7D992EB3100BE7B100DDA632 /* ATSUUpdater.h */,
 				7D992EB4100BE7B100DDA632 /* ATSUUpdater.m */,
+				7DE98F1419E9A726004499C8 /* APTPreferencePaneGeneralViewController.h */,
+				7DE98F1519E9A726004499C8 /* APTPreferencePaneGeneralViewController.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -408,6 +416,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D202CEE0486D31800D8A456 /* AppTrapPreferencePane.tiff in Resources */,
+				7DE98F1319E9A640004499C8 /* APTPreferencePaneGeneralViewController.xib in Resources */,
 				28A46D860C43E6CF007925EB /* Read Me.rtf in Resources */,
 				28A46DD60C43ED87007925EB /* Localizable.strings in Resources */,
 				7D992EBB100BEB3200DDA632 /* dsa_pub.pem in Resources */,
@@ -470,6 +479,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7DE98F1619E9A726004499C8 /* APTPreferencePaneGeneralViewController.m in Sources */,
 				287EF9A70C4F8DED002DB92D /* ATNotifications.m in Sources */,
 				7D992EB5100BE7B100DDA632 /* ATSUUpdater.m in Sources */,
 				7DA59D4510201A08002EBE1E /* ATVariables.m in Sources */,
@@ -537,6 +547,7 @@
 		1DBD214908BA80EA00186707 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
@@ -567,6 +578,7 @@
 		1DBD214A08BA80EA00186707 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
