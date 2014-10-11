@@ -6,7 +6,10 @@
 //
 //
 
-#import "PrefPaneTests.h"
+@import XCTest;
+
+@interface PrefPaneTests : XCTestCase
+@end
 
 @implementation PrefPaneTests
 
@@ -27,8 +30,8 @@
 - (void)testUserVersionNumber
 {
 	NSBundle *bundle = [NSBundle bundleForClass:[PrefPaneTests class]];
-	NSString *path = bundle.bundlePath;
-	path = path.stringByDeletingLastPathComponent;
+	NSString *path = [bundle bundlePath];
+	path = [path stringByDeletingLastPathComponent];
 	path = [path stringByAppendingPathComponent:@"AppTrap.prefPane"];
 	bundle = [NSBundle bundleWithPath:path];
 	NSString *shortVersionStringKey = @"CFBundleShortVersionString";
@@ -38,14 +41,14 @@
 	bundle = [NSBundle bundleWithPath:path];
 	NSString *backgroundVersion = [bundle objectForInfoDictionaryKey:shortVersionStringKey];
 	
-	STAssertEqualObjects(prefpaneVersion, backgroundVersion, @"");
+	XCTAssertEqualObjects(prefpaneVersion, backgroundVersion, @"");
 }
 
 - (void)testVersionNumber
 {
 	NSBundle *bundle = [NSBundle bundleForClass:[PrefPaneTests class]];
-	NSString *path = bundle.bundlePath;
-	path = path.stringByDeletingLastPathComponent;
+	NSString *path = [bundle bundlePath];
+	path = [path stringByDeletingLastPathComponent];
 	path = [path stringByAppendingPathComponent:@"AppTrap.prefPane"];
 	bundle = [NSBundle bundleWithPath:path];
 	NSString *prefpaneVersion = [bundle objectForInfoDictionaryKey:(NSString*)kCFBundleVersionKey];
@@ -54,7 +57,7 @@
 	bundle = [NSBundle bundleWithPath:path];
 	NSString *backgroundVersion = [bundle objectForInfoDictionaryKey:(NSString*)kCFBundleVersionKey];
 	
-	STAssertEqualObjects(prefpaneVersion, backgroundVersion, @"");
+	XCTAssertEqualObjects(prefpaneVersion, backgroundVersion, @"");
 }
 
 @end
