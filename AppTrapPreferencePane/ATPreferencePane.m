@@ -34,8 +34,10 @@ static NSString *AppTrapBackgroundBundleIdentifierOld = @"se.konstochvanligasake
 
 - (void)setUpMainView
 {
-    [[self mainView] addSubview:[self.preferencePaneViewController view]];
-    [[self mainView] addConstraints:[self constraintsForView:[self.preferencePaneViewController view]]];
+    NSView *preferencePaneView = [self.preferencePaneViewController view];
+    [preferencePaneView setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [[self mainView] addSubview:preferencePaneView];
+    [[self mainView] addConstraints:[self constraintsForView:preferencePaneView]];
 }
 
 - (NSArray*)constraintsForView:(NSView*)view

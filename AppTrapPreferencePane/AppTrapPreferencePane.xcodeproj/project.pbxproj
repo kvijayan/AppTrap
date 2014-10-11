@@ -10,7 +10,6 @@
 		287EF9A70C4F8DED002DB92D /* ATNotifications.m in Sources */ = {isa = PBXBuildFile; fileRef = 287EF9A60C4F8DED002DB92D /* ATNotifications.m */; };
 		28A46D860C43E6CF007925EB /* Read Me.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 28A46D850C43E6CF007925EB /* Read Me.rtf */; };
 		28A46DD60C43ED87007925EB /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 28A46DD50C43ED87007925EB /* Localizable.strings */; };
-		7D1051D6104A1FA900BAAF3F /* AppTrapPreferencePane.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7D1051D4104A1FA900BAAF3F /* AppTrapPreferencePane.xib */; };
 		7D252B9117C148B6008BBBB3 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D252B9017C148B6008BBBB3 /* Cocoa.framework */; };
 		7D252B9B17C148B6008BBBB3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7D252B9917C148B6008BBBB3 /* InfoPlist.strings */; };
 		7D252B9E17C148B6008BBBB3 /* PrefPaneTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D252B9D17C148B6008BBBB3 /* PrefPaneTests.m */; };
@@ -24,6 +23,7 @@
 		7DE98F1619E9A726004499C8 /* APTPreferencePaneGeneralViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DE98F1519E9A726004499C8 /* APTPreferencePaneGeneralViewController.m */; };
 		7DE98F1A19E9BA4B004499C8 /* APTPreferencePaneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DE98F1819E9BA4B004499C8 /* APTPreferencePaneViewController.m */; };
 		7DE98F1B19E9BA4B004499C8 /* APTPreferencePaneViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7DE98F1919E9BA4B004499C8 /* APTPreferencePaneViewController.xib */; };
+		7DE98F1F19E9D4D0004499C8 /* AppTrapPreferencePane.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7DE98F1E19E9D4D0004499C8 /* AppTrapPreferencePane.xib */; };
 		7DEB002710156A84001F11ED /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DEB002610156A84001F11ED /* CoreServices.framework */; };
 		7DEB0136180A516200180509 /* AppTrap.app in Copy AppTrap */ = {isa = PBXBuildFile; fileRef = 7D97B04E17A8B2E100569109 /* AppTrap.app */; };
 		8D202CEE0486D31800D8A456 /* AppTrapPreferencePane.tiff in Resources */ = {isa = PBXBuildFile; fileRef = F506C040013D9D8001CA16C8 /* AppTrapPreferencePane.tiff */; };
@@ -91,11 +91,8 @@
 		28A46DD10C43ED75007925EB /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/Localizable.strings; sourceTree = "<group>"; };
 		28F272BB0C3A233500B1604F /* English */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = English; path = "English.lproj/Read Me.rtf"; sourceTree = "<group>"; };
 		32DBCFA20370C41700C91783 /* AppTrapPreferencePane_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppTrapPreferencePane_Prefix.pch; sourceTree = "<group>"; };
-		7D1051D5104A1FA900BAAF3F /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/AppTrapPreferencePane.xib; sourceTree = "<group>"; };
-		7D1051D7104A1FBC00BAAF3F /* nl */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = nl; path = nl.lproj/AppTrapPreferencePane.xib; sourceTree = "<group>"; };
 		7D18B1541128BC94003C260F /* pt */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = pt; path = pt.lproj/Localizable.strings; sourceTree = "<group>"; };
 		7D18B1551128BCA8003C260F /* pt */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = pt; path = "pt.lproj/Read Me.rtf"; sourceTree = "<group>"; };
-		7D18B1561128BCB9003C260F /* pt */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = pt; path = pt.lproj/AppTrapPreferencePane.xib; sourceTree = "<group>"; };
 		7D252B8C17C148B6008BBBB3 /* PrefPaneTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PrefPaneTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D252B9017C148B6008BBBB3 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
 		7D252B9317C148B6008BBBB3 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -106,7 +103,6 @@
 		7D252B9D17C148B6008BBBB3 /* PrefPaneTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PrefPaneTests.m; sourceTree = "<group>"; };
 		7D252B9F17C148B6008BBBB3 /* PrefPaneTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PrefPaneTests-Prefix.pch"; sourceTree = "<group>"; };
 		7D3C77B91048CF5B00009126 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sparkle.framework; sourceTree = "<group>"; };
-		7D5CCF6C104C0CC40026160F /* fr */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = fr; path = fr.lproj/AppTrapPreferencePane.xib; sourceTree = "<group>"; };
 		7D5CCF6D104C0CDC0026160F /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = fr; path = "fr.lproj/Read Me.rtf"; sourceTree = "<group>"; };
 		7D5CCF6E104C0CFF0026160F /* fr */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		7D97B03E17A8A04900569109 /* AppTrap.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = AppTrap.xcodeproj; path = ../AppTrap/AppTrap.xcodeproj; sourceTree = "<group>"; };
@@ -119,13 +115,13 @@
 		7DB7FF031041C41300310F74 /* ATPreferencePane.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATPreferencePane.h; sourceTree = "<group>"; };
 		7DB7FF041041C41300310F74 /* ATPreferencePane.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATPreferencePane.m; sourceTree = "<group>"; };
 		7DE98EED19E8B6BF004499C8 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
-		7DE98EF019E8B6E5004499C8 /* de */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = de; path = de.lproj/AppTrapPreferencePane.xib; sourceTree = "<group>"; };
 		7DE98F1219E9A640004499C8 /* APTPreferencePaneGeneralViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = APTPreferencePaneGeneralViewController.xib; sourceTree = "<group>"; };
 		7DE98F1419E9A726004499C8 /* APTPreferencePaneGeneralViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APTPreferencePaneGeneralViewController.h; sourceTree = "<group>"; };
 		7DE98F1519E9A726004499C8 /* APTPreferencePaneGeneralViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APTPreferencePaneGeneralViewController.m; sourceTree = "<group>"; };
 		7DE98F1719E9BA4B004499C8 /* APTPreferencePaneViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APTPreferencePaneViewController.h; sourceTree = "<group>"; };
 		7DE98F1819E9BA4B004499C8 /* APTPreferencePaneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APTPreferencePaneViewController.m; sourceTree = "<group>"; };
 		7DE98F1919E9BA4B004499C8 /* APTPreferencePaneViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = APTPreferencePaneViewController.xib; sourceTree = "<group>"; };
+		7DE98F1E19E9D4D0004499C8 /* AppTrapPreferencePane.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AppTrapPreferencePane.xib; sourceTree = "<group>"; };
 		7DEB002610156A84001F11ED /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = /System/Library/Frameworks/CoreServices.framework; sourceTree = "<absolute>"; };
 		8D202CF70486D31800D8A456 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		8D202CF80486D31800D8A456 /* AppTrap.prefPane */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AppTrap.prefPane; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -189,7 +185,7 @@
 				28A46D850C43E6CF007925EB /* Read Me.rtf */,
 				8D202CF70486D31800D8A456 /* Info.plist */,
 				F506C040013D9D8001CA16C8 /* AppTrapPreferencePane.tiff */,
-				7D1051D4104A1FA900BAAF3F /* AppTrapPreferencePane.xib */,
+				7DE98F1E19E9D4D0004499C8 /* AppTrapPreferencePane.xib */,
 				7DE98F1219E9A640004499C8 /* APTPreferencePaneGeneralViewController.xib */,
 			);
 			name = Resources;
@@ -428,8 +424,8 @@
 				28A46D860C43E6CF007925EB /* Read Me.rtf in Resources */,
 				28A46DD60C43ED87007925EB /* Localizable.strings in Resources */,
 				7D992EBB100BEB3200DDA632 /* dsa_pub.pem in Resources */,
-				7D1051D6104A1FA900BAAF3F /* AppTrapPreferencePane.xib in Resources */,
 				7DE98F1B19E9BA4B004499C8 /* APTPreferencePaneViewController.xib in Resources */,
+				7DE98F1F19E9D4D0004499C8 /* AppTrapPreferencePane.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -529,18 +525,6 @@
 				7DE98EED19E8B6BF004499C8 /* de */,
 			);
 			name = Localizable.strings;
-			sourceTree = "<group>";
-		};
-		7D1051D4104A1FA900BAAF3F /* AppTrapPreferencePane.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				7D1051D5104A1FA900BAAF3F /* English */,
-				7D1051D7104A1FBC00BAAF3F /* nl */,
-				7D5CCF6C104C0CC40026160F /* fr */,
-				7D18B1561128BCB9003C260F /* pt */,
-				7DE98EF019E8B6E5004499C8 /* de */,
-			);
-			name = AppTrapPreferencePane.xib;
 			sourceTree = "<group>";
 		};
 		7D252B9917C148B6008BBBB3 /* InfoPlist.strings */ = {

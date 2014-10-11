@@ -2,6 +2,9 @@
 
 "General" = "Allgemein";
 "About" = "About";
+"AppTrap is:" = "AppTrap ist:";
+"Restarting AppTrap" = "AppTrap wird neugestartet";
+"Start automatically on login" = "Beim Login automatisch starten";
 "Active" = "Aktiv";
 "Inactive" = "Inaktiv";
 "Start AppTrap" = "Starte AppTrap";
