@@ -8,7 +8,7 @@
 
 @import Foundation.NSString;
 
-#import <XCTest/XCTest.h>
+@import XCTest.XCTest;
 
 #import "APTApplicationController.h"
 
