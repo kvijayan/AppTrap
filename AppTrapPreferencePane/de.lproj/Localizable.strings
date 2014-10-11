@@ -1,0 +1,14 @@
+﻿/* Localized strings in AppTrap */
+
+"Active" = "Aktiv";
+"Inactive" = "Inaktiv";
+"Start AppTrap" = "Starte AppTrap";
+"Stop AppTrap" = "Stoppe AppTrap";
+"Download" = "Herunterladen";
+"Don't download" = "Nicht herunterladen";
+"New version" = "Neue Version";
+"A new version of AppTrap is available, do you want to download it now?" = "Eine neue Version von AppTrap ist verfügbar. Möchten Sie sie jetzt herunterladen?";
+"The background process is an older version. Would you like to restart it with the newer version?" = "Der Hintergrundprozess ist veraltet. Möchten Sie ihn erneuern, indem Sie ihn neu starten?";
+"Restart AppTrap" = "AppTrap neu starten";
+"Don't restart AppTrap" = "AppTrap nicht neu starten";
+"The currently running AppTrap background process is an older version. Would you like to restart it with a newer version?\n\nYou can also restart it by pressing the \"Start/Stop AppTrap\" button." = "Der gegenwärtig laufende AppTrap-Hintergrundprozess ist veraltet. Möchten Sie ihn erneuern, indem sie ihn neu starten?\n\nSie können ihn auch durch Drücken des \"Start/Stop-AppTrap\"-Knopfes neu starten.";

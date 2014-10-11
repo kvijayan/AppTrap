@@ -64,6 +64,7 @@
 		7D6FB91517C055C500EE17FC /* AppTrapTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AppTrapTests-Prefix.pch"; sourceTree = "<group>"; };
 		7DA59D3F102018C1002EBE1E /* ATVariables.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATVariables.h; sourceTree = "<group>"; };
 		7DA59D40102018C1002EBE1E /* ATVariables.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATVariables.m; sourceTree = "<group>"; };
+		7DE98EEC19E8B65B004499C8 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		7DEFC1201744998800668ECE /* APTApplicationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APTApplicationController.h; sourceTree = "<group>"; };
 		7DEFC1211744998800668ECE /* APTApplicationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APTApplicationController.m; sourceTree = "<group>"; };
 		7DF1DA2F173B52FD004FEA6A /* APTFSEventsWatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APTFSEventsWatcher.h; sourceTree = "<group>"; };
@@ -383,6 +384,7 @@
 				281A7FDB0CFDEDAA00E5207C /* nl */,
 				7D5CCF8C104C0DAA0026160F /* fr */,
 				7D18B1041128B4F7003C260F /* pt */,
+				7DE98EEC19E8B65B004499C8 /* de */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";

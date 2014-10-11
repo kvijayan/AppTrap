@@ -1,0 +1,7 @@
+﻿/* Localized strings in AppTrap */
+
+"You are moving an application to the trash, do you want to move its associated system files too?" = "Eine Anwendung wurde in den Papierkorb verschoben – möchten Sie die zugehörigen System- und Konfigurationsdateien auch verschieben?";
+"No files will be deleted until you empty the trash." = "Es werden keine Dateien gelöscht, bis Sie den Papierkorb entleeren.";
+"WARNING: The application may only be updating itself." = "WARNUNG: Die Anwendung kann nur sich selbst aktualisieren.";
+"Leave files" = "Behalte die Dateien";
+"Move files" = "Verschiebe die Dateien";

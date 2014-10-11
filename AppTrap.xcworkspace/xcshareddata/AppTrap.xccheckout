@@ -10,29 +10,29 @@
 	<string>AppTrap</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>B546EF82-5453-4B35-84AE-9B09B8D79D7E</key>
+		<key>18A37A6C254E5750765317D486A30B53E867A355</key>
 		<string>https://github.com/kvijayan/AppTrap.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>AppTrap.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>B546EF82-5453-4B35-84AE-9B09B8D79D7E</key>
+		<key>18A37A6C254E5750765317D486A30B53E867A355</key>
 		<string>..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/kvijayan/AppTrap.git</string>
 	<key>IDESourceControlProjectVersion</key>
-	<integer>110</integer>
+	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>B546EF82-5453-4B35-84AE-9B09B8D79D7E</string>
+	<string>18A37A6C254E5750765317D486A30B53E867A355</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>B546EF82-5453-4B35-84AE-9B09B8D79D7E</string>
+			<string>18A37A6C254E5750765317D486A30B53E867A355</string>
 			<key>IDESourceControlWCCName</key>
 			<string>AppTrap</string>
 		</dict>
