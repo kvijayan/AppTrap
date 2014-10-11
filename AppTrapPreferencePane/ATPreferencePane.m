@@ -26,10 +26,35 @@
 static NSString *AppTrapBackgroundBundleIdentifier = @"com.KumaranVijayan.AppTrap";
 static NSString *AppTrapBackgroundBundleIdentifierOld = @"se.konstochvanligasaker.AppTrap";
 
+@interface ATPreferencePane ()
+@property (nonatomic) IBOutlet NSViewController *preferencePaneViewController;
+@end
+
 @implementation ATPreferencePane
+
+- (void)setUpMainView
+{
+    [[self mainView] addSubview:[self.preferencePaneViewController view]];
+    [[self mainView] addConstraints:[self constraintsForView:[self.preferencePaneViewController view]]];
+}
+
+- (NSArray*)constraintsForView:(NSView*)view
+{
+    NSDictionary *views = NSDictionaryOfVariableBindings(view);
+    NSArray *horizontalConstraints = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|[view]|"
+                                                                             options:0
+                                                                             metrics:nil
+                                                                               views:views];
+    NSArray *verticalConstraints = [NSLayoutConstraint constraintsWithVisualFormat:@"V:|[view]|"
+                                                                           options:0
+                                                                           metrics:nil
+                                                                             views:views];
+    return [horizontalConstraints arrayByAddingObjectsFromArray:verticalConstraints];
+}
 
 - (void)mainViewDidLoad
 {
+    [self setUpMainView];
 	[[ATSUUpdater sharedUpdater] resetUpdateCycle];
 	[[ATSUUpdater sharedUpdater] setDelegate:self];
 		

@@ -1,5 +1,7 @@
 ﻿/* Localized strings in AppTrap */
 
+"General" = "Allgemein";
+"About" = "About";
 "Active" = "Aktiv";
 "Inactive" = "Inaktiv";
 "Start AppTrap" = "Starte AppTrap";

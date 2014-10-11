@@ -8,6 +8,9 @@
 
 #import "APTPreferencePaneGeneralViewController.h"
 
+@interface APTPreferencePaneGeneralViewController ()
+@end
+
 @implementation APTPreferencePaneGeneralViewController
 
 - (void)setUpLocalizationStrings
