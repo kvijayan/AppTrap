@@ -16,7 +16,7 @@
 		7D252B9B17C148B6008BBBB3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7D252B9917C148B6008BBBB3 /* InfoPlist.strings */; };
 		7D252B9E17C148B6008BBBB3 /* PrefPaneTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D252B9D17C148B6008BBBB3 /* PrefPaneTests.m */; };
 		7D3C77BA1048CF5B00009126 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D3C77B91048CF5B00009126 /* Sparkle.framework */; };
-		7D3C77E61048CF6300009126 /* Sparkle.framework in Copy Sparkle Framework */ = {isa = PBXBuildFile; fileRef = 7D3C77B91048CF5B00009126 /* Sparkle.framework */; };
+		7D3C77E61048CF6300009126 /* Sparkle.framework in Copy Sparkle Framework */ = {isa = PBXBuildFile; fileRef = 7D3C77B91048CF5B00009126 /* Sparkle.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		7D992EB5100BE7B100DDA632 /* ATSUUpdater.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D992EB4100BE7B100DDA632 /* ATSUUpdater.m */; };
 		7D992EBB100BEB3200DDA632 /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = 7D992EBA100BEB3200DDA632 /* dsa_pub.pem */; };
 		7DA59D4510201A08002EBE1E /* ATVariables.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DA59D4410201A08002EBE1E /* ATVariables.m */; };
@@ -307,7 +307,7 @@
 			name = PrefPaneTests;
 			productName = PrefPaneTests;
 			productReference = 7D252B8C17C148B6008BBBB3 /* PrefPaneTests.octest */;
-			productType = "com.apple.product-type.bundle";
+			productType = "com.apple.product-type.bundle.ocunit-test";
 		};
 		8D202CE80486D31800D8A456 /* AppTrap */ = {
 			isa = PBXNativeTarget;
@@ -337,7 +337,7 @@
 		089C1669FE841209C02AAC07 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0500;
+				LastUpgradeCheck = 0600;
 			};
 			buildConfigurationList = 1DBD214C08BA80EA00186707 /* Build configuration list for PBXProject "AppTrapPreferencePane" */;
 			compatibilityVersion = "Xcode 3.2";
