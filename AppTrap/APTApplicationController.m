@@ -224,16 +224,16 @@ static NSString *SandboxContainersFolderName = @"Containers";
 	}
 	else
 	{
-		NSMutableArray *files = [NSMutableArray new];
+		NSMutableSet<NSString*> *files = [NSMutableSet new];
 		for (NSString *application in newApplicationsArray)
 		{
 			NSSet *matches = [self matchesForApplication:application];
-			[files addObjectsFromArray:matches.allObjects];
+            [files unionSet:matches];
 		}
 		   
 		if (files.count > 0)
 		{
-			NSArray *returnFiles = [NSArray arrayWithArray:files];
+            NSArray *returnFiles = files.allObjects;
 			[self.delegate applicationController:self didFindFiles:returnFiles];
 		}
 		   
