@@ -43,6 +43,13 @@
 			remoteGlobalIDString = 8D202CE80486D31800D8A456;
 			remoteInfo = AppTrap;
 		};
+		7D87BA341BF68E1A00416611 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7D97B03E17A8A04900569109 /* AppTrap.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 7D3E982D1BF3F29C0089E727;
+			remoteInfo = Relaunch;
+		};
 		7D97B04D17A8B2E100569109 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 7D97B03E17A8A04900569109 /* AppTrap.xcodeproj */;
@@ -283,6 +290,7 @@
 			children = (
 				7D97B04E17A8B2E100569109 /* AppTrap.app */,
 				7D252BA517C148B6008BBBB3 /* AppTrapTests.octest */,
+				7D87BA351BF68E1A00416611 /* Relaunch */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -307,7 +315,7 @@
 			name = PrefPaneTests;
 			productName = PrefPaneTests;
 			productReference = 7D252B8C17C148B6008BBBB3 /* PrefPaneTests.octest */;
-			productType = "com.apple.product-type.bundle";
+			productType = "com.apple.product-type.bundle.ocunit-test";
 		};
 		8D202CE80486D31800D8A456 /* AppTrap */ = {
 			isa = PBXNativeTarget;
@@ -387,6 +395,13 @@
 			fileType = wrapper.cfbundle;
 			path = AppTrapTests.octest;
 			remoteRef = 7D252BA417C148B6008BBBB3 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		7D87BA351BF68E1A00416611 /* Relaunch */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = Relaunch;
+			remoteRef = 7D87BA341BF68E1A00416611 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		7D97B04E17A8B2E100569109 /* AppTrap.app */ = {
@@ -558,6 +573,7 @@
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Library/PreferencePanes";
+				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				PRODUCT_NAME = AppTrap;
 				SDKROOT = macosx;
@@ -586,6 +602,7 @@
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Library/PreferencePanes";
+				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				PRODUCT_NAME = AppTrap;
 				SDKROOT = macosx;

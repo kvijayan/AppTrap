@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="4510" systemVersion="12F45" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
     <dependencies>
-        <deployment defaultVersion="1070" identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="4510"/>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="9060"/>
+        <capability name="box content view" minToolsVersion="7.0"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="ATPreferencePane">
             <connections>
-                <outlet property="_window" destination="12" id="248"/>
+                <outlet property="_window" destination="12" id="IqZ-Vf-92C"/>
                 <outlet property="aboutView" destination="138" id="149"/>
                 <outlet property="automaticallyCheckForUpdate" destination="242" id="245"/>
                 <outlet property="restartingAppTrapIndicator" destination="218" id="221"/>
@@ -15,24 +16,24 @@
                 <outlet property="startOnLoginButton" destination="111" id="130"/>
                 <outlet property="startStopButton" destination="103" id="110"/>
                 <outlet property="statusText" destination="102" id="108"/>
-                <outlet property="window" destination="12" id="247"/>
             </connections>
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
-        <customObject id="-3" userLabel="Application"/>
-        <window title="&lt;&lt; do not localize >>" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" deferred="NO" oneShot="NO" releasedWhenClosed="NO" wantsToBeColor="NO" visibleAtLaunch="NO" animationBehavior="default" id="12" userLabel="PrefPane">
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <window title="&lt;&lt; do not localize &gt;&gt;" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" deferred="NO" oneShot="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="12" userLabel="PrefPane">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="165" y="41" width="591" height="466"/>
+            <rect key="contentRect" x="165" y="41" width="668" height="466"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1440" height="878"/>
             <value key="minSize" type="size" width="213.66399999999999" height="10"/>
             <view key="contentView" id="6">
-                <rect key="frame" x="0.0" y="0.0" width="591" height="466"/>
+                <rect key="frame" x="0.0" y="0.0" width="668" height="466"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <tabView id="132">
-                        <rect key="frame" x="13" y="10" width="565" height="450"/>
+                        <rect key="frame" x="52" y="10" width="565" height="450"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
                         <font key="font" metaFont="system"/>
                         <tabViewItems>
                             <tabViewItem label="General" identifier="" id="133">
@@ -43,13 +44,14 @@
                                         <box title="Title" titlePosition="noTitle" id="106">
                                             <rect key="frame" x="188" y="218" width="170" height="101"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <view key="contentView">
+                                            <view key="contentView" id="TBQ-qG-4oJ">
                                                 <rect key="frame" x="2" y="2" width="166" height="97"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <subviews>
                                                     <textField verticalHuggingPriority="750" id="102">
                                                         <rect key="frame" x="96" y="60" width="53" height="17"/>
                                                         <autoresizingMask key="autoresizingMask"/>
+                                                        <animations/>
                                                         <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Inactive" id="228">
                                                             <font key="font" metaFont="system"/>
                                                             <color key="textColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -59,6 +61,7 @@
                                                     <textField verticalHuggingPriority="750" id="101">
                                                         <rect key="frame" x="17" y="60" width="77" height="17"/>
                                                         <autoresizingMask key="autoresizingMask"/>
+                                                        <animations/>
                                                         <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="AppTrap is:" id="227">
                                                             <font key="font" metaFont="system"/>
                                                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -68,6 +71,7 @@
                                                     <button verticalHuggingPriority="750" id="103">
                                                         <rect key="frame" x="19" y="12" width="128" height="32"/>
                                                         <autoresizingMask key="autoresizingMask"/>
+                                                        <animations/>
                                                         <buttonCell key="cell" type="push" title="Start AppTrap" bezelStyle="rounded" alignment="center" borderStyle="border" inset="2" id="229">
                                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                             <font key="font" metaFont="system"/>
@@ -77,13 +81,16 @@
                                                         </connections>
                                                     </button>
                                                 </subviews>
+                                                <animations/>
                                             </view>
+                                            <animations/>
                                             <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
                                             <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </box>
                                         <button id="111">
                                             <rect key="frame" x="175" y="173" width="196" height="18"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <animations/>
                                             <buttonCell key="cell" type="check" title="Start automatically on login" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="230">
                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                 <font key="font" metaFont="system"/>
@@ -95,6 +102,7 @@
                                         <textField verticalHuggingPriority="750" id="125">
                                             <rect key="frame" x="171" y="325" width="202" height="59"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <animations/>
                                             <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="AppTrap" id="231">
                                                 <font key="font" size="48" name="Helvetica-BoldOblique"/>
                                                 <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -104,10 +112,12 @@
                                         <progressIndicator horizontalHuggingPriority="750" verticalHuggingPriority="750" minValue="16" maxValue="100" doubleValue="16" displayedWhenStopped="NO" bezeled="NO" indeterminate="YES" controlSize="small" style="spinning" id="218">
                                             <rect key="frame" x="191" y="197" width="16" height="16"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <animations/>
                                         </progressIndicator>
                                         <textField hidden="YES" verticalHuggingPriority="750" id="219">
                                             <rect key="frame" x="212" y="197" width="160" height="17"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <animations/>
                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Restarting AppTrap" id="232">
                                                 <font key="font" metaFont="system"/>
                                                 <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -115,6 +125,7 @@
                                             </textFieldCell>
                                         </textField>
                                     </subviews>
+                                    <animations/>
                                 </view>
                             </tabViewItem>
                             <tabViewItem label="About" identifier="" id="134">
@@ -132,6 +143,7 @@
                                                     <textView editable="NO" usesRuler="YES" usesFontPanel="YES" verticallyResizable="YES" spellingCorrection="YES" smartInsertDelete="YES" id="138">
                                                         <rect key="frame" x="0.0" y="0.0" width="503" height="237"/>
                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                        <animations/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <size key="minSize" width="503" height="237"/>
                                                         <size key="maxSize" width="1008" height="10000000"/>
@@ -140,20 +152,25 @@
                                                         <size key="maxSize" width="1008" height="10000000"/>
                                                     </textView>
                                                 </subviews>
+                                                <animations/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             </clipView>
-                                            <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" id="237">
+                                            <animations/>
+                                            <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="YES" id="237">
                                                 <rect key="frame" x="-100" y="-100" width="87" height="18"/>
                                                 <autoresizingMask key="autoresizingMask"/>
+                                                <animations/>
                                             </scroller>
-                                            <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" id="236">
+                                            <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="236">
                                                 <rect key="frame" x="-30" y="1" width="15" height="237"/>
                                                 <autoresizingMask key="autoresizingMask"/>
+                                                <animations/>
                                             </scroller>
                                         </scrollView>
                                         <button verticalHuggingPriority="750" id="139">
                                             <rect key="frame" x="14" y="97" width="148" height="32"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <animations/>
                                             <buttonCell key="cell" type="push" title="AppTrap Website" bezelStyle="rounded" alignment="center" borderStyle="border" inset="2" id="233">
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                 <font key="font" metaFont="system"/>
@@ -165,13 +182,14 @@
                                         <box title="Automatic Updates" borderType="line" id="198">
                                             <rect key="frame" x="17" y="18" width="511" height="60"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <view key="contentView">
+                                            <view key="contentView" id="6AZ-6K-5Q2">
                                                 <rect key="frame" x="1" y="1" width="509" height="44"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <subviews>
                                                     <button verticalHuggingPriority="750" id="178">
                                                         <rect key="frame" x="12" y="6" width="150" height="32"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                        <animations/>
                                                         <buttonCell key="cell" type="push" title="Check for Update" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="234">
                                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                             <font key="font" metaFont="system"/>
@@ -183,6 +201,7 @@
                                                     <button id="242">
                                                         <rect key="frame" x="268" y="12" width="225" height="18"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                        <animations/>
                                                         <buttonCell key="cell" type="check" title="Automatically check for updates" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="243">
                                                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                             <font key="font" metaFont="system"/>
@@ -192,17 +211,22 @@
                                                         </connections>
                                                     </button>
                                                 </subviews>
+                                                <animations/>
                                             </view>
+                                            <animations/>
                                             <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
                                             <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </box>
                                     </subviews>
+                                    <animations/>
                                 </view>
                             </tabViewItem>
                         </tabViewItems>
                     </tabView>
                 </subviews>
+                <animations/>
             </view>
+            <point key="canvasLocation" x="347.5" y="360"/>
         </window>
     </objects>
 </document>

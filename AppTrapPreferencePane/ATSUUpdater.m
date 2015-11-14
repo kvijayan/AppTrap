@@ -24,7 +24,7 @@
 
 @implementation ATSUUpdater
 
-+(id)sharedUpdater
++(SUUpdater*)sharedUpdater
 {
 	return [self updaterForBundle:[NSBundle bundleForClass:[self class]]];
 }
