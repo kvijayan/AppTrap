@@ -719,6 +719,7 @@
 				7D3E98321BF3F29C0089E727 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7D6FB91817C055C500EE17FC /* Build configuration list for PBXNativeTarget "AppTrapTests" */ = {
 			isa = XCConfigurationList;
