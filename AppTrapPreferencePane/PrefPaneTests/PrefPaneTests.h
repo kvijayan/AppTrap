@@ -6,8 +6,8 @@
 //
 //
 
-#import <SenTestingKit/SenTestingKit.h>
+#import <XCTest/XCTest.h>
 
-@interface PrefPaneTests : SenTestCase
+@interface PrefPaneTests : XCTestCase
 
 @end
