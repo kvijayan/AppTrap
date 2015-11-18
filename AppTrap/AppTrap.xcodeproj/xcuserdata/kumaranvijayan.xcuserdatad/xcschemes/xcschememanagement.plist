@@ -9,9 +9,24 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>AppTrapTests.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
+		<key>Relaunch.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>3</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>7D3E982C1BF3F29C0089E727</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>7D6FB90217C055C500EE17FC</key>
 		<dict>
 			<key>primary</key>

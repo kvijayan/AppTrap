@@ -54,7 +54,7 @@ static CGFloat SmallHeight = 177.0;
 
 - (id)initWithCoder:(NSCoder *)aDecoder
 {
-	self = [super init];
+	self = [super initWithCoder:aDecoder];
 	if (self)
 	{
 		NSDistributedNotificationCenter *nc = [NSDistributedNotificationCenter defaultCenter];

@@ -27,6 +27,6 @@
 
 }
 
-+(id)sharedUpdater;
++(SUUpdater*)sharedUpdater;
 
 @end

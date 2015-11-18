@@ -35,7 +35,6 @@
     IBOutlet NSTextView *aboutView;
 	IBOutlet NSProgressIndicator *restartingAppTrapIndicator;
 	IBOutlet NSTextField *restartingAppTrapTextField;
-	IBOutlet NSWindow *window;
 	IBOutlet NSWindow *appTrapRestartWindow;
 }
 

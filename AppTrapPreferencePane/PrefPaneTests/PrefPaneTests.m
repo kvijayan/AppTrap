@@ -38,7 +38,7 @@
 	bundle = [NSBundle bundleWithPath:path];
 	NSString *backgroundVersion = [bundle objectForInfoDictionaryKey:shortVersionStringKey];
 	
-	STAssertEqualObjects(prefpaneVersion, backgroundVersion, @"");
+	XCTAssertEqualObjects(prefpaneVersion, backgroundVersion, @"");
 }
 
 - (void)testVersionNumber
@@ -54,7 +54,7 @@
 	bundle = [NSBundle bundleWithPath:path];
 	NSString *backgroundVersion = [bundle objectForInfoDictionaryKey:(NSString*)kCFBundleVersionKey];
 	
-	STAssertEqualObjects(prefpaneVersion, backgroundVersion, @"");
+	XCTAssertEqualObjects(prefpaneVersion, backgroundVersion, @"");
 }
 
 @end
