@@ -102,6 +102,10 @@ static NSString *SandboxContainersFolderName = @"Containers";
     {
         [self setUpWhitelist];
         [self setUpAndStartEventsWatcher];
+        [[NSWorkspace sharedWorkspace].notificationCenter addObserver:self
+                                                             selector:@selector(awokeFromSleep:)
+                                                                 name:NSWorkspaceDidWakeNotification
+                                                               object:nil];
     }
     return self;
 }
@@ -154,6 +158,15 @@ static NSString *SandboxContainersFolderName = @"Containers";
 	[self setEventsWatcher:watcher];
 	[watcher setDelegate:self];
 	[watcher startWatching];
+}
+
+- (void)awokeFromSleep:(NSNotification*)notification
+{
+    NSTask *task = [NSTask new];
+    NSString *launchPath = [[NSBundle mainBundle] pathForResource:@"RelaunchObjC" ofType:nil];
+    task.launchPath = launchPath;
+    task.arguments = @[[NSString stringWithFormat:@"%d", [NSProcessInfo processInfo].processIdentifier]];
+    [task launch];
 }
 
 #pragma mark - Core
@@ -224,16 +237,16 @@ static NSString *SandboxContainersFolderName = @"Containers";
 	}
 	else
 	{
-		NSMutableArray *files = [NSMutableArray new];
+		NSMutableSet<NSString*> *files = [NSMutableSet new];
 		for (NSString *application in newApplicationsArray)
 		{
 			NSSet *matches = [self matchesForApplication:application];
-			[files addObjectsFromArray:matches.allObjects];
+            [files unionSet:matches];
 		}
 		   
 		if (files.count > 0)
 		{
-			NSArray *returnFiles = [NSArray arrayWithArray:files];
+            NSArray *returnFiles = files.allObjects;
 			[self.delegate applicationController:self didFindFiles:returnFiles];
 		}
 		   

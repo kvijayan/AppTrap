@@ -26,6 +26,9 @@
 static NSString *AppTrapBackgroundBundleIdentifier = @"com.KumaranVijayan.AppTrap";
 static NSString *AppTrapBackgroundBundleIdentifierOld = @"se.konstochvanligasaker.AppTrap";
 
+@interface ATPreferencePane () <SUUpdaterDelegate>
+@end
+
 @implementation ATPreferencePane
 
 - (void)mainViewDidLoad
@@ -102,15 +105,15 @@ static NSString *AppTrapBackgroundBundleIdentifierOld = @"se.konstochvanligasake
 	int prefpaneVersionInt = [prefpaneVersion intValue];
 	
 	if (prefpaneVersionInt != backgroundProcessVersionInt) {
-		NSBeginAlertSheet(@"AppTrap", 
-						  NSLocalizedStringFromTableInBundle(@"Restart AppTrap", nil, [self bundle], @""), 
-						  NSLocalizedStringFromTableInBundle(@"Don't restart AppTrap", nil, [self bundle], @""), 
-						  nil, 
+		NSBeginAlertSheet(@"AppTrap",
+						  NSLocalizedStringFromTableInBundle(@"Restart AppTrap", nil, [self bundle], @""),
+						  NSLocalizedStringFromTableInBundle(@"Don't restart AppTrap", nil, [self bundle], @""),
+						  nil,
 						  [startStopButton window], 
-						  self, 
+						  self,
 						  @selector(sheetDidEnd:returnCode:contextInfo:), 
-						  nil, 
-						  nil, 
+						  nil,
+						  nil,
 						  NSLocalizedStringFromTableInBundle(@"The background process is an older version. Would you like to restart it with the newer version?", nil, [self bundle], @""));
 	}
 }
@@ -118,13 +121,13 @@ static NSString *AppTrapBackgroundBundleIdentifierOld = @"se.konstochvanligasake
 - (void)checkBackgroundProcessVersion {
 	NSDistributedNotificationCenter *nc = [NSDistributedNotificationCenter defaultCenter];
 	
-	[nc postNotificationName:ATApplicationSendVersionData 
-					  object:nil 
-					userInfo:nil 
-		  deliverImmediately:YES];	
+	[nc postNotificationName:ATApplicationSendVersionData
+					  object:nil
+					userInfo:nil
+		  deliverImmediately:YES];
 }
 
-- (void)sheetDidEnd:(NSWindow *)sheet returnCode:(int)returnCode contextInfo:(void  *)contextInfo {
+- (void)sheetDidEnd:(NSWindow *)sheet returnCode:(int)returnCode contextInfo:(void*)contextInfo {
 	if (returnCode == NSAlertDefaultReturn) {
 		[startStopButton setEnabled:NO];
 		[restartingAppTrapIndicator startAnimation:nil];
@@ -179,7 +182,7 @@ static NSString *AppTrapBackgroundBundleIdentifierOld = @"se.konstochvanligasake
 }
 
 - (void)launchAppTrap
-{    
+{
     // Try to launch AppTrap
 	NSLog(@"launching AppTrap");
 	NSURL *appURL = [NSURL fileURLWithPath:appPath];
