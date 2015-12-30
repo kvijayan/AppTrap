@@ -163,7 +163,7 @@ static NSString *SandboxContainersFolderName = @"Containers";
 - (void)awokeFromSleep:(NSNotification*)notification
 {
     NSTask *task = [NSTask new];
-    NSString *launchPath = [[NSBundle mainBundle] pathForResource:@"Relaunch" ofType:nil];
+    NSString *launchPath = [[NSBundle mainBundle] pathForResource:@"RelaunchObjC" ofType:nil];
     task.launchPath = launchPath;
     task.arguments = @[[NSString stringWithFormat:@"%d", [NSProcessInfo processInfo].processIdentifier]];
     [task launch];

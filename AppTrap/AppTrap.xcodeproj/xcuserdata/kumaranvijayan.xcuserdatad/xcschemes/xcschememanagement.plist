@@ -19,9 +19,19 @@
 			<key>orderHint</key>
 			<integer>3</integer>
 		</dict>
+		<key>RelaunchObjC.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>4</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>7D02FA251C31D22600C6CAB4</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>7D3E982C1BF3F29C0089E727</key>
 		<dict>
 			<key>primary</key>
