@@ -26,6 +26,9 @@
 static NSString *AppTrapBackgroundBundleIdentifier = @"com.KumaranVijayan.AppTrap";
 static NSString *AppTrapBackgroundBundleIdentifierOld = @"se.konstochvanligasaker.AppTrap";
 
+@interface ATPreferencePane () <NSFileManagerDelegate>
+@end
+
 @implementation ATPreferencePane
 
 - (void)mainViewDidLoad
