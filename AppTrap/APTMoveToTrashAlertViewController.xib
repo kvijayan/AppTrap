@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <deployment version="1070" identifier="macosx"/>
+        <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="9531"/>
     </dependencies>
     <objects>
@@ -33,8 +33,8 @@
                     </constraints>
                     <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="NSApplicationIcon" id="176"/>
                 </imageView>
-                <textField verticalHuggingPriority="750" misplaced="YES" preferredMaxLayoutWidth="377" translatesAutoresizingMaskIntoConstraints="NO" id="185">
-                    <rect key="frame" x="82" y="324" width="381" height="36"/>
+                <textField verticalHuggingPriority="750" preferredMaxLayoutWidth="377" translatesAutoresizingMaskIntoConstraints="NO" id="185">
+                    <rect key="frame" x="83" y="324" width="379" height="36"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="375" id="194"/>
                         <constraint firstAttribute="height" constant="36" id="339"/>
@@ -45,8 +45,8 @@
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
-                <textField verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="195">
-                    <rect key="frame" x="82" y="299" width="381" height="17"/>
+                <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="195">
+                    <rect key="frame" x="83" y="299" width="379" height="17"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="17" id="205"/>
                     </constraints>
@@ -56,8 +56,8 @@
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
-                <textField verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="201">
-                    <rect key="frame" x="82" y="274" width="381" height="17"/>
+                <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="201">
+                    <rect key="frame" x="83" y="274" width="379" height="17"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="17" id="213"/>
                     </constraints>
@@ -67,8 +67,8 @@
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
-                <button verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="211">
-                    <rect key="frame" x="360" y="238" width="106" height="32"/>
+                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="211">
+                    <rect key="frame" x="361" y="238" width="105" height="32"/>
                     <buttonCell key="cell" type="push" title="Move Files" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="212">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
@@ -77,8 +77,8 @@
                         <action selector="moveFiles:" target="-2" id="378"/>
                     </connections>
                 </button>
-                <button verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="217">
-                    <rect key="frame" x="252" y="238" width="108" height="32"/>
+                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="217">
+                    <rect key="frame" x="254" y="238" width="107" height="32"/>
                     <buttonCell key="cell" type="push" title="Leave Files" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="218">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
@@ -127,8 +127,8 @@
                                                 <rect key="frame" x="1" y="1" width="435" height="48"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <subviews>
-                                                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="255">
-                                                        <rect key="frame" x="68" y="24" width="350" height="17"/>
+                                                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="255">
+                                                        <rect key="frame" x="69" y="24" width="348" height="17"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="17" id="411"/>
                                                             <constraint firstAttribute="width" constant="344" id="416"/>
@@ -162,8 +162,8 @@
                                                             <binding destination="254" name="value" keyPath="self.objectValue.icon" id="390"/>
                                                         </connections>
                                                     </imageView>
-                                                    <textField verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="396">
-                                                        <rect key="frame" x="68" y="7" width="355" height="14"/>
+                                                    <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="396">
+                                                        <rect key="frame" x="69" y="7" width="353" height="14"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="14" id="412"/>
                                                             <constraint firstAttribute="width" constant="349" id="413"/>
@@ -237,6 +237,7 @@
                 <constraint firstAttribute="trailing" secondItem="236" secondAttribute="trailing" constant="20" symbolic="YES" id="249"/>
                 <constraint firstItem="236" firstAttribute="top" secondItem="217" secondAttribute="bottom" constant="20" symbolic="YES" id="334"/>
             </constraints>
+            <point key="canvasLocation" x="313" y="346"/>
         </customView>
         <customObject id="379" customClass="APTApplicationController">
             <connections>

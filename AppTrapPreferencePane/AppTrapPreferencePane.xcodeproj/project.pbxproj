@@ -293,7 +293,6 @@
 				7D252B8717C148B6008BBBB3 /* Sources */,
 				7D252B8817C148B6008BBBB3 /* Frameworks */,
 				7D252B8917C148B6008BBBB3 /* Resources */,
-				7D252B8A17C148B6008BBBB3 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -428,19 +427,6 @@
 /* End PBXRezBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		7D252B8A17C148B6008BBBB3 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
-		};
 		7DF9E17A181A216000DCD9CE /* Sign Sparkle */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
