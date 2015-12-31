@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="9531"/>
@@ -25,15 +25,18 @@
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="165" y="41" width="668" height="466"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="878"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1280" height="800"/>
             <value key="minSize" type="size" width="213.66399999999999" height="10"/>
             <view key="contentView" id="6">
                 <rect key="frame" x="0.0" y="0.0" width="668" height="466"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <tabView id="132">
+                    <tabView translatesAutoresizingMaskIntoConstraints="NO" id="132">
                         <rect key="frame" x="52" y="10" width="565" height="450"/>
-                        <autoresizingMask key="autoresizingMask"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="434" id="OIg-vK-S58"/>
+                            <constraint firstAttribute="width" constant="551" id="R2R-CI-G42"/>
+                        </constraints>
                         <font key="font" metaFont="system"/>
                         <tabViewItems>
                             <tabViewItem label="General" identifier="" id="133">
@@ -41,34 +44,30 @@
                                     <rect key="frame" x="10" y="33" width="545" height="404"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <box title="Title" titlePosition="noTitle" id="106">
+                                        <box title="Title" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="106">
                                             <rect key="frame" x="188" y="218" width="170" height="101"/>
-                                            <autoresizingMask key="autoresizingMask"/>
                                             <view key="contentView" id="bdX-wb-fog">
                                                 <rect key="frame" x="2" y="2" width="166" height="97"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <subviews>
-                                                    <textField verticalHuggingPriority="750" id="102">
-                                                        <rect key="frame" x="96" y="60" width="53" height="17"/>
-                                                        <autoresizingMask key="autoresizingMask"/>
+                                                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="102">
+                                                        <rect key="frame" x="91" y="60" width="52" height="17"/>
                                                         <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Inactive" id="228">
                                                             <font key="font" metaFont="system"/>
                                                             <color key="textColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                         </textFieldCell>
                                                     </textField>
-                                                    <textField verticalHuggingPriority="750" id="101">
-                                                        <rect key="frame" x="17" y="60" width="77" height="17"/>
-                                                        <autoresizingMask key="autoresizingMask"/>
+                                                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="101">
+                                                        <rect key="frame" x="17" y="60" width="72" height="17"/>
                                                         <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="AppTrap is:" id="227">
                                                             <font key="font" metaFont="system"/>
                                                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                         </textFieldCell>
                                                     </textField>
-                                                    <button verticalHuggingPriority="750" id="103">
-                                                        <rect key="frame" x="19" y="12" width="128" height="32"/>
-                                                        <autoresizingMask key="autoresizingMask"/>
+                                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="103">
+                                                        <rect key="frame" x="21" y="12" width="125" height="32"/>
                                                         <buttonCell key="cell" type="push" title="Start AppTrap" bezelStyle="rounded" alignment="center" borderStyle="border" inset="2" id="229">
                                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                             <font key="font" metaFont="system"/>
@@ -78,13 +77,24 @@
                                                         </connections>
                                                     </button>
                                                 </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="101" firstAttribute="top" secondItem="bdX-wb-fog" secondAttribute="top" constant="20" id="7NA-8a-d8G"/>
+                                                    <constraint firstItem="102" firstAttribute="leading" secondItem="101" secondAttribute="trailing" constant="6" id="MRb-NI-UOE"/>
+                                                    <constraint firstItem="103" firstAttribute="centerX" secondItem="bdX-wb-fog" secondAttribute="centerX" id="U0V-m4-zdj"/>
+                                                    <constraint firstItem="103" firstAttribute="top" secondItem="101" secondAttribute="bottom" constant="20" id="gFK-hB-Wok"/>
+                                                    <constraint firstItem="101" firstAttribute="leading" secondItem="bdX-wb-fog" secondAttribute="leading" constant="19" id="iMm-Wj-Wes"/>
+                                                    <constraint firstItem="102" firstAttribute="baseline" secondItem="101" secondAttribute="baseline" id="moM-gi-TiR"/>
+                                                </constraints>
                                             </view>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="164" id="Coy-UB-WvJ"/>
+                                                <constraint firstAttribute="height" constant="95" id="YXF-ze-jBy"/>
+                                            </constraints>
                                             <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
                                             <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </box>
-                                        <button id="111">
-                                            <rect key="frame" x="175" y="173" width="196" height="18"/>
-                                            <autoresizingMask key="autoresizingMask"/>
+                                        <button translatesAutoresizingMaskIntoConstraints="NO" id="111">
+                                            <rect key="frame" x="179" y="173" width="188" height="18"/>
                                             <buttonCell key="cell" type="check" title="Start automatically on login" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="230">
                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                 <font key="font" metaFont="system"/>
@@ -93,22 +103,19 @@
                                                 <action selector="startOnLogin:" target="-2" id="128"/>
                                             </connections>
                                         </button>
-                                        <textField verticalHuggingPriority="750" id="125">
-                                            <rect key="frame" x="171" y="325" width="202" height="59"/>
-                                            <autoresizingMask key="autoresizingMask"/>
+                                        <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="125">
+                                            <rect key="frame" x="173" y="325" width="199" height="59"/>
                                             <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="AppTrap" id="231">
                                                 <font key="font" size="48" name="Helvetica-BoldOblique"/>
                                                 <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
                                         </textField>
-                                        <progressIndicator horizontalHuggingPriority="750" verticalHuggingPriority="750" minValue="16" maxValue="100" doubleValue="16" displayedWhenStopped="NO" bezeled="NO" indeterminate="YES" controlSize="small" style="spinning" id="218">
+                                        <progressIndicator horizontalHuggingPriority="750" verticalHuggingPriority="750" minValue="16" maxValue="100" doubleValue="16" displayedWhenStopped="NO" bezeled="NO" indeterminate="YES" controlSize="small" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="218">
                                             <rect key="frame" x="191" y="197" width="16" height="16"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         </progressIndicator>
-                                        <textField hidden="YES" verticalHuggingPriority="750" id="219">
-                                            <rect key="frame" x="212" y="197" width="160" height="17"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <textField hidden="YES" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="219">
+                                            <rect key="frame" x="212" y="197" width="121" height="17"/>
                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Restarting AppTrap" id="232">
                                                 <font key="font" metaFont="system"/>
                                                 <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -116,6 +123,18 @@
                                             </textFieldCell>
                                         </textField>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="111" firstAttribute="centerX" secondItem="135" secondAttribute="centerX" id="1DR-Ss-5gr"/>
+                                        <constraint firstItem="219" firstAttribute="centerY" secondItem="218" secondAttribute="centerY" id="5Tn-rk-Tp4"/>
+                                        <constraint firstItem="106" firstAttribute="top" secondItem="125" secondAttribute="bottom" constant="8" id="Bfq-Sk-PHR"/>
+                                        <constraint firstItem="219" firstAttribute="top" secondItem="106" secondAttribute="bottom" constant="8" id="ESy-yF-Nlw"/>
+                                        <constraint firstItem="111" firstAttribute="top" secondItem="219" secondAttribute="bottom" constant="8" id="VKX-mQ-oDj"/>
+                                        <constraint firstItem="125" firstAttribute="centerX" secondItem="135" secondAttribute="centerX" id="fjX-tK-gcb"/>
+                                        <constraint firstItem="106" firstAttribute="centerX" secondItem="135" secondAttribute="centerX" id="jgx-oN-nkz"/>
+                                        <constraint firstItem="219" firstAttribute="leading" secondItem="218" secondAttribute="trailing" constant="7" id="pBP-dE-e8b"/>
+                                        <constraint firstItem="125" firstAttribute="top" secondItem="135" secondAttribute="top" constant="20" id="uwC-4l-dBB"/>
+                                        <constraint firstItem="218" firstAttribute="leading" secondItem="106" secondAttribute="leading" id="wvJ-H6-i8X"/>
+                                    </constraints>
                                 </view>
                             </tabViewItem>
                             <tabViewItem label="About" identifier="" id="134">
@@ -123,9 +142,8 @@
                                     <rect key="frame" x="10" y="33" width="545" height="404"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <scrollView autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" id="137">
+                                        <scrollView autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="137">
                                             <rect key="frame" x="20" y="145" width="505" height="239"/>
-                                            <autoresizingMask key="autoresizingMask"/>
                                             <clipView key="contentView" id="h56-fG-Lsp">
                                                 <rect key="frame" x="1" y="1" width="503" height="237"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -143,6 +161,9 @@
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             </clipView>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="239" id="tCC-k1-Lmk"/>
+                                            </constraints>
                                             <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="YES" id="237">
                                                 <rect key="frame" x="-100" y="-100" width="87" height="18"/>
                                                 <autoresizingMask key="autoresizingMask"/>
@@ -152,9 +173,8 @@
                                                 <autoresizingMask key="autoresizingMask"/>
                                             </scroller>
                                         </scrollView>
-                                        <button verticalHuggingPriority="750" id="139">
-                                            <rect key="frame" x="14" y="97" width="148" height="32"/>
-                                            <autoresizingMask key="autoresizingMask"/>
+                                        <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="139">
+                                            <rect key="frame" x="14" y="97" width="144" height="32"/>
                                             <buttonCell key="cell" type="push" title="AppTrap Website" bezelStyle="rounded" alignment="center" borderStyle="border" inset="2" id="233">
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                 <font key="font" metaFont="system"/>
@@ -163,16 +183,14 @@
                                                 <action selector="visitWebsite:" target="-2" id="148"/>
                                             </connections>
                                         </button>
-                                        <box title="Automatic Updates" borderType="line" id="198">
+                                        <box title="Automatic Updates" borderType="line" translatesAutoresizingMaskIntoConstraints="NO" id="198">
                                             <rect key="frame" x="17" y="18" width="511" height="60"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <view key="contentView" id="Lnz-Bg-QRY">
                                                 <rect key="frame" x="1" y="1" width="509" height="44"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <subviews>
-                                                    <button verticalHuggingPriority="750" id="178">
-                                                        <rect key="frame" x="12" y="6" width="150" height="32"/>
-                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="178">
+                                                        <rect key="frame" x="12" y="6" width="147" height="32"/>
                                                         <buttonCell key="cell" type="push" title="Check for Update" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="234">
                                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                             <font key="font" metaFont="system"/>
@@ -181,9 +199,8 @@
                                                             <action selector="checkForUpdate:" target="-2" id="180"/>
                                                         </connections>
                                                     </button>
-                                                    <button id="242">
-                                                        <rect key="frame" x="268" y="12" width="225" height="18"/>
-                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                    <button translatesAutoresizingMaskIntoConstraints="NO" id="242">
+                                                        <rect key="frame" x="276" y="12" width="217" height="18"/>
                                                         <buttonCell key="cell" type="check" title="Automatically check for updates" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="243">
                                                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                             <font key="font" metaFont="system"/>
@@ -193,16 +210,38 @@
                                                         </connections>
                                                     </button>
                                                 </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="bottom" secondItem="178" secondAttribute="bottom" constant="13" id="3eR-kf-SFC"/>
+                                                    <constraint firstItem="178" firstAttribute="top" secondItem="Lnz-Bg-QRY" secondAttribute="top" constant="10" id="5Dg-Z9-k48"/>
+                                                    <constraint firstItem="242" firstAttribute="top" secondItem="Lnz-Bg-QRY" secondAttribute="top" constant="16" id="BvO-7m-Syf"/>
+                                                    <constraint firstAttribute="trailing" secondItem="242" secondAttribute="trailing" constant="18" id="QSR-xh-6uo"/>
+                                                    <constraint firstAttribute="bottom" secondItem="242" secondAttribute="bottom" constant="14" id="V7f-8N-D3B"/>
+                                                    <constraint firstItem="178" firstAttribute="leading" secondItem="Lnz-Bg-QRY" secondAttribute="leading" constant="18" id="eHI-8D-bm8"/>
+                                                </constraints>
                                             </view>
                                             <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
                                             <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </box>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="139" firstAttribute="leading" secondItem="136" secondAttribute="leading" constant="20" id="9tL-f9-jhz"/>
+                                        <constraint firstItem="137" firstAttribute="top" secondItem="136" secondAttribute="top" constant="20" id="PWV-aj-NcL"/>
+                                        <constraint firstItem="198" firstAttribute="top" secondItem="139" secondAttribute="bottom" constant="26" id="QNQ-86-xot"/>
+                                        <constraint firstItem="139" firstAttribute="top" secondItem="137" secondAttribute="bottom" constant="20" id="YVP-Lv-ihV"/>
+                                        <constraint firstAttribute="trailing" secondItem="137" secondAttribute="trailing" constant="20" id="Ync-sw-3sj"/>
+                                        <constraint firstItem="198" firstAttribute="trailing" secondItem="137" secondAttribute="trailing" id="t03-8k-OaB"/>
+                                        <constraint firstItem="198" firstAttribute="leading" secondItem="137" secondAttribute="leading" id="uB0-If-KHF"/>
+                                        <constraint firstItem="137" firstAttribute="leading" secondItem="136" secondAttribute="leading" constant="20" id="vW2-qG-Sdb"/>
+                                    </constraints>
                                 </view>
                             </tabViewItem>
                         </tabViewItems>
                     </tabView>
                 </subviews>
+                <constraints>
+                    <constraint firstItem="132" firstAttribute="centerX" secondItem="6" secondAttribute="centerX" id="73i-nD-qkA"/>
+                    <constraint firstItem="132" firstAttribute="top" secondItem="6" secondAttribute="top" constant="12" id="d1D-pC-U6o"/>
+                </constraints>
             </view>
             <point key="canvasLocation" x="350.5" y="342"/>
         </window>

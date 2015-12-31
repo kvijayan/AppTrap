@@ -17,13 +17,13 @@
 	<key>CFBundlePackageType</key>
 	<string>BNDL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.2.2</string>
+	<string>1.2.3</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>64</string>
+	<string>65</string>
 	<key>LSMinimumSystemVersion</key>
-	<string>10.8</string>
+	<string>10.10</string>
 	<key>NSHumanReadableCopyright</key>
 	<string>© Konst och vanliga saker, 2007-2008</string>
 	<key>NSMainNibFile</key>
