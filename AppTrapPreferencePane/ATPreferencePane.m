@@ -25,6 +25,7 @@
 
 static NSString *AppTrapBackgroundBundleIdentifier = @"com.KumaranVijayan.AppTrap";
 static NSString *AppTrapBackgroundBundleIdentifierOld = @"se.konstochvanligasaker.AppTrap";
+static const NSInteger ATPreferencePaneRestartBackgroundProcessAlertDefaultResponseCode = 1000;
 
 @interface ATPreferencePane () <NSFileManagerDelegate>
 @end
@@ -105,16 +106,18 @@ static NSString *AppTrapBackgroundBundleIdentifierOld = @"se.konstochvanligasake
 	int prefpaneVersionInt = [prefpaneVersion intValue];
 	
 	if (prefpaneVersionInt != backgroundProcessVersionInt) {
-		NSBeginAlertSheet(@"AppTrap", 
-						  NSLocalizedStringFromTableInBundle(@"Restart AppTrap", nil, [self bundle], @""), 
-						  NSLocalizedStringFromTableInBundle(@"Don't restart AppTrap", nil, [self bundle], @""), 
-						  nil, 
-						  [startStopButton window], 
-						  self, 
-						  @selector(sheetDidEnd:returnCode:contextInfo:), 
-						  nil, 
-						  nil, 
-						  NSLocalizedStringFromTableInBundle(@"The background process is an older version. Would you like to restart it with the newer version?", nil, [self bundle], @""));
+        NSAlert *alert = [NSAlert new];
+        alert.alertStyle = NSInformationalAlertStyle;
+        alert.informativeText = NSLocalizedStringFromTableInBundle(@"The background process is an older version. Would you like to restart it with the newer version?", nil, [self bundle], @"");
+        [alert addButtonWithTitle:NSLocalizedStringFromTableInBundle(@"Restart AppTrap", nil, [self bundle], @"")];
+        [alert addButtonWithTitle:NSLocalizedStringFromTableInBundle(@"Don't restart AppTrap", nil, [self bundle], @"")];
+        __weak typeof(self) weakSelf = self;
+        [alert beginSheetModalForWindow:startStopButton.window
+                      completionHandler:^(NSModalResponse returnCode) {
+                          if (returnCode == ATPreferencePaneRestartBackgroundProcessAlertDefaultResponseCode) {
+                              [weakSelf restartBackgroundProcess];
+                          }
+        }];
 	}
 }
 
@@ -124,17 +127,15 @@ static NSString *AppTrapBackgroundBundleIdentifierOld = @"se.konstochvanligasake
 	[nc postNotificationName:ATApplicationSendVersionData 
 					  object:nil 
 					userInfo:nil 
-		  deliverImmediately:YES];	
+		  deliverImmediately:YES];
 }
 
-- (void)sheetDidEnd:(NSWindow *)sheet returnCode:(int)returnCode contextInfo:(void  *)contextInfo {
-	if (returnCode == NSAlertDefaultReturn) {
-		[startStopButton setEnabled:NO];
-		[restartingAppTrapIndicator startAnimation:nil];
-		[restartingAppTrapTextField setHidden:NO];
-		[self terminateAppTrap];
-		[self performSelector:@selector(restartWithNewVersion) withObject:nil afterDelay:5];
-	}
+- (void)restartBackgroundProcess {
+    [startStopButton setEnabled:NO];
+    [restartingAppTrapIndicator startAnimation:nil];
+    [restartingAppTrapTextField setHidden:NO];
+    [self terminateAppTrap];
+    [self performSelector:@selector(restartWithNewVersion) withObject:nil afterDelay:5];
 }
 
 - (void)restartWithNewVersion {
