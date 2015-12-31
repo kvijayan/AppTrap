@@ -78,41 +78,6 @@
 - (void)checkBackgroundProcessVersion;
 
 /**
- * Check to see if the application referenced by thePath is in the user's list
- * of login items.
- *
- * @param[in] theLoginItemsRefs The list of the user's login items.
- * @param[in] thePath The URL to the application in question.
- * @return a BOOL indicating whether the application referenced by thePath is in
- * the user's list of login items.
- * @todo Modify this method, or make a new one, that gets the login items on its
- * own (without a parameter).
- */
-- (BOOL)inLoginItems:(LSSharedFileListRef)theLoginItemsRefs forPath:(CFURLRef)thePath;
-
-/**
- * Add the application referenced by thePath to the list of user's login items.
- *
- * @param[in] theLginItemsRefs The list of user's login items.
- * @param[in] thePath The URL to the application to be added.
- * @todo Modify this method, or make a new one, that gets the login items on its
- * own (without a parameter).
- */
-- (void)addToLoginItems:(LSSharedFileListRef )theLoginItemsRefs forPath:(CFURLRef)thePath;
-
-/**
- * Remove the application referenced by thePath from the list of user's login
- * items.
- *
- * @param[in] theLoginItemsRefs The list of user's login items.
- * @param[in] thePath The URL to the application to be added to the list of
- * login items.
- * @todo Modify this method, or make a new one, that gets the login items on its
- * own (without a parameter).
- */
-- (void)removeFromLoginItems:(LSSharedFileListRef )theLoginItemsRefs forPath:(CFURLRef)thePath;
-
-/**
  * Enable or disable automatic update checking, depending on the sender's state.
  * Called by a checkbox.
  *

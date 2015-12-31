@@ -51,7 +51,7 @@ static const NSInteger ATPreferencePaneRestartBackgroundProcessAlertDefaultRespo
 	CFURLRef appPathURL = (CFURLRef)CFBridgingRetain([appPath copy]);
 
     // Check if application is in login items
-    if ([self inLoginItems:LSSharedFileListCreate(NULL, kLSSharedFileListSessionLoginItems, NULL) forPath:appPathURL]) {
+    if ([self isBackgroundAppInLoginItems]) {
 		[startOnLoginButton setState:NSOnState];
 	} else {
 		[startOnLoginButton setState:NSOffState];
@@ -149,8 +149,7 @@ static const NSInteger ATPreferencePaneRestartBackgroundProcessAlertDefaultRespo
 {
 	CFURLRef appPathURL = (CFURLRef)CFBridgingRetain([appPath copy]);
 	
-	if ([self inLoginItems:LSSharedFileListCreate(NULL, kLSSharedFileListSessionLoginItems, NULL) 
-				   forPath:appPathURL]) {
+	if ([self isBackgroundAppInLoginItems]) {
 		[startOnLoginButton setState:NSOnState];
 	} else {
 		[startOnLoginButton setState:NSOffState];
@@ -240,46 +239,58 @@ static const NSInteger ATPreferencePaneRestartBackgroundProcessAlertDefaultRespo
 
 #pragma mark -
 #pragma mark Login items
-- (BOOL)inLoginItems:(LSSharedFileListRef)theLoginItemsRefs forPath:(CFURLRef)thePath
+- (BOOL)isBackgroundAppInLoginItems
 {
-	UInt32 seedValue;
+    LSSharedFileListRef loginItemsRefs = LSSharedFileListCreate(NULL,
+                                                                kLSSharedFileListSessionLoginItems,
+                                                                NULL);
+    UInt32 seedValue;
 	
 	// We're going to grab the contents of the shared file list (LSSharedFileListItemRef objects)
 	// and pop it in an array so we can iterate through it to find our item.
-	NSArray  *loginItemsArray = (NSArray *)CFBridgingRelease(LSSharedFileListCopySnapshot(theLoginItemsRefs, &seedValue));
-	for (id item in loginItemsArray) {		
+	NSArray  *loginItemsArray = (NSArray *)CFBridgingRelease(LSSharedFileListCopySnapshot(loginItemsRefs, &seedValue));
+	for (id item in loginItemsArray) {
 		LSSharedFileListItemRef itemRef = (__bridge LSSharedFileListItemRef)item;
-		if (LSSharedFileListItemResolve(itemRef, 0, (CFURLRef*) &thePath, NULL) == noErr) {
-			if ([[(__bridge NSURL *)thePath path] hasPrefix:appPath]) {
-				return YES;
-			}
-		}
+        NSURL *path = (__bridge NSURL*)LSSharedFileListItemCopyResolvedURL(itemRef, 0, NULL);
+        if ([path.path hasPrefix:appPath]) {
+            return YES;
+        }
 	}
 	
 	return NO;
 }
 
-- (void)addToLoginItems:(LSSharedFileListRef )theLoginItemsRefs forPath:(CFURLRef)thePath
+- (void)addBackgroundAppToLoginItems
 {
-	LSSharedFileListItemRef item = LSSharedFileListInsertItemURL(theLoginItemsRefs, kLSSharedFileListItemLast, NULL, NULL, thePath, NULL, NULL);		
+    CFURLRef appPathURL = (__bridge CFURLRef)[NSURL fileURLWithPath:appPath];
+    LSSharedFileListRef loginItems = LSSharedFileListCreate(NULL, kLSSharedFileListSessionLoginItems, NULL);
+	LSSharedFileListItemRef item = LSSharedFileListInsertItemURL(loginItems,
+                                                                 kLSSharedFileListItemLast,
+                                                                 NULL,
+                                                                 NULL,
+                                                                 appPathURL,
+                                                                 NULL,
+                                                                 NULL);
 	if (item) {
 		CFRelease(item);
 	}
 }
 
-- (void)removeFromLoginItems:(LSSharedFileListRef )theLoginItemsRefs forPath:(CFURLRef)thePath
+- (void)removeBackgroundAppFromLoginItems
 {
+    LSSharedFileListRef loginItems = LSSharedFileListCreate(NULL, kLSSharedFileListSessionLoginItems, NULL);
 	UInt32 seedValue;
 	
 	// We're going to grab the contents of the shared file list (LSSharedFileListItemRef objects)
 	// and pop it in an array so we can iterate through it to find our item.
-	NSArray  *loginItemsArray = (NSArray *)CFBridgingRelease(LSSharedFileListCopySnapshot(theLoginItemsRefs, &seedValue));
+	NSArray  *loginItemsArray = (NSArray *)CFBridgingRelease(LSSharedFileListCopySnapshot(loginItems,
+                                                                                          &seedValue));
 	for (id item in loginItemsArray) {		
 		LSSharedFileListItemRef itemRef = (__bridge LSSharedFileListItemRef)item;
-		if (LSSharedFileListItemResolve(itemRef, 0, (CFURLRef*) &thePath, NULL) == noErr) {
-			if ([[(__bridge NSURL *)thePath path] hasPrefix:appPath])
-				LSSharedFileListItemRemove(theLoginItemsRefs, itemRef); // Deleting the item
-		}
+        NSURL *path = (__bridge NSURL*)LSSharedFileListItemCopyResolvedURL(itemRef, 0, NULL);
+        if ([path.path hasPrefix:appPath]) {
+            LSSharedFileListItemRemove(loginItems, itemRef); // Deleting the item
+        }
 	}
 	
 }
@@ -299,16 +310,11 @@ static const NSInteger ATPreferencePaneRestartBackgroundProcessAlertDefaultRespo
 
 - (IBAction)startOnLogin:(id)sender
 {
-	CFURLRef appPathURL = (__bridge CFURLRef)[NSURL fileURLWithPath:appPath];
-	LSSharedFileListRef loginItems = LSSharedFileListCreate(NULL, kLSSharedFileListSessionLoginItems, NULL);
-
     if ([sender state] == NSOnState) {
-        [self addToLoginItems:loginItems forPath:appPathURL];
+        [self addBackgroundAppToLoginItems];
 	} else {
-        [self removeFromLoginItems:loginItems forPath:appPathURL];
+        [self removeBackgroundAppFromLoginItems];
 	}
-	
-    CFRelease(loginItems);
 }
 
 - (IBAction)visitWebsite:(id)sender
