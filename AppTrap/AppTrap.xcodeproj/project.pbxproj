@@ -835,6 +835,7 @@
 				7D02FA2B1C31D22600C6CAB4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7D3E98331BF3F29C0089E727 /* Build configuration list for PBXNativeTarget "Relaunch" */ = {
 			isa = XCConfigurationList;

@@ -28,6 +28,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		7D123B111C71897B009F1573 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7D97B03E17A8A04900569109 /* AppTrap.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 7D02FA261C31D22600C6CAB4;
+			remoteInfo = RelaunchObjC;
+		};
 		7D252BA417C148B6008BBBB3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 7D97B03E17A8A04900569109 /* AppTrap.xcodeproj */;
@@ -287,6 +294,7 @@
 				7D97B04E17A8B2E100569109 /* AppTrap.app */,
 				7D252BA517C148B6008BBBB3 /* AppTrapTests.octest */,
 				7D87BA351BF68E1A00416611 /* Relaunch */,
+				7D123B121C71897B009F1573 /* RelaunchObjC */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -387,6 +395,13 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		7D123B121C71897B009F1573 /* RelaunchObjC */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = RelaunchObjC;
+			remoteRef = 7D123B111C71897B009F1573 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		7D252BA517C148B6008BBBB3 /* AppTrapTests.octest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
