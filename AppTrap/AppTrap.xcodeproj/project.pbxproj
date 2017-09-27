@@ -88,7 +88,7 @@
 		7D3E982D1BF3F29C0089E727 /* Relaunch */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Relaunch; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D3E982F1BF3F29C0089E727 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		7D5CCF8C104C0DAA0026160F /* fr */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
-		7D6FB8FA17C020B300EE17FC /* APTPreferencePaneDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = APTPreferencePaneDelegate.h; path = /Users/kumaranvijayan/Code/AppTrap/AppTrap/APTPreferencePaneDelegate.h; sourceTree = "<absolute>"; };
+		7D6FB8FA17C020B300EE17FC /* APTPreferencePaneDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APTPreferencePaneDelegate.h; sourceTree = "<group>"; };
 		7D6FB90317C055C500EE17FC /* AppTrapTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AppTrapTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D6FB90417C055C500EE17FC /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		7D6FB90617C055C500EE17FC /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
